@@ -1,0 +1,894 @@
+{
+  "schema": "memorization-fit-v1",
+  "scope": "train_set_memorization_diagnostic",
+  "L1_status": "not_run",
+  "generalization_evaluation": "not_run",
+  "reader": "concat",
+  "status": "memorized",
+  "histories": 1,
+  "config": {
+    "max_steps": 1000,
+    "evaluate_every": 25,
+    "required_successes": 3,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "gradient_clip_norm": 1.0,
+    "dropout": 0.1,
+    "seed": 11
+  },
+  "optimizer_steps": 125,
+  "success_streak": 3,
+  "history": [
+    {
+      "step": 0,
+      "free": {
+        "histories": 1,
+        "full_history_error": 1.0,
+        "full_event_error": 1.0,
+        "fields": {
+          "time": {
+            "errors": 16,
+            "total": 16,
+            "error_rate": 1.0,
+            "confusion": {
+              "3->10": 1,
+              "3->16": 1,
+              "4->16": 1,
+              "5->16": 1,
+              "-1->16": 12
+            }
+          },
+          "mode": {
+            "errors": 16,
+            "total": 16,
+            "error_rate": 1.0,
+            "confusion": {
+              "20->24": 2,
+              "22->24": 1,
+              "23->24": 1,
+              "-1->24": 12
+            }
+          },
+          "entity": {
+            "errors": 15,
+            "total": 16,
+            "error_rate": 0.9375,
+            "confusion": {
+              "26->27": 3,
+              "27->27": 1,
+              "-1->27": 12
+            }
+          },
+          "predicate": {
+            "errors": 15,
+            "total": 16,
+            "error_rate": 0.9375,
+            "confusion": {
+              "30->32": 3,
+              "32->32": 1,
+              "-1->32": 12
+            }
+          },
+          "negation": {
+            "errors": 12,
+            "total": 16,
+            "error_rate": 0.75,
+            "confusion": {
+              "33->33": 4,
+              "-1->33": 12
+            }
+          },
+          "value": {
+            "errors": 16,
+            "total": 16,
+            "error_rate": 1.0,
+            "confusion": {
+              "36->38": 3,
+              "39->38": 1,
+              "-1->38": 12
+            }
+          }
+        },
+        "invalid_decodings": 1,
+        "termination_errors": 1,
+        "first_error_fields": {
+          "time": 1
+        }
+      },
+      "teacher": {
+        "nll": 1.270947494506836,
+        "tokens": 25,
+        "token_errors": 15,
+        "token_error": 0.6000000238418579,
+        "full_history_error": 1.0,
+        "fields": {
+          "time": {
+            "errors": 4,
+            "tokens": 4
+          },
+          "mode": {
+            "errors": 3,
+            "tokens": 4
+          },
+          "entity": {
+            "errors": 1,
+            "tokens": 4
+          },
+          "predicate": {
+            "errors": 2,
+            "tokens": 4
+          },
+          "negation": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "value": {
+            "errors": 4,
+            "tokens": 4
+          },
+          "termination": {
+            "errors": 1,
+            "tokens": 1
+          }
+        }
+      }
+    },
+    {
+      "step": 25,
+      "update_nll": 0.5426018834114075,
+      "free": {
+        "histories": 1,
+        "full_history_error": 1.0,
+        "full_event_error": 0.75,
+        "fields": {
+          "time": {
+            "errors": 3,
+            "total": 4,
+            "error_rate": 0.75,
+            "confusion": {
+              "3->3": 1,
+              "3->-1": 1,
+              "4->-1": 1,
+              "5->-1": 1
+            }
+          },
+          "mode": {
+            "errors": 3,
+            "total": 4,
+            "error_rate": 0.75,
+            "confusion": {
+              "20->20": 1,
+              "20->-1": 1,
+              "22->-1": 1,
+              "23->-1": 1
+            }
+          },
+          "entity": {
+            "errors": 3,
+            "total": 4,
+            "error_rate": 0.75,
+            "confusion": {
+              "26->26": 1,
+              "27->-1": 1,
+              "26->-1": 2
+            }
+          },
+          "predicate": {
+            "errors": 3,
+            "total": 4,
+            "error_rate": 0.75,
+            "confusion": {
+              "30->30": 1,
+              "30->-1": 2,
+              "32->-1": 1
+            }
+          },
+          "negation": {
+            "errors": 3,
+            "total": 4,
+            "error_rate": 0.75,
+            "confusion": {
+              "33->33": 1,
+              "33->-1": 3
+            }
+          },
+          "value": {
+            "errors": 3,
+            "total": 4,
+            "error_rate": 0.75,
+            "confusion": {
+              "36->36": 1,
+              "36->-1": 2,
+              "39->-1": 1
+            }
+          }
+        },
+        "invalid_decodings": 0,
+        "termination_errors": 1,
+        "first_error_fields": {
+          "termination": 1
+        }
+      },
+      "teacher": {
+        "nll": 0.5186679840087891,
+        "tokens": 25,
+        "token_errors": 3,
+        "token_error": 0.11999999731779099,
+        "full_history_error": 1.0,
+        "fields": {
+          "time": {
+            "errors": 2,
+            "tokens": 4
+          },
+          "mode": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "entity": {
+            "errors": 1,
+            "tokens": 4
+          },
+          "predicate": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "negation": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "value": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "termination": {
+            "errors": 0,
+            "tokens": 1
+          }
+        }
+      }
+    },
+    {
+      "step": 50,
+      "update_nll": 0.229035422205925,
+      "free": {
+        "histories": 1,
+        "full_history_error": 1.0,
+        "full_event_error": 0.6,
+        "fields": {
+          "time": {
+            "errors": 3,
+            "total": 5,
+            "error_rate": 0.6,
+            "confusion": {
+              "3->3": 2,
+              "4->3": 1,
+              "5->4": 1,
+              "-1->5": 1
+            }
+          },
+          "mode": {
+            "errors": 3,
+            "total": 5,
+            "error_rate": 0.6,
+            "confusion": {
+              "20->20": 2,
+              "22->20": 1,
+              "23->22": 1,
+              "-1->23": 1
+            }
+          },
+          "entity": {
+            "errors": 2,
+            "total": 5,
+            "error_rate": 0.4,
+            "confusion": {
+              "26->26": 2,
+              "27->27": 1,
+              "26->27": 1,
+              "-1->26": 1
+            }
+          },
+          "predicate": {
+            "errors": 3,
+            "total": 5,
+            "error_rate": 0.6,
+            "confusion": {
+              "30->30": 2,
+              "32->30": 1,
+              "30->32": 1,
+              "-1->30": 1
+            }
+          },
+          "negation": {
+            "errors": 1,
+            "total": 5,
+            "error_rate": 0.2,
+            "confusion": {
+              "33->33": 4,
+              "-1->33": 1
+            }
+          },
+          "value": {
+            "errors": 3,
+            "total": 5,
+            "error_rate": 0.6,
+            "confusion": {
+              "36->36": 2,
+              "39->36": 1,
+              "36->39": 1,
+              "-1->36": 1
+            }
+          }
+        },
+        "invalid_decodings": 0,
+        "termination_errors": 1,
+        "first_error_fields": {
+          "time": 1
+        }
+      },
+      "teacher": {
+        "nll": 0.2196550178527832,
+        "tokens": 25,
+        "token_errors": 1,
+        "token_error": 0.03999999910593033,
+        "full_history_error": 1.0,
+        "fields": {
+          "time": {
+            "errors": 1,
+            "tokens": 4
+          },
+          "mode": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "entity": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "predicate": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "negation": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "value": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "termination": {
+            "errors": 0,
+            "tokens": 1
+          }
+        }
+      }
+    },
+    {
+      "step": 75,
+      "update_nll": 0.08738026767969131,
+      "free": {
+        "histories": 1,
+        "full_history_error": 0.0,
+        "full_event_error": 0.0,
+        "fields": {
+          "time": {
+            "errors": 0,
+            "total": 4,
+            "error_rate": 0.0,
+            "confusion": {
+              "3->3": 2,
+              "4->4": 1,
+              "5->5": 1
+            }
+          },
+          "mode": {
+            "errors": 0,
+            "total": 4,
+            "error_rate": 0.0,
+            "confusion": {
+              "20->20": 2,
+              "22->22": 1,
+              "23->23": 1
+            }
+          },
+          "entity": {
+            "errors": 0,
+            "total": 4,
+            "error_rate": 0.0,
+            "confusion": {
+              "26->26": 3,
+              "27->27": 1
+            }
+          },
+          "predicate": {
+            "errors": 0,
+            "total": 4,
+            "error_rate": 0.0,
+            "confusion": {
+              "30->30": 3,
+              "32->32": 1
+            }
+          },
+          "negation": {
+            "errors": 0,
+            "total": 4,
+            "error_rate": 0.0,
+            "confusion": {
+              "33->33": 4
+            }
+          },
+          "value": {
+            "errors": 0,
+            "total": 4,
+            "error_rate": 0.0,
+            "confusion": {
+              "36->36": 3,
+              "39->39": 1
+            }
+          }
+        },
+        "invalid_decodings": 0,
+        "termination_errors": 0,
+        "first_error_fields": {}
+      },
+      "teacher": {
+        "nll": 0.07852357864379883,
+        "tokens": 25,
+        "token_errors": 0,
+        "token_error": 0.0,
+        "full_history_error": 0.0,
+        "fields": {
+          "time": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "mode": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "entity": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "predicate": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "negation": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "value": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "termination": {
+            "errors": 0,
+            "tokens": 1
+          }
+        }
+      }
+    },
+    {
+      "step": 100,
+      "update_nll": 0.018449755385518074,
+      "free": {
+        "histories": 1,
+        "full_history_error": 0.0,
+        "full_event_error": 0.0,
+        "fields": {
+          "time": {
+            "errors": 0,
+            "total": 4,
+            "error_rate": 0.0,
+            "confusion": {
+              "3->3": 2,
+              "4->4": 1,
+              "5->5": 1
+            }
+          },
+          "mode": {
+            "errors": 0,
+            "total": 4,
+            "error_rate": 0.0,
+            "confusion": {
+              "20->20": 2,
+              "22->22": 1,
+              "23->23": 1
+            }
+          },
+          "entity": {
+            "errors": 0,
+            "total": 4,
+            "error_rate": 0.0,
+            "confusion": {
+              "26->26": 3,
+              "27->27": 1
+            }
+          },
+          "predicate": {
+            "errors": 0,
+            "total": 4,
+            "error_rate": 0.0,
+            "confusion": {
+              "30->30": 3,
+              "32->32": 1
+            }
+          },
+          "negation": {
+            "errors": 0,
+            "total": 4,
+            "error_rate": 0.0,
+            "confusion": {
+              "33->33": 4
+            }
+          },
+          "value": {
+            "errors": 0,
+            "total": 4,
+            "error_rate": 0.0,
+            "confusion": {
+              "36->36": 3,
+              "39->39": 1
+            }
+          }
+        },
+        "invalid_decodings": 0,
+        "termination_errors": 0,
+        "first_error_fields": {}
+      },
+      "teacher": {
+        "nll": 0.01718039035797119,
+        "tokens": 25,
+        "token_errors": 0,
+        "token_error": 0.0,
+        "full_history_error": 0.0,
+        "fields": {
+          "time": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "mode": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "entity": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "predicate": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "negation": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "value": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "termination": {
+            "errors": 0,
+            "tokens": 1
+          }
+        }
+      }
+    },
+    {
+      "step": 125,
+      "update_nll": 0.009071909822523594,
+      "free": {
+        "histories": 1,
+        "full_history_error": 0.0,
+        "full_event_error": 0.0,
+        "fields": {
+          "time": {
+            "errors": 0,
+            "total": 4,
+            "error_rate": 0.0,
+            "confusion": {
+              "3->3": 2,
+              "4->4": 1,
+              "5->5": 1
+            }
+          },
+          "mode": {
+            "errors": 0,
+            "total": 4,
+            "error_rate": 0.0,
+            "confusion": {
+              "20->20": 2,
+              "22->22": 1,
+              "23->23": 1
+            }
+          },
+          "entity": {
+            "errors": 0,
+            "total": 4,
+            "error_rate": 0.0,
+            "confusion": {
+              "26->26": 3,
+              "27->27": 1
+            }
+          },
+          "predicate": {
+            "errors": 0,
+            "total": 4,
+            "error_rate": 0.0,
+            "confusion": {
+              "30->30": 3,
+              "32->32": 1
+            }
+          },
+          "negation": {
+            "errors": 0,
+            "total": 4,
+            "error_rate": 0.0,
+            "confusion": {
+              "33->33": 4
+            }
+          },
+          "value": {
+            "errors": 0,
+            "total": 4,
+            "error_rate": 0.0,
+            "confusion": {
+              "36->36": 3,
+              "39->39": 1
+            }
+          }
+        },
+        "invalid_decodings": 0,
+        "termination_errors": 0,
+        "first_error_fields": {}
+      },
+      "teacher": {
+        "nll": 0.008349617719650268,
+        "tokens": 25,
+        "token_errors": 0,
+        "token_error": 0.0,
+        "full_history_error": 0.0,
+        "fields": {
+          "time": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "mode": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "entity": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "predicate": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "negation": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "value": {
+            "errors": 0,
+            "tokens": 4
+          },
+          "termination": {
+            "errors": 0,
+            "tokens": 1
+          }
+        }
+      }
+    }
+  ],
+  "final": {
+    "step": 125,
+    "update_nll": 0.009071909822523594,
+    "free": {
+      "histories": 1,
+      "full_history_error": 0.0,
+      "full_event_error": 0.0,
+      "fields": {
+        "time": {
+          "errors": 0,
+          "total": 4,
+          "error_rate": 0.0,
+          "confusion": {
+            "3->3": 2,
+            "4->4": 1,
+            "5->5": 1
+          }
+        },
+        "mode": {
+          "errors": 0,
+          "total": 4,
+          "error_rate": 0.0,
+          "confusion": {
+            "20->20": 2,
+            "22->22": 1,
+            "23->23": 1
+          }
+        },
+        "entity": {
+          "errors": 0,
+          "total": 4,
+          "error_rate": 0.0,
+          "confusion": {
+            "26->26": 3,
+            "27->27": 1
+          }
+        },
+        "predicate": {
+          "errors": 0,
+          "total": 4,
+          "error_rate": 0.0,
+          "confusion": {
+            "30->30": 3,
+            "32->32": 1
+          }
+        },
+        "negation": {
+          "errors": 0,
+          "total": 4,
+          "error_rate": 0.0,
+          "confusion": {
+            "33->33": 4
+          }
+        },
+        "value": {
+          "errors": 0,
+          "total": 4,
+          "error_rate": 0.0,
+          "confusion": {
+            "36->36": 3,
+            "39->39": 1
+          }
+        }
+      },
+      "invalid_decodings": 0,
+      "termination_errors": 0,
+      "first_error_fields": {}
+    },
+    "teacher": {
+      "nll": 0.008349617719650268,
+      "tokens": 25,
+      "token_errors": 0,
+      "token_error": 0.0,
+      "full_history_error": 0.0,
+      "fields": {
+        "time": {
+          "errors": 0,
+          "tokens": 4
+        },
+        "mode": {
+          "errors": 0,
+          "tokens": 4
+        },
+        "entity": {
+          "errors": 0,
+          "tokens": 4
+        },
+        "predicate": {
+          "errors": 0,
+          "tokens": 4
+        },
+        "negation": {
+          "errors": 0,
+          "tokens": 4
+        },
+        "value": {
+          "errors": 0,
+          "tokens": 4
+        },
+        "termination": {
+          "errors": 0,
+          "tokens": 1
+        }
+      }
+    }
+  },
+  "controls": {
+    "zero_embeddings": {
+      "histories": 1,
+      "full_history_error": 1.0,
+      "full_event_error": 1.0,
+      "fields": {
+        "time": {
+          "errors": 3,
+          "total": 4,
+          "error_rate": 0.75,
+          "confusion": {
+            "3->3": 1,
+            "3->4": 1,
+            "4->5": 1,
+            "5->-1": 1
+          }
+        },
+        "mode": {
+          "errors": 3,
+          "total": 4,
+          "error_rate": 0.75,
+          "confusion": {
+            "20->20": 1,
+            "20->22": 1,
+            "22->23": 1,
+            "23->-1": 1
+          }
+        },
+        "entity": {
+          "errors": 3,
+          "total": 4,
+          "error_rate": 0.75,
+          "confusion": {
+            "26->27": 1,
+            "27->26": 1,
+            "26->26": 1,
+            "26->-1": 1
+          }
+        },
+        "predicate": {
+          "errors": 3,
+          "total": 4,
+          "error_rate": 0.75,
+          "confusion": {
+            "30->30": 1,
+            "30->32": 1,
+            "32->30": 1,
+            "30->-1": 1
+          }
+        },
+        "negation": {
+          "errors": 1,
+          "total": 4,
+          "error_rate": 0.25,
+          "confusion": {
+            "33->33": 3,
+            "33->-1": 1
+          }
+        },
+        "value": {
+          "errors": 3,
+          "total": 4,
+          "error_rate": 0.75,
+          "confusion": {
+            "36->36": 1,
+            "36->39": 1,
+            "39->36": 1,
+            "36->-1": 1
+          }
+        }
+      },
+      "invalid_decodings": 0,
+      "termination_errors": 1,
+      "first_error_fields": {
+        "entity": 1
+      }
+    },
+    "same_length_swap": {
+      "status": "not_applicable_single_history"
+    }
+  },
+  "teacher_step_parity_initial": {
+    "max_abs_valid_logit_difference": 1.4901161193847656e-07,
+    "argmax_disagreements": 0,
+    "valid_logits_allclose": true
+  },
+  "teacher_step_parity_final": {
+    "max_abs_valid_logit_difference": 2.384185791015625e-06,
+    "argmax_disagreements": 0,
+    "valid_logits_allclose": true
+  },
+  "parameters": 4721448,
+  "wall_seconds": 7.726139003993012,
+  "checkpoint_sha256": "ef51bd50306b5cd7ce433a98439138902fb36f1ddf9b404336675f26e9b5c98a",
+  "provenance": {
+    "input_lock_sha256": "e1473fd0a476542dd81001c4aa1464a8497b2676a62d3280de010b7c6bd8fa76",
+    "protocol_sha256": "074ad23ffb1bc586c9fc8d457fccd152906f4f28c516e00c9eafd20dd9b7a6d4",
+    "diagnostic_source_sha256": "461e57d64228d73bac7640f77bdb23e855a1918f8c0aa09a2d086a949cfa1e44",
+    "selection_sha256": "eecb623df7b15ca8cdcc3a11f32e1bef2cad4250cd55150c984a3c0e792a065a",
+    "stage": "single"
+  },
+  "restoration_verified": true
+}

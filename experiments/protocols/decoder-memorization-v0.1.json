@@ -1,0 +1,28 @@
+{
+  "protocol_id": "decoder-memorization-v0.1",
+  "scope": "train_set_memorization_diagnostic",
+  "L1_status": "not_run",
+  "branches": ["concat", "attention", "gru"],
+  "history_lengths": [4, 8, 12, 16],
+  "histories_per_length": 2,
+  "selection": "first_distinct_target_histories_in_locked_train_order",
+  "single_history": "first_selected_length_4",
+  "training": {
+    "max_steps": 1000,
+    "evaluate_every": 25,
+    "required_successes": 3,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "gradient_clip_norm": 1.0,
+    "dropout": 0.1,
+    "seed": 11
+  },
+  "batching": "full_selected_batch",
+  "threads": 4,
+  "device": "cpu",
+  "success": "all_exact_greedy_histories_and_zero_invalid_for_3_consecutive_checks",
+  "controls": ["zero_embeddings_same_lengths", "swap_each_same_length_pair"],
+  "generalization_evaluation": "not_run",
+  "architecture_changes": "none",
+  "normalization": "none"
+}

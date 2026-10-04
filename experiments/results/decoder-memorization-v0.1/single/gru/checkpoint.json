@@ -1,0 +1,58 @@
+{
+  "schema": "memorization-checkpoint-v1",
+  "scope": "train_set_memorization_diagnostic",
+  "reader": "gru",
+  "input_dim": 1024,
+  "config": {
+    "max_steps": 1000,
+    "evaluate_every": 25,
+    "required_successes": 3,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "gradient_clip_norm": 1.0,
+    "dropout": 0.1,
+    "seed": 11
+  },
+  "provenance": {
+    "input_lock_sha256": "e1473fd0a476542dd81001c4aa1464a8497b2676a62d3280de010b7c6bd8fa76",
+    "protocol_sha256": "074ad23ffb1bc586c9fc8d457fccd152906f4f28c516e00c9eafd20dd9b7a6d4",
+    "diagnostic_source_sha256": "461e57d64228d73bac7640f77bdb23e855a1918f8c0aa09a2d086a949cfa1e44",
+    "selection_sha256": "eecb623df7b15ca8cdcc3a11f32e1bef2cad4250cd55150c984a3c0e792a065a",
+    "stage": "single"
+  },
+  "implementation": {
+    "runtime_source_sha256": {
+      "__init__.py": "e00680756351f76de38d29f6140971e76231dc08ddca2b88737ea54d52414644",
+      "__main__.py": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+      "calibration.py": "9ae39caaca209bb221273e3364cd81582aba2be9aaa7da9d0500ad913bcacd44",
+      "cli.py": "f6bc2347acf0c4969679a277eaa18b8904aee62b07d13b89bfef996594130507",
+      "contracts.py": "fc63f3e2a5132abf7c890fa6c0f9e07c11068f8c4112cc2fb18858662b328d72",
+      "core_evaluation.py": "e90a459a98e1b7d746776ba7268b89291cf3f9fec01c9ebbf7cbb5ca7dd8d3de",
+      "dataset.py": "fb708482cec264b040b2d04715ae69aae70f42e3e3eb270aa7f7ea77666cba2f",
+      "dataset_cli.py": "f7205395028aac6446a717d7f7d2cd40d990536dffa3a34db285ab533d8590f7",
+      "dataset_codec.py": "d95af4908a1dbdc4dd51e2552a65237d6a922e41ccde978c3afcdeca6dd9898f",
+      "dynamics.py": "df93041a712cf1134297a5ba0e1465aa2e64c5ffe3fb4a7e1fe81e099d035034",
+      "embedding_cache.py": "235cb18b5d179d26a475eef4009ecc0ef1a9155384c84fbc8542001ef84993b6",
+      "generator.py": "4110f688c79c45906f1cc20fb88caf1919f064187f282c9652f7011ad3c88da1",
+      "grounder.py": "be943381f00abc9cdffca9cf10267c5eb6535d9cbb3d02154eca2032375a1da3",
+      "inference.py": "2abb0b3fa818f8f7bbeb48085787f0e135972e6f9044494fcfbf7ed68df6469d",
+      "journal.py": "4924abdd549ec959041a39bdd0ea11b8cf145759f6d68e56c6839a97eb7c013d",
+      "language_catalog.py": "5a94b52d20e11a41b2a71d16c8905c120371f6a6aac4cee9c82e43f9fe26012b",
+      "language_cli.py": "6d07dc4e1e50e031b1f6388cd0a134a3c3562af85d60073b2c534ad7a08c73f5",
+      "language_evaluation.py": "c0f1c001c9a7640ff5c38827d5065874579adf05ed10a2eabeed8c68a68667f5",
+      "language_lock.py": "186dcf0eb82a4fc42c92ab3292dd17525190931caef53e849866e76aa7e9c7f1",
+      "language_tokens.py": "af41ddf3dd9e501be63c9fcb25ade5bc28066759b8488afcaceafcaa139b1fd9",
+      "language_training.py": "398fc2bdce9b82f7c93c59818889abe3f9b4671059dd8bca1b518b7282516eb1",
+      "metrics.py": "402a535ae2c304aaf26aba9dd21e4c409df339f03987d6bc329b868fad554392",
+      "misspecification.py": "889e310c89cb65be26a0b4d7e50ab219675bef98c40f3e6a4008b1e63cd4af76",
+      "pairs.py": "c5d4e7135cafa9ec8384f9127c08ad5290e90e37620019536c956e05b1f01bed",
+      "population.py": "6cc256e6e3c214f028d0506febc044bebd372889e5fc1b83d285e663b261a050",
+      "queries.py": "b0f14cff5e34d203f3794b3cdbaca20fc807992efb993dfcbc0eed4a4858749e",
+      "simulator.py": "830d1ca740c9cf8c50aee47fc564c01ddbd4e6b00b21a8d86f9b4ab5224c840d",
+      "sonar_encoder.py": "8f2cd3dbe307c788062ad57642f26a28c58e42f993add294f75e897e8589e476"
+    },
+    "diagnostic_source_sha256": "461e57d64228d73bac7640f77bdb23e855a1918f8c0aa09a2d086a949cfa1e44",
+    "protocol_sha256": "074ad23ffb1bc586c9fc8d457fccd152906f4f28c516e00c9eafd20dd9b7a6d4"
+  },
+  "weights_sha256": "1033a616f9614cc445edea9a85589e6d15cc5d603d55bf884b8998b87282feed"
+}

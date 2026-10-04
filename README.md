@@ -10,6 +10,8 @@
 
 Первый языковой diagnostic выполнен на128 train /32 validation histories с реальными SONAR embeddings. Все три ветки обучены, но полностью правильных validation histories пока0/32. Это проверка интеграции с отрицательным результатом качества; зарегистрированный L1 остаётся `not_run`. Проверки реализации:156 tests passed.
 
+Последующая [диагностика запоминания](docs/implementation/decoder-memorization.md) завершена: concat/attention/GRU восстановили8/8 обучающих histories; контроль перестановки входов подтверждает использование embeddings. Это train-only результат, без вывода об обобщении. Текущая проверка реализации:179 tests passed.
+
 ```sh
 python -m pip install -e '.[test]'
 python -m pytest -q

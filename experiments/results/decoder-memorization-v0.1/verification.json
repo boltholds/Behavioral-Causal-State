@@ -1,0 +1,103 @@
+{
+  "tests": {
+    "command": "python -m pytest -q",
+    "passed": 179,
+    "seconds": 21.14
+  },
+  "review": {
+    "critical": 0,
+    "important_findings_fixed": [
+      "Restoration checks current runtime/runner/protocol hashes",
+      "Unsupported fixed protocol declarations rejected"
+    ],
+    "regression_cases_red_then_green": 9,
+    "re_review": "not_performed"
+  },
+  "published_artifacts": "JSON reports, selection, checkpoints metadata and predictions only; model weights generated locally",
+  "runs": [
+    {
+      "stage": "single",
+      "branch": "concat",
+      "status": "memorized",
+      "steps": 125,
+      "first_exact_step": 75,
+      "exact_histories": 1,
+      "histories": 1,
+      "teacher_nll": 0.008349617719650268,
+      "teacher_token_error": 0.0,
+      "zero_exact_histories": 0,
+      "seconds": 7.726139003993012
+    },
+    {
+      "stage": "single",
+      "branch": "attention",
+      "status": "memorized",
+      "steps": 100,
+      "first_exact_step": 50,
+      "exact_histories": 1,
+      "histories": 1,
+      "teacher_nll": 0.00575459361076355,
+      "teacher_token_error": 0.0,
+      "zero_exact_histories": 1,
+      "seconds": 12.069123594999837
+    },
+    {
+      "stage": "single",
+      "branch": "gru",
+      "status": "memorized",
+      "steps": 100,
+      "first_exact_step": 50,
+      "exact_histories": 1,
+      "histories": 1,
+      "teacher_nll": 0.017381523847579957,
+      "teacher_token_error": 0.0,
+      "zero_exact_histories": 0,
+      "seconds": 2.0761079949952546
+    },
+    {
+      "stage": "eight",
+      "branch": "concat",
+      "status": "memorized",
+      "steps": 275,
+      "first_exact_step": 225,
+      "exact_histories": 8,
+      "histories": 8,
+      "teacher_nll": 0.034430288877643524,
+      "teacher_token_error": 0.0,
+      "zero_exact_histories": 1,
+      "seconds": 63.81388459200389,
+      "swap_recipient_exact_histories": 0,
+      "swap_donor_exact_histories": 8
+    },
+    {
+      "stage": "eight",
+      "branch": "attention",
+      "status": "memorized",
+      "steps": 400,
+      "first_exact_step": 300,
+      "exact_histories": 8,
+      "histories": 8,
+      "teacher_nll": 0.0012004303394771013,
+      "teacher_token_error": 0.0,
+      "zero_exact_histories": 3,
+      "seconds": 130.61885841500043,
+      "swap_recipient_exact_histories": 0,
+      "swap_donor_exact_histories": 8
+    },
+    {
+      "stage": "eight",
+      "branch": "gru",
+      "status": "memorized",
+      "steps": 275,
+      "first_exact_step": 225,
+      "exact_histories": 8,
+      "histories": 8,
+      "teacher_nll": 0.030223332467626353,
+      "teacher_token_error": 0.0,
+      "zero_exact_histories": 1,
+      "seconds": 63.20493918500142,
+      "swap_recipient_exact_histories": 0,
+      "swap_donor_exact_histories": 8
+    }
+  ]
+}

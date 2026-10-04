@@ -1,0 +1,512 @@
+{
+  "concat": {
+    "optimizer_steps": 30,
+    "best_epoch": 10,
+    "weights_sha256": "a82f7cd6d2f7b6b6b9f920e64af597ab37c43aa40b2b1ebac5c17049c380e9e3",
+    "selected_train_metrics": {
+      "free": {
+        "histories": 8,
+        "full_history_error": 1.0,
+        "full_event_error": 0.921875,
+        "fields": {
+          "time": {
+            "errors": 99,
+            "total": 128,
+            "error_rate": 0.7734375,
+            "confusion": {
+              "3->3": 14,
+              "4->4": 15,
+              "5->4": 10,
+              "-1->4": 48,
+              "3->4": 9,
+              "6->4": 7,
+              "7->4": 6,
+              "8->4": 3,
+              "9->4": 2,
+              "10->4": 2,
+              "11->4": 2,
+              "12->4": 2,
+              "13->4": 3,
+              "14->4": 3,
+              "15->4": 1,
+              "16->4": 1
+            }
+          },
+          "mode": {
+            "errors": 81,
+            "total": 128,
+            "error_rate": 0.6328125,
+            "confusion": {
+              "20->20": 14,
+              "22->22": 33,
+              "23->22": 8,
+              "-1->22": 48,
+              "24->22": 7,
+              "20->22": 16,
+              "21->22": 1,
+              "25->22": 1
+            }
+          },
+          "entity": {
+            "errors": 80,
+            "total": 128,
+            "error_rate": 0.625,
+            "confusion": {
+              "26->26": 8,
+              "27->27": 40,
+              "26->27": 32,
+              "-1->27": 48
+            }
+          },
+          "predicate": {
+            "errors": 73,
+            "total": 128,
+            "error_rate": 0.5703125,
+            "confusion": {
+              "30->30": 14,
+              "32->32": 41,
+              "30->32": 13,
+              "-1->32": 48,
+              "29->32": 8,
+              "31->32": 1,
+              "28->32": 3
+            }
+          },
+          "negation": {
+            "errors": 49,
+            "total": 128,
+            "error_rate": 0.3828125,
+            "confusion": {
+              "33->33": 79,
+              "-1->33": 48,
+              "34->33": 1
+            }
+          },
+          "value": {
+            "errors": 90,
+            "total": 128,
+            "error_rate": 0.703125,
+            "confusion": {
+              "36->35": 7,
+              "39->39": 31,
+              "36->39": 11,
+              "-1->39": 48,
+              "35->35": 7,
+              "38->39": 10,
+              "35->39": 13,
+              "37->39": 1
+            }
+          }
+        },
+        "invalid_decodings": 8,
+        "termination_errors": 6,
+        "first_error_fields": {
+          "value": 5,
+          "mode": 1,
+          "time": 2
+        }
+      },
+      "teacher": {
+        "nll": 0.915078272585009,
+        "tokens": 488,
+        "token_errors": 161,
+        "token_error": 0.3299180269241333,
+        "full_history_error": 1.0,
+        "fields": {
+          "time": {
+            "errors": 51,
+            "tokens": 80
+          },
+          "mode": {
+            "errors": 27,
+            "tokens": 80
+          },
+          "entity": {
+            "errors": 38,
+            "tokens": 80
+          },
+          "predicate": {
+            "errors": 12,
+            "tokens": 80
+          },
+          "negation": {
+            "errors": 0,
+            "tokens": 80
+          },
+          "value": {
+            "errors": 27,
+            "tokens": 80
+          },
+          "termination": {
+            "errors": 6,
+            "tokens": 8
+          }
+        }
+      }
+    },
+    "teacher_step_parity": {
+      "max_abs_valid_logit_difference": 1.5497207641601562e-06,
+      "argmax_disagreements": 0,
+      "valid_logits_allclose": true
+    }
+  },
+  "attention": {
+    "optimizer_steps": 46,
+    "best_epoch": 18,
+    "weights_sha256": "92a171268f86806e5cccec1052175fbe5c786178173566ba8951684fc16bed95",
+    "selected_train_metrics": {
+      "free": {
+        "histories": 8,
+        "full_history_error": 1.0,
+        "full_event_error": 0.875,
+        "fields": {
+          "time": {
+            "errors": 59,
+            "total": 88,
+            "error_rate": 0.6704545454545454,
+            "confusion": {
+              "3->3": 18,
+              "4->4": 7,
+              "5->-1": 1,
+              "4->-1": 3,
+              "3->4": 5,
+              "4->3": 4,
+              "5->4": 3,
+              "6->-1": 1,
+              "7->-1": 1,
+              "4->6": 1,
+              "5->6": 4,
+              "6->6": 4,
+              "7->6": 5,
+              "-1->6": 8,
+              "8->6": 3,
+              "5->3": 2,
+              "6->4": 2,
+              "9->6": 2,
+              "10->6": 2,
+              "11->6": 2,
+              "12->6": 2,
+              "13->6": 3,
+              "14->6": 3,
+              "15->6": 1,
+              "16->6": 1
+            }
+          },
+          "mode": {
+            "errors": 44,
+            "total": 88,
+            "error_rate": 0.5,
+            "confusion": {
+              "20->20": 19,
+              "22->22": 25,
+              "23->-1": 1,
+              "24->-1": 1,
+              "24->20": 1,
+              "20->22": 10,
+              "24->22": 5,
+              "22->-1": 3,
+              "20->-1": 1,
+              "22->20": 5,
+              "23->22": 6,
+              "-1->22": 8,
+              "21->22": 1,
+              "25->22": 1,
+              "23->20": 1
+            }
+          },
+          "entity": {
+            "errors": 45,
+            "total": 88,
+            "error_rate": 0.5113636363636364,
+            "confusion": {
+              "26->26": 25,
+              "27->27": 18,
+              "26->27": 12,
+              "26->-1": 3,
+              "27->-1": 3,
+              "27->26": 19,
+              "-1->26": 8
+            }
+          },
+          "predicate": {
+            "errors": 38,
+            "total": 88,
+            "error_rate": 0.4318181818181818,
+            "confusion": {
+              "30->30": 19,
+              "32->32": 31,
+              "30->-1": 1,
+              "32->-1": 4,
+              "32->30": 6,
+              "30->32": 7,
+              "29->-1": 1,
+              "29->32": 7,
+              "-1->32": 8,
+              "31->30": 1,
+              "28->32": 3
+            }
+          },
+          "negation": {
+            "errors": 15,
+            "total": 88,
+            "error_rate": 0.17045454545454544,
+            "confusion": {
+              "33->33": 73,
+              "33->-1": 6,
+              "-1->33": 8,
+              "34->33": 1
+            }
+          },
+          "value": {
+            "errors": 53,
+            "total": 88,
+            "error_rate": 0.6022727272727273,
+            "confusion": {
+              "36->36": 7,
+              "39->38": 5,
+              "36->-1": 2,
+              "35->36": 5,
+              "38->-1": 3,
+              "38->35": 1,
+              "36->38": 4,
+              "39->35": 5,
+              "35->38": 5,
+              "39->-1": 1,
+              "35->35": 6,
+              "39->39": 20,
+              "35->39": 4,
+              "38->38": 2,
+              "-1->38": 8,
+              "36->35": 2,
+              "37->38": 1,
+              "36->39": 3,
+              "38->39": 4
+            }
+          }
+        },
+        "invalid_decodings": 6,
+        "termination_errors": 6,
+        "first_error_fields": {
+          "entity": 2,
+          "value": 5,
+          "mode": 1
+        }
+      },
+      "teacher": {
+        "nll": 0.7654994902063589,
+        "tokens": 488,
+        "token_errors": 165,
+        "token_error": 0.33811476826667786,
+        "full_history_error": 1.0,
+        "fields": {
+          "time": {
+            "errors": 47,
+            "tokens": 80
+          },
+          "mode": {
+            "errors": 31,
+            "tokens": 80
+          },
+          "entity": {
+            "errors": 37,
+            "tokens": 80
+          },
+          "predicate": {
+            "errors": 9,
+            "tokens": 80
+          },
+          "negation": {
+            "errors": 0,
+            "tokens": 80
+          },
+          "value": {
+            "errors": 37,
+            "tokens": 80
+          },
+          "termination": {
+            "errors": 4,
+            "tokens": 8
+          }
+        }
+      }
+    },
+    "teacher_step_parity": {
+      "max_abs_valid_logit_difference": 6.67572021484375e-06,
+      "argmax_disagreements": 0,
+      "valid_logits_allclose": true
+    }
+  },
+  "gru": {
+    "optimizer_steps": 60,
+    "best_epoch": 27,
+    "weights_sha256": "c92c6ff41a7b3d759bc68c99ea963f2da469fa22d2a53147edc91d5a2094d087",
+    "selected_train_metrics": {
+      "free": {
+        "histories": 8,
+        "full_history_error": 1.0,
+        "full_event_error": 0.9056603773584906,
+        "fields": {
+          "time": {
+            "errors": 79,
+            "total": 106,
+            "error_rate": 0.7452830188679245,
+            "confusion": {
+              "3->3": 18,
+              "4->3": 7,
+              "5->4": 5,
+              "-1->4": 2,
+              "4->4": 4,
+              "3->4": 4,
+              "3->5": 1,
+              "4->6": 3,
+              "-1->6": 24,
+              "6->6": 5,
+              "7->6": 6,
+              "5->6": 5,
+              "4->5": 1,
+              "8->6": 3,
+              "6->4": 2,
+              "9->6": 2,
+              "10->6": 2,
+              "11->6": 2,
+              "12->6": 2,
+              "13->6": 3,
+              "14->6": 3,
+              "15->6": 1,
+              "16->6": 1
+            }
+          },
+          "mode": {
+            "errors": 60,
+            "total": 106,
+            "error_rate": 0.5660377358490566,
+            "confusion": {
+              "20->20": 18,
+              "22->20": 5,
+              "23->22": 7,
+              "-1->22": 26,
+              "24->22": 6,
+              "24->20": 1,
+              "20->22": 12,
+              "22->22": 28,
+              "21->22": 1,
+              "25->22": 1,
+              "23->20": 1
+            }
+          },
+          "entity": {
+            "errors": 64,
+            "total": 106,
+            "error_rate": 0.6037735849056604,
+            "confusion": {
+              "26->26": 25,
+              "27->27": 17,
+              "26->27": 15,
+              "-1->27": 2,
+              "27->26": 23,
+              "-1->26": 24
+            }
+          },
+          "predicate": {
+            "errors": 52,
+            "total": 106,
+            "error_rate": 0.49056603773584906,
+            "confusion": {
+              "30->30": 19,
+              "32->30": 6,
+              "30->32": 8,
+              "-1->32": 26,
+              "32->32": 35,
+              "29->32": 8,
+              "31->32": 1,
+              "28->32": 3
+            }
+          },
+          "negation": {
+            "errors": 27,
+            "total": 106,
+            "error_rate": 0.25471698113207547,
+            "confusion": {
+              "33->33": 79,
+              "-1->33": 26,
+              "34->33": 1
+            }
+          },
+          "value": {
+            "errors": 75,
+            "total": 106,
+            "error_rate": 0.7075471698113207,
+            "confusion": {
+              "36->36": 5,
+              "39->35": 5,
+              "36->38": 3,
+              "-1->38": 2,
+              "35->36": 5,
+              "38->38": 1,
+              "36->35": 4,
+              "38->35": 1,
+              "39->39": 20,
+              "38->39": 8,
+              "36->39": 6,
+              "-1->39": 24,
+              "35->38": 4,
+              "39->38": 6,
+              "35->35": 5,
+              "35->39": 6,
+              "37->38": 1
+            }
+          }
+        },
+        "invalid_decodings": 8,
+        "termination_errors": 6,
+        "first_error_fields": {
+          "time": 1,
+          "value": 6,
+          "entity": 1
+        }
+      },
+      "teacher": {
+        "nll": 0.8081688802750384,
+        "tokens": 488,
+        "token_errors": 169,
+        "token_error": 0.3463114798069,
+        "full_history_error": 1.0,
+        "fields": {
+          "time": {
+            "errors": 46,
+            "tokens": 80
+          },
+          "mode": {
+            "errors": 31,
+            "tokens": 80
+          },
+          "entity": {
+            "errors": 39,
+            "tokens": 80
+          },
+          "predicate": {
+            "errors": 13,
+            "tokens": 80
+          },
+          "negation": {
+            "errors": 0,
+            "tokens": 80
+          },
+          "value": {
+            "errors": 35,
+            "tokens": 80
+          },
+          "termination": {
+            "errors": 5,
+            "tokens": 8
+          }
+        }
+      }
+    },
+    "teacher_step_parity": {
+      "max_abs_valid_logit_difference": 2.384185791015625e-06,
+      "argmax_disagreements": 0,
+      "valid_logits_allclose": true
+    }
+  }
+}
