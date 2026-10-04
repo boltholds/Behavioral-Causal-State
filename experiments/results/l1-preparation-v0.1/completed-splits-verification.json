@@ -1,0 +1,43 @@
+{
+  "schema": "l1-preparation-verification-v1",
+  "core_numpy_version": "2.3.5",
+  "zero_encoder_calls": true,
+  "newly_encoded": 0,
+  "global_unique_sentences": 12112,
+  "elapsed_seconds": 3.9761893510003574,
+  "verified": {
+    "train": {
+      "records": 20000,
+      "unique_sentences": 4157,
+      "manifest_sha256": "a1870f7de0fea95e4263f765c09871fe53e63b805240e87d6ac7495a3052ab2d"
+    },
+    "validation": {
+      "records": 4000,
+      "unique_sentences": 3319,
+      "manifest_sha256": "d47bd294e72227c131f8ff5c5c78df7f1c8aa49f92852c24578aa94821b38758"
+    },
+    "iid_test": {
+      "records": 4000,
+      "unique_sentences": 3290,
+      "manifest_sha256": "0ade92c9aa796e0a2c471c005ce05385f53a162a9003f13cae742e1a6006cfa3"
+    },
+    "challenge": {
+      "records": 28000,
+      "unique_sentences": 7833,
+      "manifest_sha256": "cd3aba43bf50bb81735b826ade5f84548f3f024cd22dd313a4ec7d6eba48bccc"
+    }
+  },
+  "transient_empty_directory_cleanup": {
+    "path": "artifacts/l1-embeddings-v0.1/.challenge.partial",
+    "origin": "unknown",
+    "empty_directory_inode": 659019,
+    "birth_local": "2026-10-04 23:32:11.090895910 +0200",
+    "mtime_local": "2026-10-04 23:32:06.102918490 +0200",
+    "completed_challenge_directory_inode": 662689,
+    "all_four_completed_caches_verified_before_cleanup": true,
+    "encoder_process_exited": true,
+    "cleanup": "rmdir of verified empty directory only; no files removed",
+    "initial_resume_guard_refused_directory": true,
+    "source_changed": false
+  }
+}

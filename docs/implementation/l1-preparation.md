@@ -15,3 +15,7 @@ All existing split caches are verified against public hashes, binary/record chec
 Progress is emitted at most 20 seconds apart between batches. Batch prediction is synchronous; a single unusually slow batch can extend that interval. The completion summary includes split/source/cache hashes, records, unique sentence counts, actual newly encoded counts, library versions, batch size, threads, and elapsed time. Compact manifests are copied to `experiments/results/l1-preparation-v0.1`; binary caches and checkpoint assets remain excluded from git.
 
 The separate `experiments/reviews/l1-catalog-review-request.json` and `.md` request renders 48 controlled-language forms and binds the pending human-review decision to the exact frozen catalog SHA256. Preparation does not invent or approve that review.
+
+## Completed run
+
+The actual run encoded 12,112 globally unique texts for 56,000 public records in 2,025.90 seconds. All four completed caches passed independent NumPy 2.3.5 verification; a subsequent verified resume made zero encoder calls. [Full hashes and timing](../../experiments/results/l1-preparation-v0.1/final-report.json). The initial resume correctly rejected an unexpected empty staging directory; its safe empty-directory cleanup and unknown origin are documented in that report. No source changes or replacement vectors were used.

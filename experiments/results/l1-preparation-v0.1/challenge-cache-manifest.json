@@ -1,0 +1,31 @@
+{
+  "schema": "embedding-cache-v1",
+  "public_sha256": "23c3912c1ffb50b716044c03d199d142a964abbe8c3bc90856742010a1222b86",
+  "encoder": {
+    "family": "SONAR",
+    "model": "text_sonar_basic_encoder",
+    "dimension": 1024,
+    "source_lang": "rus_Cyrl",
+    "dtype": "float32",
+    "normalization": "none",
+    "hf_revision": "a551c586dcf4a49c8fd847de369412d556a7f2f2",
+    "checkpoint_sha256": "b46ffc66abd0519ce6693797eaf8b15da9011159eae18d99900c273a54208bf7",
+    "tokenizer_sha256": "14bb8dfb35c0ffdea7bc01e56cea38b9e3d5efcdcb9c251d6b40538e1aab555a",
+    "device": "cpu",
+    "versions": {
+      "sonar-space": "0.5.0",
+      "fairseq2": "0.5.2",
+      "fairseq2n": "0.5.2+cpu",
+      "torch": "2.8.0+cpu",
+      "numpy": "1.26.4"
+    }
+  },
+  "dimension": 1024,
+  "dtype": "float32",
+  "unique_sentences": 7833,
+  "records": 28000,
+  "files": {
+    "vectors.npy": "0eb38e8644f4e7a96f6aed9b2426becd4cff63cb7f587d6ef2b9f59d1c14d4e6",
+    "records.json": "40604e08f5650f17395d29832e8f33d4d4789d839b0265ddecb80aaca82ab76f"
+  }
+}

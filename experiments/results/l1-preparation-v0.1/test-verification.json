@@ -1,0 +1,30 @@
+{
+  "focused": {
+    "command": "python -m pytest tests/test_l1_preparation.py tests/test_embedding_cache.py -q",
+    "passed": 12,
+    "note": "All12tests passed together in0.33s"
+  },
+  "suite_snapshot": {
+    "passed": 203,
+    "failed": 7,
+    "seconds": 36.44,
+    "unrelated_in_progress_failures": [
+      "tests/test_l1_training.py::test_resume_reproduces_uninterrupted_weights_and_metrics",
+      "tests/test_l1_training.py::test_resume_refuses_changed_config_inputs_or_identity",
+      "tests/test_l1_training.py::test_completed_checkpoint_corruption_is_rejected",
+      "tests/test_l1_training.py::test_training_never_accepts_overlapping_validation_groups",
+      "tests/test_l1_training.py::test_train_job_alone_never_claims_passed_l1",
+      "tests/test_ttt_integration.py::test_completed_run_report_is_bound_to_sources_and_rejects_corruption",
+      "tests/test_ttt_oracle.py::test_exact_equivalence_exhausts_product_edges"
+    ],
+    "superseded": true
+  },
+  "human_catalog_review": "pending",
+  "latest_full_suite": {
+    "passed": 237,
+    "failed": 0,
+    "elapsed_seconds": 95.39,
+    "reported_by": "root",
+    "published_revision": "d82614718d1334b402e82f1fa85e4b7421d4793e"
+  }
+}

@@ -2,7 +2,7 @@
 
 Исследовательский проект причинного рассуждающего движка: состояния относительно семейств predictive, interventional и counterfactual запросов; текстовый grounding; факторизованные SCM; проверяемые границы причинных ответов.
 
-**Текущий статус: causal runtime и языковой training pipeline, 2026-10-04.** Реализованы точный do/CF inference, журнал, обучение Boolean core, семь видов текстовых пар и аудит splits. Добавлены verified SONAR adapter, concat/attention/GRU, autoregressive grounder и diagnostic training с input locks. Полные G2/P1 пройдены на 100 seeds. Реальный LearnLib TTT завершён: 60/60 прогонов с точным EQ. Для полного L1 реализован исполнитель 9 tuning + 15 final запусков; зарегистрированное обучение пока не выполнено.
+**Текущий статус: causal runtime и языковой training pipeline, 2026-10-04.** Реализованы точный do/CF inference, журнал, обучение Boolean core, семь видов текстовых пар и аудит splits. Добавлены verified SONAR adapter, concat/attention/GRU, autoregressive grounder и diagnostic training с input locks. Полные G2/P1 пройдены на 100 seeds. Реальный LearnLib TTT завершён: 60/60 прогонов с точным EQ. Для полного L1 реализован исполнитель 9 tuning + 15 final запусков; полный SONAR cache готов (56 000 histories), зарегистрированное обучение ожидает обязательный human review каталога. Проверка реализации:237 tests passed.
 
 [Запуск, результаты и ограничения runtime](docs/implementation/first-runtime.md).
 [Обученное ядро, полный кандидатный датасет и oracle validation](docs/implementation/calibration-dataset.md).
