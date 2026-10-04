@@ -1,0 +1,35 @@
+{
+  "stage": "calibration_and_candidate_dataset",
+  "date": "2026-10-04",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "pytest": "9.1.1",
+  "tests": {
+    "command": "python -m pytest -q",
+    "passed": 122,
+    "failed": 0
+  },
+  "installation": {
+    "command": "python -m pip install -e . --no-deps --no-build-isolation",
+    "status": "passed"
+  },
+  "dataset_reproduction": {
+    "command": "python -m bcs prepare-l1 --output /tmp/bcs-l1-full",
+    "seed": 20261004,
+    "independent_build_file_hashes_equal": true
+  },
+  "review": {
+    "substantive_findings": 3,
+    "new_failure_regressions": 5,
+    "regressions_failed_before_fix": 5,
+    "remaining_substantive_findings": 0
+  },
+  "scope_limits": [
+    "human catalog review pending",
+    "encoder/tokenizer lock pending",
+    "neural L1 branches not trained",
+    "TTT/EQ not implemented",
+    "known graph and deterministic mechanisms only"
+  ]
+}

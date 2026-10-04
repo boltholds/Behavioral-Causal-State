@@ -10,7 +10,8 @@ from collections import defaultdict
 from dataclasses import dataclass
 from fractions import Fraction as F
 from itertools import product
-from .simulator import Action, Variable, Clamp, Step, DeviceState, bit, object_id, advance_device
+from .simulator import Action, Variable, Clamp, Step, DeviceState, bit, object_id
+from .dynamics import Dynamics
 
 @dataclass(frozen=True)
 class Evidence:
@@ -95,7 +96,7 @@ class _BudgetExhausted(Exception):
     pass
 
 
-def evaluate(spec,history,query,budget=1_000_000):
+def evaluate(spec: Dynamics,history,query,budget=1_000_000):
     """Distribution conditional on the declared SCM, not identification over SCMs.
 
     Normalizing after each slice retains the likelihood separately. Both devices
@@ -134,7 +135,7 @@ def evaluate(spec,history,query,budget=1_000_000):
             for c in (0,1):
                 for nm,ny,p in spec.noise.support():
                     spend()
-                    state = advance_device(DeviceState(0,0,c,0),Action.HOLD,(),nm,ny,spec.wrong_gate)
+                    state = spec.reset(c,nm,ny)
                     if consistent(state,0):
                         pairs[(state,state)] += p/2
             mass = sum(pairs.values(),F(0))
@@ -149,8 +150,8 @@ def evaluate(spec,history,query,budget=1_000_000):
                 for (factual,alternative),weight in pairs.items():
                     for nm,ny,p in spec.noise.support():
                         spend()
-                        f = advance_device(factual,step.actions[obj],clamps,nm,ny,spec.wrong_gate)
-                        a = advance_device(alternative,alt,clamps,nm,ny,spec.wrong_gate)
+                        f = spec.advance(factual,step.actions[obj],clamps,nm,ny)
+                        a = spec.advance(alternative,alt,clamps,nm,ny)
                         if consistent(f,time):
                             next_pairs[(f,a)] += weight*p
                 mass = sum(next_pairs.values(),F(0))
@@ -167,7 +168,7 @@ def evaluate(spec,history,query,budget=1_000_000):
             for state,weight in target.items():
                 for nm,ny,p in spec.noise.support():
                     spend()
-                    nxt[advance_device(state,step.actions[obj],step.local_clamps(obj),nm,ny,spec.wrong_gate)] += weight*p
+                    nxt[spec.advance(state,step.actions[obj],step.local_clamps(obj),nm,ny)] += weight*p
             target = nxt
     except _BudgetExhausted:
         return InferenceIncomplete('transition budget exhausted; no partial distribution asserted',count)

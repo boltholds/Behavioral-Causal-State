@@ -39,3 +39,11 @@ def test_cli_generates_only_public_records_unless_train_labels_requested(tmp_pat
     assert len(records) == 5
     assert all(set(record) == {'group_id','messages'} for record in records)
     assert path.with_suffix('.manifest.json').exists()
+
+
+def test_cli_builds_and_audits_smoke_dataset(tmp_path):
+    out=tmp_path/'dataset'
+    result=run('prepare-l1','--smoke','--output',str(out))
+    assert result.returncode==0,result.stderr
+    assert json.loads((out/'audit.json').read_text())['integrity_status']=='passed'
+    assert json.loads((out/'core-evaluation.json').read_text())['oracle_validation_gate']=='not_run_registered_dataset'

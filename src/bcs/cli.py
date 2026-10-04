@@ -148,6 +148,12 @@ def main(argv=None):
         p = subs.add_parser(command)
         p.add_argument('--smoke',action='store_true')
         p.add_argument('--output',type=Path,required=True)
+    p = subs.add_parser('prepare-l1')
+    p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--smoke',action='store_true')
+    p.add_argument('--seed',type=int,default=20261004)
+    p = subs.add_parser('audit-l1')
+    p.add_argument('--dataset',type=Path,required=True)
     p = subs.add_parser('generate')
     p.add_argument('--count',type=int,default=10)
     p.add_argument('--seed',type=int,default=0)
@@ -156,6 +162,16 @@ def main(argv=None):
     p.add_argument('--output',type=Path,required=True)
     args = parser.parse_args(argv)
     try:
+        if args.command == 'prepare-l1':
+            from .dataset_cli import prepare_l1
+            result=prepare_l1(args.output,args.repo_root,args.smoke,args.seed)
+            print(json.dumps(result,ensure_ascii=False))
+            return 0 if result['integrity_status']=='passed' and result['oracle_core_gate']!='failed' else 1
+        if args.command == 'audit-l1':
+            from .dataset import audit_dataset
+            result=audit_dataset(args.dataset)
+            print(json.dumps(result,ensure_ascii=False))
+            return 0 if result['integrity_status']=='passed' else 1
         if args.command == 'demo':
             print(json.dumps(demo(),ensure_ascii=False,indent=2))
             return 0

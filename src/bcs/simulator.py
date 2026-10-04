@@ -99,6 +99,10 @@ class WorldSpec:
     regime: Regime
     noise: NoiseLaw
     wrong_gate: bool = False
+    def reset(self,c,nm,ny):
+        return advance_device(DeviceState(0,0,c,0),Action.HOLD,(),nm,ny,self.wrong_gate)
+    def advance(self,previous,action,clamps,nm,ny):
+        return advance_device(previous,action,clamps,nm,ny,self.wrong_gate)
     @classmethod
     def for_regime(cls,regime):
         if not isinstance(regime,Regime):

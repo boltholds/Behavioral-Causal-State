@@ -2,14 +2,16 @@
 
 Исследовательский проект причинного рассуждающего движка: состояния относительно семейств predictive, interventional и counterfactual запросов; текстовый grounding; факторизованные SCM; проверяемые границы причинных ответов.
 
-**Текущий статус: первый исполняемый runtime v0.1, 2026-10-04.** Реализованы точный симулятор и do/CF inference, журнал, базовый текстовый генератор и эксперименты G2/P1. Полные G2/P1 пройдены на 100 seeds. Языковое обучение L1 и реальный TTT остаются следующим этапом.
+**Текущий статус: runtime и подготовка языкового эксперимента, 2026-10-04.** Реализованы точный симулятор и do/CF inference, журнал, обучение Boolean core по видимым calibration probes, семь видов текстовых пар, сборка и аудит splits. Полные G2/P1 пройдены на 100 seeds. Языковое обучение L1 и реальный TTT остаются следующим этапом.
 
 [Запуск, результаты и ограничения runtime](docs/implementation/first-runtime.md).
+[Обученное ядро, полный кандидатный датасет и oracle validation](docs/implementation/calibration-dataset.md).
 
 ```sh
 python -m pip install -e '.[test]'
 python -m pytest -q
 python -m bcs demo
+python -m bcs prepare-l1 --smoke --output /tmp/bcs-l1-smoke
 ```
 
 ## Начать здесь
@@ -25,7 +27,7 @@ python -m bcs demo
 9. [Литература и сравнение методов](docs/specs/08-literature.md).
 10. [G2-MISSPEC: обнаружение нарушения предположений](docs/specs/09-misspecification.md).
 
-[Что входит в первый запуск и что отложено](docs/specs/deferred.md). Формат ключа журнала полностью задан в [SPEC-02](docs/specs/02-contracts.md); геометрическая диагностика GEO-1 отложена. Базовый генератор реализован; полный G0 (с TTT), G1 и L1 ещё не завершены. G2/P1 имеют отдельные воспроизводимые run reports.
+[Что входит в первый запуск и что отложено](docs/specs/deferred.md). Формат ключа журнала полностью задан в [SPEC-02](docs/specs/02-contracts.md); геометрическая диагностика GEO-1 отложена. Аудитор проверяет реальные публичные/evaluator файлы, calibration, splits и pair witnesses. Полный G0 (с TTT), G1 с реальным training loader и L1 ещё не завершены. Каталог имеет статус human review pending; `training_ready=false`. G2/P1 имеют отдельные воспроизводимые run reports.
 
 Машиночитаемые параметры: [language-v0.1.json](experiments/protocols/language-v0.1.json), [population-v0.1.json](experiments/protocols/population-v0.1.json), [misspecification-v0.1.json](experiments/protocols/misspecification-v0.1.json). Аналитические примеры: [causal-oracles-v0.1.json](experiments/fixtures/causal-oracles-v0.1.json). Побайтные примеры ключей: [journal-key-v1.json](experiments/fixtures/journal-key-v1.json).
 
@@ -42,6 +44,6 @@ TTT служит predictive baseline в детерминированном тр�
 - MUST — обязательный контракт; SHOULD — рекомендуемый способ реализации.
 - Принятое определение, выбранный инженерный параметр и исследовательская гипотеза обозначаются раздельно.
 - Изменение порогов, класса моделей или test-распределения после открытия test создаёт новую версию протокола.
-- Реализованное поведение и оставшаяся работа перечислены в [отчёте runtime](docs/implementation/first-runtime.md); спецификация описывает также будущие модули.
+- Реализованное поведение и оставшаяся работа перечислены в [отчёте runtime](docs/implementation/first-runtime.md) и [отчёте calibration/dataset](docs/implementation/calibration-dataset.md); спецификация описывает также будущие модули.
 
 Лицензия репозитория: [LICENSE](LICENSE).

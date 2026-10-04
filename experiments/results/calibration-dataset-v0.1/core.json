@@ -1,0 +1,1 @@
+{"assumptions":["known_graph","deterministic","C_copy","R_reset_zero","independent_objects","stationary_mechanisms"],"m_table":[0,1],"r_table":[1,0,0,1,0,1],"schema":"boolean-core-v1","y_table":[0,0,1,0]}

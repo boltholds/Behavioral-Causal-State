@@ -1,14 +1,14 @@
 # Граница первого запуска и отложенные задачи
 
-Статус документа: scope v0.1. Основные числовые пороги и seeds L1/P1 сохранены. Журнал и reference core реализованы, полные G2/P1 запущены; [актуальный отчёт](../implementation/first-runtime.md). L1 test не открыт.
+Статус документа: scope v0.1. Основные числовые пороги и seeds L1/P1 сохранены. Журнал, reference inference и calibration learner реализованы, полные G2/P1 запущены; [runtime](../implementation/first-runtime.md), [calibration/dataset](../implementation/calibration-dataset.md). Held-out артефакты проверяет evaluator, языковые test metrics ещё не вычислялись и не использовались для выбора модели.
 
 ## Требования треков и текущее выполнение
 
 | Компонент | Контракт | Что требуется до заявления о прохождении |
 |---|---|---|
 | Журнал воспроизводимости | Побайтный AnswerJournal/v1 и hash fixtures в [SPEC-02](02-contracts.md) | Выполнены: runtime round-trip, exact replay, разделение snapshots |
-| Генератор | Физика, event plan, renderer и minimal pairs в [SPEC-04](04-generator.md) | Исполняемый generator, полный template/name catalog и реальные dataset artifacts |
-| G0/G1 | [SPEC-05](05-evaluation.md) | Проверка evaluator, provenance/splits и отсутствие утечек на созданных данных |
+| Генератор | Физика, event plan, renderer и minimal pairs в [SPEC-04](04-generator.md) | Реализованы generator, candidate catalog и проверка реальных dataset artifacts; human review каталога pending |
+| G0/G1 | [SPEC-05](05-evaluation.md) | Artifact audit реализован; остаются TTT/EQ и проверка доступа реального training loader |
 | L1 | Четыре reader branches, общее frozen core, primary metrics | Locked manifest, реальные checkpoint hashes, train/test и все seed |
 | G2-MISSPEC | [SPEC-09](09-misspecification.md) | Выполнены в reference runtime: exact/finite-data, certificates, false rejection, budget fault |
 | P1 | [SPEC-06](06-population.md) | Выполнены четыре search arms ×100 seeds; аналитический solver остаётся отдельным |

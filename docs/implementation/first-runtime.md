@@ -85,7 +85,7 @@ P1 acceptance также требует прохождения дополнит�
 - C1 как полный stochastic/partial learning track: reference inference и G2 существуют, обучение класса SCM не реализовано.
 - Генератор пока поддерживает контролируемый русский язык; свободный текст, entity discovery, active causal design и transfer остаются в roadmap.
 
-Тесты ядра и положительные G2/P1 не заменяют эти gates. Следующий этап: calibration learner + полный minimal-pair/split generator, затем lock manifest и L1 обучение.
+Тесты ядра и положительные G2/P1 не заменяют эти gates. Продолжение реализации — calibration learner и полный minimal-pair/split generator — описано в [отдельном отчёте](calibration-dataset.md). Этот документ сохраняет результаты первого runtime; далее остаются lock manifest и L1 обучение.
 
 
 ## Решения реализации и ревью

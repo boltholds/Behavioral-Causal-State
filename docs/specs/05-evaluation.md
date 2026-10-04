@@ -10,7 +10,7 @@ G1: train/validation/test групповые пересечения и semantic 
 
 G2-MISSPEC: отдельная проверка реакции движка на нарушение assumptions, описанная в [SPEC-09](09-misspecification.md) и [misspecification-v0.1.json](../../experiments/protocols/misspecification-v0.1.json). Она не включена в G0/G1. G2 обязателен перед заявлением поддержки misspecification и приёмкой C1; первый ограниченный L1 можно публиковать отдельно, явно указав G2=not_run. Отсутствие выполненного G2 запрещает общий claim «движок обнаруживает неверную модель».
 
-Первый runtime содержит simulator/inference, базовый generator и G2/P1 evaluator. Полные G2/P1 запущены; G0 с TTT и G1/L1 ещё не завершены. [Результаты и границы реализации](../implementation/first-runtime.md).
+Runtime содержит simulator/inference, calibration learner, полный generator/auditor и G2/P1 evaluator. Полные G2/P1 запущены. Oracle validation preflight имеет отдельный статус `oracle_validation_gate`: прямой API сначала проверяет весь dataset и при ошибке возвращает `invalid_dataset`. Это предварительная проверка на validation; L1 test metrics ещё не получены. G0 с TTT и G1 с реальным training loader не завершены. [Первый runtime](../implementation/first-runtime.md), [calibration/dataset](../implementation/calibration-dataset.md).
 
 ## Общие условия L1
 

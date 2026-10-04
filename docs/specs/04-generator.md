@@ -1,6 +1,6 @@
 # SPEC-04 — Генератор трасс, текстов и пар
 
-**Статус: базовый sampler/renderer реализован; полный challenge/split generator ещё не завершён.** Этот документ задаёт входы, алгоритм и требуемые артефакты; он не является свидетельством прохождения G1. G1 можно выполнить только на реально сгенерированном наборе. [Критерии G0/G1/G2](05-evaluation.md) и [граница первого запуска](deferred.md).
+**Статус: sampler/renderer, calibration learner, семь challenge transforms, split builder и аудит артефактов реализованы.** [Команды и фактические результаты](../implementation/calibration-dataset.md). Каталог кандидатный: human review pending, `training_ready=false`. Этот документ задаёт контракт; полный G1 также требует проверки доступа реального training loader. [Критерии G0/G1/G2](05-evaluation.md) и [граница первого запуска](deferred.md).
 
 ## Слои и разделение доступа
 
