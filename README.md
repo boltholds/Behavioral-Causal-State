@@ -2,10 +2,13 @@
 
 Исследовательский проект причинного рассуждающего движка: состояния относительно семейств predictive, interventional и counterfactual запросов; текстовый grounding; факторизованные SCM; проверяемые границы причинных ответов.
 
-**Текущий статус: runtime и подготовка языкового эксперимента, 2026-10-04.** Реализованы точный симулятор и do/CF inference, журнал, обучение Boolean core по видимым calibration probes, семь видов текстовых пар, сборка и аудит splits. Полные G2/P1 пройдены на 100 seeds. Языковое обучение L1 и реальный TTT остаются следующим этапом.
+**Текущий статус: causal runtime и языковой training pipeline, 2026-10-04.** Реализованы точный do/CF inference, журнал, обучение Boolean core, семь видов текстовых пар и аудит splits. Добавлены verified SONAR adapter, concat/attention/GRU, autoregressive grounder и diagnostic training с input locks. Полные G2/P1 пройдены на 100 seeds. Полный зарегистрированный L1 и реальный TTT ещё не завершены.
 
 [Запуск, результаты и ограничения runtime](docs/implementation/first-runtime.md).
 [Обученное ядро, полный кандидатный датасет и oracle validation](docs/implementation/calibration-dataset.md).
+[SONAR, языковые ветки и команды обучения](docs/implementation/language-runtime.md).
+
+Первый языковой diagnostic выполнен на128 train /32 validation histories с реальными SONAR embeddings. Все три ветки обучены, но полностью правильных validation histories пока0/32. Это проверка интеграции с отрицательным результатом качества; зарегистрированный L1 остаётся `not_run`. Проверки реализации:156 tests passed.
 
 ```sh
 python -m pip install -e '.[test]'
@@ -27,7 +30,7 @@ python -m bcs prepare-l1 --smoke --output /tmp/bcs-l1-smoke
 9. [Литература и сравнение методов](docs/specs/08-literature.md).
 10. [G2-MISSPEC: обнаружение нарушения предположений](docs/specs/09-misspecification.md).
 
-[Что входит в первый запуск и что отложено](docs/specs/deferred.md). Формат ключа журнала полностью задан в [SPEC-02](docs/specs/02-contracts.md); геометрическая диагностика GEO-1 отложена. Аудитор проверяет реальные публичные/evaluator файлы, calibration, splits и pair witnesses. Полный G0 (с TTT), G1 с реальным training loader и L1 ещё не завершены. Каталог имеет статус human review pending; `training_ready=false`. G2/P1 имеют отдельные воспроизводимые run reports.
+[Что входит в первый запуск и что отложено](docs/specs/deferred.md). Формат ключа журнала полностью задан в [SPEC-02](docs/specs/02-contracts.md); геометрическая диагностика GEO-1 отложена. Аудитор проверяет публичные/evaluator файлы, calibration, splits и pair witnesses. Training loader проверяет split IDs и input locks; полный G0 (с TTT) и L1 ещё не завершены. Каталог имеет статус human review pending; `training_ready=false` относится к зарегистрированному L1. Ограниченная диагностика не получает его gates. G2/P1 имеют отдельные воспроизводимые run reports.
 
 Машиночитаемые параметры: [language-v0.1.json](experiments/protocols/language-v0.1.json), [population-v0.1.json](experiments/protocols/population-v0.1.json), [misspecification-v0.1.json](experiments/protocols/misspecification-v0.1.json). Аналитические примеры: [causal-oracles-v0.1.json](experiments/fixtures/causal-oracles-v0.1.json). Побайтные примеры ключей: [journal-key-v1.json](experiments/fixtures/journal-key-v1.json).
 

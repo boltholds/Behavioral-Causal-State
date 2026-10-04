@@ -1,0 +1,95 @@
+{
+  "schema": "language-diagnostic-summary-v1",
+  "date": "2026-10-04",
+  "L1_status": "not_run_diagnostic",
+  "base_commit": "8835d649b9f3be58f5293eec54d852a1957d5228",
+  "input_lock_sha256": "e1473fd0a476542dd81001c4aa1464a8497b2676a62d3280de010b7c6bd8fa76",
+  "train_histories": 128,
+  "validation_histories": 32,
+  "selection": "fixed parent prefix; separate train and validation groups",
+  "evaluation": "free-running validation; same learned frozen causal core for predicted and oracle grounding",
+  "training": {
+    "epochs_max": 30,
+    "batch_size": 64,
+    "learning_rate": 0.0003,
+    "seed": 11,
+    "patience": 5,
+    "optimizer": "AdamW",
+    "weight_decay": 0.01,
+    "gradient_clip_norm": 1.0,
+    "dropout": 0.1,
+    "threads": 4,
+    "device": "cpu"
+  },
+  "branches": {
+    "concat": {
+      "epochs_run": 15,
+      "best_epoch": 10,
+      "parameters": 4721448,
+      "optimizer_steps": 30,
+      "wall_seconds": 16.300787931999366,
+      "full_event_error": 0.9375,
+      "full_history_error": 1.0,
+      "invalid_decodings": 32,
+      "teacher_forced_validation_nll": 0.9429847879612699,
+      "language_mean_tv": 1.0,
+      "joint_mean_tv": 1.0,
+      "weights_sha256": "a82f7cd6d2f7b6b6b9f920e64af597ab37c43aa40b2b1ebac5c17049c380e9e3"
+    },
+    "attention": {
+      "epochs_run": 23,
+      "best_epoch": 18,
+      "parameters": 2565928,
+      "optimizer_steps": 46,
+      "wall_seconds": 33.24214338899765,
+      "full_event_error": 0.8945783132530121,
+      "full_history_error": 1.0,
+      "invalid_decodings": 25,
+      "teacher_forced_validation_nll": 0.7408214812583112,
+      "language_mean_tv": 0.9296875,
+      "joint_mean_tv": 0.8020833333333334,
+      "weights_sha256": "92a171268f86806e5cccec1052175fbe5c786178173566ba8951684fc16bed95"
+    },
+    "gru": {
+      "epochs_run": 30,
+      "best_epoch": 27,
+      "parameters": 1441320,
+      "optimizer_steps": 60,
+      "wall_seconds": 32.673879114001465,
+      "full_event_error": 0.9149425287356322,
+      "full_history_error": 1.0,
+      "invalid_decodings": 32,
+      "teacher_forced_validation_nll": 0.775549770923371,
+      "language_mean_tv": 1.0,
+      "joint_mean_tv": 1.0,
+      "weights_sha256": "c92c6ff41a7b3d759bc68c99ea963f2da469fa22d2a53147edc91d5a2094d087"
+    }
+  },
+  "verification": {
+    "tests_passed": 156,
+    "test_command": "python -m pytest -q",
+    "test_seconds": 20.88,
+    "input_lock_reverified": true,
+    "checkpoints_restored_with_source_and_weight_hashes": true,
+    "independent_review": "two important findings fixed and regression-tested; no critical finding"
+  },
+  "interpretation": "Integration diagnostic completed. All three branches have zero fully correct validation histories. This is not a SONAR sufficiency test or a registered L1 result.",
+  "limitations": [
+    "128 training histories; one learning rate; one seed",
+    "Human catalog review pending",
+    "Full tuning, five final seeds and held-out/challenge/rare evaluation not run",
+    "Geometry diagnostic and TTT not implemented",
+    "Model weights and vector caches are local generated artifacts, not included in these compact reports"
+  ],
+  "encoding": {
+    "train_unique_texts": 621,
+    "validation_unique_texts": 234,
+    "outer_batch_size": 32,
+    "sonar_batch_size": 16,
+    "threads": 4,
+    "seconds": 72.7716037489954,
+    "normalization": "none",
+    "dimension": 1024,
+    "dtype": "float32"
+  }
+}

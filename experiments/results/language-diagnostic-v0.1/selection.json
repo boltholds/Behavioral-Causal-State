@@ -1,0 +1,10 @@
+{
+  "mode": "diagnostic",
+  "selection": "first groups in fixed seeded file order",
+  "counts": {
+    "train": 128,
+    "validation": 32
+  },
+  "source_manifest_sha256": "fd230102ff597ed5493b249a0167c83858bdf9be52f92bff6a5ecc1d6f4b3ba1",
+  "L1_status": "not_run"
+}

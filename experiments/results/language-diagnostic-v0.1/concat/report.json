@@ -1,0 +1,269 @@
+{
+  "schema": "language-training-v1",
+  "L1_status": "not_run_diagnostic",
+  "reader": "concat",
+  "settings": {
+    "epochs": 30,
+    "batch_size": 64,
+    "learning_rate": 0.0003,
+    "seed": 11,
+    "patience": 5
+  },
+  "train_histories": 128,
+  "validation_histories": 32,
+  "history": [
+    {
+      "epoch": 1,
+      "train_nll": 1.1538304295331208,
+      "validation_event_error": 1.0,
+      "validation_history_error": 1.0,
+      "validation_nll": 1.1371385939577792
+    },
+    {
+      "epoch": 2,
+      "train_nll": 1.1317326210860637,
+      "validation_event_error": 1.0,
+      "validation_history_error": 1.0,
+      "validation_nll": 1.116242364112367
+    },
+    {
+      "epoch": 3,
+      "train_nll": 1.110410250874441,
+      "validation_event_error": 0.986328125,
+      "validation_history_error": 1.0,
+      "validation_nll": 1.0950014804271941
+    },
+    {
+      "epoch": 4,
+      "train_nll": 1.0877369118093045,
+      "validation_event_error": 0.978515625,
+      "validation_history_error": 1.0,
+      "validation_nll": 1.0728860408701795
+    },
+    {
+      "epoch": 5,
+      "train_nll": 1.0651590434820446,
+      "validation_event_error": 0.958984375,
+      "validation_history_error": 1.0,
+      "validation_nll": 1.0495308734000997
+    },
+    {
+      "epoch": 6,
+      "train_nll": 1.041360967568934,
+      "validation_event_error": 0.95703125,
+      "validation_history_error": 1.0,
+      "validation_nll": 1.024906629197141
+    },
+    {
+      "epoch": 7,
+      "train_nll": 1.0167691525680151,
+      "validation_event_error": 0.953125,
+      "validation_history_error": 1.0,
+      "validation_nll": 1.000176287711935
+    },
+    {
+      "epoch": 8,
+      "train_nll": 0.9919042587280273,
+      "validation_event_error": 0.953125,
+      "validation_history_error": 1.0,
+      "validation_nll": 0.9775684113198139
+    },
+    {
+      "epoch": 9,
+      "train_nll": 0.9717569138731493,
+      "validation_event_error": 0.953125,
+      "validation_history_error": 1.0,
+      "validation_nll": 0.9587767905377327
+    },
+    {
+      "epoch": 10,
+      "train_nll": 0.9536598285972245,
+      "validation_event_error": 0.9375,
+      "validation_history_error": 1.0,
+      "validation_nll": 0.9429847879612699
+    },
+    {
+      "epoch": 11,
+      "train_nll": 0.9402502257388836,
+      "validation_event_error": 0.94140625,
+      "validation_history_error": 1.0,
+      "validation_nll": 0.9284421230884309
+    },
+    {
+      "epoch": 12,
+      "train_nll": 0.9265289099900929,
+      "validation_event_error": 0.94140625,
+      "validation_history_error": 1.0,
+      "validation_nll": 0.9141589874916888
+    },
+    {
+      "epoch": 13,
+      "train_nll": 0.9117172326069631,
+      "validation_event_error": 0.94140625,
+      "validation_history_error": 1.0,
+      "validation_nll": 0.9013681614652593
+    },
+    {
+      "epoch": 14,
+      "train_nll": 0.8981280348471414,
+      "validation_event_error": 0.94140625,
+      "validation_history_error": 1.0,
+      "validation_nll": 0.8905878594581117
+    },
+    {
+      "epoch": 15,
+      "train_nll": 0.886434992069623,
+      "validation_event_error": 0.947265625,
+      "validation_history_error": 1.0,
+      "validation_nll": 0.8807306167927195
+    }
+  ],
+  "best_epoch": 10,
+  "validation": {
+    "histories": 32,
+    "full_history_error": 1.0,
+    "full_event_error": 0.9375,
+    "fields": {
+      "time": {
+        "errors": 392,
+        "total": 512,
+        "error_rate": 0.765625,
+        "confusion": {
+          "3->3": 57,
+          "4->4": 63,
+          "5->4": 46,
+          "6->4": 28,
+          "-1->4": 204,
+          "3->4": 29,
+          "7->4": 25,
+          "8->4": 23,
+          "9->4": 13,
+          "10->4": 11,
+          "11->4": 11,
+          "12->4": 2
+        }
+      },
+      "mode": {
+        "errors": 357,
+        "total": 512,
+        "error_rate": 0.697265625,
+        "confusion": {
+          "20->20": 57,
+          "22->22": 98,
+          "21->22": 4,
+          "24->22": 23,
+          "20->22": 69,
+          "23->22": 37,
+          "-1->22": 204,
+          "25->22": 20
+        }
+      },
+      "entity": {
+        "errors": 313,
+        "total": 512,
+        "error_rate": 0.611328125,
+        "confusion": {
+          "26->26": 32,
+          "27->27": 167,
+          "26->27": 109,
+          "-1->27": 204
+        }
+      },
+      "predicate": {
+        "errors": 314,
+        "total": 512,
+        "error_rate": 0.61328125,
+        "confusion": {
+          "30->30": 57,
+          "32->32": 141,
+          "30->32": 36,
+          "-1->32": 204,
+          "29->32": 31,
+          "31->32": 17,
+          "28->32": 26
+        }
+      },
+      "negation": {
+        "errors": 224,
+        "total": 512,
+        "error_rate": 0.4375,
+        "confusion": {
+          "33->33": 288,
+          "-1->33": 204,
+          "34->33": 20
+        }
+      },
+      "value": {
+        "errors": 409,
+        "total": 512,
+        "error_rate": 0.798828125,
+        "confusion": {
+          "36->35": 29,
+          "35->35": 28,
+          "38->39": 65,
+          "37->39": 4,
+          "39->39": 72,
+          "35->39": 53,
+          "36->39": 46,
+          "-1->39": 204,
+          "35->38": 5,
+          "36->38": 2,
+          "39->38": 1,
+          "38->38": 3
+        }
+      }
+    },
+    "invalid_decodings": 32,
+    "teacher_forced_nll": 0.9429847879612699
+  },
+  "parameters": 4721448,
+  "optimizer_steps": 30,
+  "wall_seconds": 16.300787931999366,
+  "device": "cpu",
+  "dtype": "float32",
+  "versions": {
+    "torch": "2.14.1+cpu",
+    "numpy": "2.3.5",
+    "python": "3.12.14"
+  },
+  "checkpoint_manifest_sha256": "7ce13ed76aed2ef906b746ce945be25fc48a6efabce6eb44b5488c3cfee851b6",
+  "geometry_diagnostic": "deferred",
+  "heldout_test_metrics": "not_run",
+  "full_protocol_blockers": [
+    "catalog human review",
+    "three learning-rate trials",
+    "five final seeds",
+    "heldout evaluation and registered gates"
+  ],
+  "causal_validation": {
+    "category_means": {
+      "predict_hold": 1.0,
+      "do_c_zero_hold": 1.0,
+      "do_c_one_hold": 1.0,
+      "replace_past_command": 1.0
+    },
+    "language_mean_tv": 1.0,
+    "joint_mean_tv": 1.0,
+    "invalid_histories": 32,
+    "undefined_queries_on_decodable_histories": 0,
+    "queries_on_decodable_histories": 0,
+    "core_artifact_id": "sha256:e0bcf071209bcd67f3750bb2d02b749db939155645b44cc9b1dcd330183e93ed",
+    "scope": "diagnostic oracle comparison; no registered L1 acceptance",
+    "sensitivity": {
+      "intervention_priority": 1.0,
+      "counterfactual_priority": 1.0
+    },
+    "language_tv_upper": 1,
+    "joint_tv_upper": 1
+  },
+  "input_hashes": {
+    "public/train.jsonl": "a1aec5217e5b96aefb93640c9da3e3a8a8485f77297ccfaf23c5c11d85f5b601",
+    "public/validation.jsonl": "9deadf0d0adf2acd08bc16b51496a43d13c93bb70295fd8983d7013b4b4ed29c",
+    "training/labels.jsonl": "64938a9617dbf4f530a0fbc93348a286e5be2334e893f8bba370f527d15e6068",
+    "evaluator/validation.jsonl": "3191d4e7b666fc89d81238efd5c25e2243951b4dd9611426bfa05bc0f888f042",
+    "core.json": "13a6585693b11c8d2486a84f14c2c7e16229ec95934a79916480830fd684d76b"
+  },
+  "protocol_sha256": "a19ed455951e429ab77bbfe5182814a8c5f8802db136ee87c085b1bedac00bbf",
+  "input_lock_sha256": "e1473fd0a476542dd81001c4aa1464a8497b2676a62d3280de010b7c6bd8fa76",
+  "encoder_identity_matches_pinned_contract": true
+}
