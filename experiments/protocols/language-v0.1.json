@@ -1,0 +1,121 @@
+{
+  "protocol_id": "L1-v0.1",
+  "status": "specified_not_run",
+  "spec": "docs/specs/05-evaluation.md",
+  "primary_regime": "deterministic",
+  "data_access": "fixed_data",
+  "objects": 2,
+  "known_variables": ["R", "M", "C", "Y"],
+  "graph_known": true,
+  "core": {
+    "mechanisms": "learned_boolean_truth_tables",
+    "training_observations": "oracle_visible_journal_only",
+    "calibration_probes": 12,
+    "calibration_includes_preparation_action_accounting": true,
+    "frozen_shared_artifact": true
+  },
+  "branches": ["oracle", "sonar_concat", "sonar_attention", "sonar_gru"],
+  "encoder": {
+    "family": "SONAR",
+    "frozen": true,
+    "input_unit": "utterance",
+    "stored_dtype": "float32",
+    "extra_normalization": "none",
+    "checkpoint_identity": "must_be_resolved_in_locked_run_manifest"
+  },
+  "architecture": {
+    "history_limit": 16,
+    "concat_mlp_widths": [256, 256],
+    "attention_width": 256,
+    "attention_blocks": 2,
+    "attention_heads": 8,
+    "attention_ffn_width": 1024,
+    "gru_layers": 1,
+    "gru_hidden": 256,
+    "event_decoder": "autoregressive_gru",
+    "decoder_hidden": 256,
+    "decoder_layers": 1,
+    "dropout": 0.1,
+    "test_decoding": "greedy_free_running"
+  },
+  "dataset": {
+    "language": "ru",
+    "train_histories": 20000,
+    "validation_histories": 4000,
+    "iid_test_histories": 4000,
+    "history_lengths": [4, 8, 12, 16],
+    "history_length_weights": [0.25, 0.25, 0.25, 0.25],
+    "challenge_types": ["paraphrase", "negation", "mode", "order", "time", "binding", "knownness"],
+    "pairs_per_challenge": 2000,
+    "new_template_pairs_per_challenge": 1000,
+    "new_names_compositions_pairs_per_challenge": 1000,
+    "split_unit": "base_group_with_all_derivatives",
+    "cross_split_semantic_duplicates": "forbidden",
+    "event_probabilities_after_required_action": {
+      "executed_command": 0.3,
+      "single_target_clamp": 0.2,
+      "observation_or_unknown": 0.3,
+      "hypothetical_command": 0.1,
+      "denied_execution": 0.1
+    },
+    "minimum_executed_commands_per_history": 1
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "learning_rates": [0.0001, 0.0003, 0.001],
+    "weight_decay": 0.01,
+    "batch_size": 64,
+    "max_epochs": 30,
+    "early_stopping_patience": 5,
+    "gradient_clip_norm": 1.0,
+    "tuning_seed": 0,
+    "maximum_tuning_configurations": 3,
+    "final_seeds": [11, 23, 37, 51, 79],
+    "required_passing_seeds": 4
+  },
+  "queries": {
+    "language_category_weights": {
+      "predict_hold": 0.25,
+      "do_c_zero_hold": 0.25,
+      "do_c_one_hold": 0.25,
+      "replace_past_command": 0.25
+    },
+    "averaging_unit": "history_then_category",
+    "predictive_interventional_objects": "uniform_over_both",
+    "counterfactual_actions": "uniform_over_eligible_executed_actions",
+    "joint_target_pairs": [["R", "M"], ["R", "C"], ["M", "C"]],
+    "joint_assignments": [[0, 0], [0, 1], [1, 0], [1, 1]],
+    "joint_intervention_count": 12,
+    "full_outcome": ["M", "Y"],
+    "partial_outcome": ["Y"],
+    "causal_pair_witness_min_tv": 0.25,
+    "rare_training_context_probability_below": 0.01
+  },
+  "metrics": {
+    "primary_distribution_distance": "total_variation",
+    "invalid_output_penalty": 1.0,
+    "critical_error_interval": "one_sided_clopper_pearson",
+    "critical_family_alpha": 0.05,
+    "critical_family_comparisons": 14,
+    "critical_interval_unit": "challenge_type_times_holdout_stratum",
+    "mean_interval": "one_sided_empirical_bernstein_maurer_pontil",
+    "mean_comparison_alpha": 0.05,
+    "variance_denominator": "n_minus_1",
+    "statistical_unit": "independent_base_group"
+  },
+  "gates": {
+    "oracle_mean_tv_upper": 0.02,
+    "branch_to_oracle_mean_tv_upper": 0.02,
+    "critical_pair_error_upper": 0.01,
+    "paired_excess_to_concat_upper": 0.005,
+    "paraphrase_status_disagreement_upper": 0.01,
+    "paraphrase_mean_tv_upper": 0.01,
+    "analytic_tolerance": 1e-12
+  },
+  "run_manifest_required": [
+    "code_commit", "protocol_sha256", "encoder_checkpoint_hash", "tokenizer_hash",
+    "dataset_hashes", "split_seed", "template_catalog_hash", "name_catalog_hash",
+    "core_artifact_hash", "chosen_configuration", "training_seed", "library_versions",
+    "dtype", "device", "query_manifest_hash", "assumption_ids"
+  ]
+}

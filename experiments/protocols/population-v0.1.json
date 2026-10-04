@@ -1,0 +1,56 @@
+{
+  "protocol_id": "P1-v0.1",
+  "status": "specified_not_run",
+  "spec": "docs/specs/06-population.md",
+  "data_mode": "exact_population_constraints",
+  "model": {
+    "genotype": "t",
+    "domain": [0.0, 0.25],
+    "response_type_order": ["00", "01", "10", "11"],
+    "response_probabilities": ["t", "0.75-t", "0.25-t", "t"],
+    "p_y0_one": 0.25,
+    "p_y1_one": 0.75,
+    "treatment_assignment": "randomized_independent_of_response_type",
+    "query": "P(Y_1=1 | A=0,Y=1)",
+    "query_expression": "4*t",
+    "sharp_bounds": [0.0, 1.0]
+  },
+  "search": {
+    "population_size": 64,
+    "initial_uniform_interval": [0.1, 0.15],
+    "generations": 100,
+    "offspring_per_generation": 64,
+    "mutation_sigma": 0.025,
+    "boundary_operator": "clip",
+    "crossover": "none",
+    "evaluations_per_run": 6464,
+    "seed_range_inclusive": [0, 99],
+    "parent_sampling": "uniform_with_replacement",
+    "archive": "all_time_verified_min_and_max",
+    "budget_counts_repeated_candidates": true,
+    "stop": "fixed_budget"
+  },
+  "arms": {
+    "fit_only": "mutate_64_then_random_survivors_64_from_parents_and_offspring",
+    "novelty": "mutate_64_then_farthest_first_64_by_absolute_query_distance",
+    "directed": "two_pools_32_each_rank_select_min_or_max_with_32_mutations_each",
+    "uniform": "shared_initial_64_then_independent_uniform_domain_samples"
+  },
+  "novelty": {
+    "first_candidate": "smallest_stable_candidate_id",
+    "ties": "smallest_stable_candidate_id",
+    "distance": "abs_q_difference"
+  },
+  "gates": {
+    "found_min_at_most": 0.01,
+    "found_max_at_least": 0.99,
+    "minimum_successful_runs": 95,
+    "total_runs": 100,
+    "feasibility_tolerance": 1e-12,
+    "false_identification_claims": 0,
+    "false_infeasibility_claims": 0
+  },
+  "controls": ["monotonicity", "finite_data_intervals", "infeasible_constraints", "restricted_coupling_class"],
+  "novelty_advantage_is_required": false,
+  "interpretation": "correctness_calibration_not_scalability_evidence"
+}

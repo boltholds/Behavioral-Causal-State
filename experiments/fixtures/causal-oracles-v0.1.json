@@ -1,0 +1,56 @@
+{
+  "fixture_version": "0.1",
+  "status": "analytic_expected_values_not_experimental_results",
+  "tolerance": 1e-12,
+  "model_indexed_history_profiles": {
+    "M1": {"h1": 0.2, "h2": 0.8},
+    "M2": {"h1": 0.8, "h2": 0.2},
+    "same_bounds": true,
+    "robustly_equivalent": false
+  },
+  "confounding": {
+    "p_c_one": 0.5,
+    "p_a_one_given_c_zero": 0.2,
+    "p_a_one_given_c_one": 0.8,
+    "observed_y_one_given_a_zero": 0.2,
+    "observed_y_one_given_a_one": 0.8,
+    "confounded_do_y_one": [0.5, 0.5],
+    "unconfounded_alternative_do_y_one": [0.2, 0.8]
+  },
+  "simpson": {
+    "easy": {"A": [9, 10], "B": [72, 90]},
+    "hard": {"A": [27, 90], "B": [2, 10]},
+    "pooled": {"A": 0.36, "B": 0.74},
+    "equal_strata_weights": {"A": 0.6, "B": 0.5}
+  },
+  "counterfactual_response_types": {
+    "order": ["00", "01", "10", "11"],
+    "p0": 0.25,
+    "p1": 0.75,
+    "cases": [
+      {"id": "M_minus", "t": 0.0, "probabilities": [0.0, 0.75, 0.25, 0.0], "q": 0.0},
+      {"id": "midpoint", "t": 0.125, "probabilities": [0.125, 0.625, 0.125, 0.125], "q": 0.5},
+      {"id": "M_plus", "t": 0.25, "probabilities": [0.25, 0.5, 0.0, 0.25], "q": 1.0}
+    ],
+    "sharp_bounds": [0.0, 1.0],
+    "under_monotonicity": [1.0, 1.0]
+  },
+  "noise_diagnostics": {
+    "marginal_noise_probability": 0.1,
+    "query": "P(Y=1 | do(R=r,C=c))",
+    "cells": [
+      {"r": 0, "c": 0, "independent_xor": 0.18, "shared_xor": 0.0, "wrong_gate": 0.1},
+      {"r": 0, "c": 1, "independent_xor": 0.1, "shared_xor": 0.1, "wrong_gate": 0.18},
+      {"r": 1, "c": 0, "independent_xor": 0.82, "shared_xor": 1.0, "wrong_gate": 0.1},
+      {"r": 1, "c": 1, "independent_xor": 0.1, "shared_xor": 0.1, "wrong_gate": 0.82}
+    ]
+  },
+  "ordered_actions": {
+    "initial_r": 0,
+    "cases": [
+      {"actions": ["start", "stop", "hold"], "final_r": 0, "final_m": 0},
+      {"actions": ["stop", "start", "hold"], "final_r": 1, "final_m": 1}
+    ]
+  },
+  "local_parent_set_counts_degree_3": {"8": 512, "12": 2784, "20": 23200, "50": 982500}
+}
