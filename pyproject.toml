@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "behavioral-causal-state"
+version = "0.1.0"
+description = "Exact reference runtime for behavioral and causal state experiments"
+requires-python = ">=3.12"
+dependencies = ["numpy>=2.0,<3", "scipy>=1.13,<2"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+bcs = "bcs.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

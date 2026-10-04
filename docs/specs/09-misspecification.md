@@ -1,6 +1,6 @@
 # SPEC-09 — G2-MISSPEC: проверка нарушения предположений
 
-Статус: specified_not_run. [Конфигурация](../../experiments/protocols/misspecification-v0.1.json), [аналитические вероятности](../../experiments/fixtures/causal-oracles-v0.1.json).
+Статус: runtime v0.1 реализован и пройден на 100 seeds; [отчёт](../implementation/first-runtime.md). Исходный protocol JSON сохраняет preregistration status; фактический статус записан в run report. [Конфигурация](../../experiments/protocols/misspecification-v0.1.json), [аналитические вероятности](../../experiments/fixtures/causal-oracles-v0.1.json).
 
 G2 проверяет поведение причинного ядра с oracle grounding при неверном классе моделей. G0 проверяет корректность simulator/evaluator, G1 — данные и утечки. Прохождение G0/G1 не означает прохождение G2. G2 обязателен для приёмки C1 и утверждений об обнаружении misspecification; ограниченный детерминированный L1 может оцениваться отдельно.
 

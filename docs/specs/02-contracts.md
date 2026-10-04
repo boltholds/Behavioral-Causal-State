@@ -82,7 +82,7 @@ QueryBytes — UTF-8 JSON уже проверенного structured Query AST �
 
 Whitespace, регистр, пунктуация и Unicode composition исходного text сохраняются после декодирования внешнего wire format в строку. Ни Γ, ни z, ни threshold similarity не входят в K. Перефразировки сознательно дают промах; гарантия относится к идентичному request payload. Для одинакового K журнал дополнительно сравнивает сохранённый Payload: несовпадение означает HashCollision и запрещает replay чужого ответа.
 
-Конкретные пары вход→K и пример Payload: [journal-key-v1.json](../../experiments/fixtures/journal-key-v1.json). Runtime MUST воспроизвести все expected keys. Это эталон контракта; исполняемого journal в репозитории пока нет.
+Конкретные пары вход→K и пример Payload: [journal-key-v1.json](../../experiments/fixtures/journal-key-v1.json). Runtime MUST воспроизвести все expected keys. Это эталон контракта; [runtime journal](../../src/bcs/journal.py) воспроизводит все 12 ключей в автоматических тестах.
 
 Snapshot включает данные/constraints, assumptions, interventions, классы моделей, encoder/tokenizer, grounder, core, алгоритм, seed и бюджет вывода, dtype и версии схем. Replay возвращает именно сохранённый ответ. Продолжение незавершённого расчёта с новым бюджетом создаёт новый snapshot и новую ревизию ответа с ссылкой на предыдущую, не переписывая историю.
 

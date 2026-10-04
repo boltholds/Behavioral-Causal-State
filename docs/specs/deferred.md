@@ -1,17 +1,17 @@
 # Граница первого запуска и отложенные задачи
 
-Статус документа: уточнение v0.1 до реализации и открытия test. Основные числовые пороги и seeds L1/P1 сохранены. Ни один gate пока не пройден исполняемой системой.
+Статус документа: scope v0.1. Основные числовые пороги и seeds L1/P1 сохранены. Журнал и reference core реализованы, полные G2/P1 запущены; [актуальный отчёт](../implementation/first-runtime.md). L1 test не открыт.
 
-## Что специфицировано, но ещё требует реализации
+## Требования треков и текущее выполнение
 
 | Компонент | Контракт | Что требуется до заявления о прохождении |
 |---|---|---|
-| Журнал воспроизводимости | Побайтный AnswerJournal/v1 и hash fixtures в [SPEC-02](02-contracts.md) | Runtime round-trip, exact replay, инвалидация snapshot |
+| Журнал воспроизводимости | Побайтный AnswerJournal/v1 и hash fixtures в [SPEC-02](02-contracts.md) | Выполнены: runtime round-trip, exact replay, разделение snapshots |
 | Генератор | Физика, event plan, renderer и minimal pairs в [SPEC-04](04-generator.md) | Исполняемый generator, полный template/name catalog и реальные dataset artifacts |
 | G0/G1 | [SPEC-05](05-evaluation.md) | Проверка evaluator, provenance/splits и отсутствие утечек на созданных данных |
 | L1 | Четыре reader branches, общее frozen core, primary metrics | Locked manifest, реальные checkpoint hashes, train/test и все seed |
-| G2-MISSPEC | [SPEC-09](09-misspecification.md) | Exact/finite-data проверки, certificates, false rejection и budget fault injection |
-| P1 | [SPEC-06](06-population.md) | Реальный поиск и результаты 100 seeds; аналитический эталон сам не является экспериментом |
+| G2-MISSPEC | [SPEC-09](09-misspecification.md) | Выполнены в reference runtime: exact/finite-data, certificates, false rejection, budget fault |
+| P1 | [SPEC-06](06-population.md) | Выполнены четыре search arms ×100 seeds; аналитический solver остаётся отдельным |
 
 Эти пункты не называются deferred только потому, что пока не написан код. Они входят в соответствующие declared tracks. L1 completion не означает completion C1/G2/P1.
 

@@ -10,7 +10,7 @@ G1: train/validation/test групповые пересечения и semantic 
 
 G2-MISSPEC: отдельная проверка реакции движка на нарушение assumptions, описанная в [SPEC-09](09-misspecification.md) и [misspecification-v0.1.json](../../experiments/protocols/misspecification-v0.1.json). Она не включена в G0/G1. G2 обязателен перед заявлением поддержки misspecification и приёмкой C1; первый ограниченный L1 можно публиковать отдельно, явно указав G2=not_run. Отсутствие выполненного G2 запрещает общий claim «движок обнаруживает неверную модель».
 
-Текущий репозиторий содержит спецификации и fixtures, но не executable generator/evaluator. Следовательно, сейчас G0, G1 и G2 имеют статус not_run, даже если числовые эталоны документации проверены.
+Первый runtime содержит simulator/inference, базовый generator и G2/P1 evaluator. Полные G2/P1 запущены; G0 с TTT и G1/L1 ещё не завершены. [Результаты и границы реализации](../implementation/first-runtime.md).
 
 ## Общие условия L1
 
