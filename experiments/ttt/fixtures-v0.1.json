@@ -1,0 +1,1354 @@
+{
+  "version": "ttt-v0.1",
+  "frozen_at_utc": "2026-10-04T20:59:42.035271+00:00",
+  "description": "Frozen before learner runs; 4 reset C configurations x 5 alphabet profiles. All symbols explicit.",
+  "profiles": {
+    "commands": [
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "start",
+          "hold"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "stop",
+          "hold"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "hold",
+          "start"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "hold",
+          "stop"
+        ],
+        "clamps": []
+      }
+    ],
+    "parallel_commands": [
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "hold",
+          "start"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "hold",
+          "stop"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "start",
+          "hold"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "start",
+          "start"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "start",
+          "stop"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "stop",
+          "hold"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "stop",
+          "start"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "stop",
+          "stop"
+        ],
+        "clamps": []
+      }
+    ],
+    "commands_c": [
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "start",
+          "hold"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "stop",
+          "hold"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "hold",
+          "start"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "hold",
+          "stop"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "C",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "C",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "C",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "C",
+            1
+          ]
+        ]
+      }
+    ],
+    "commands_single_clamps": [
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "start",
+          "hold"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "stop",
+          "hold"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "hold",
+          "start"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "hold",
+          "stop"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "R",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "R",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "M",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "M",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "C",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "C",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "Y",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "Y",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "R",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "R",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "M",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "M",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "C",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "C",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "Y",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "Y",
+            1
+          ]
+        ]
+      }
+    ],
+    "commands_joint_clamps": [
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "start",
+          "hold"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "stop",
+          "hold"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "hold",
+          "start"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "hold",
+          "stop"
+        ],
+        "clamps": []
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "R",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "R",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "M",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "M",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "C",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "C",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "Y",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "Y",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "R",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "R",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "M",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "M",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "C",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "C",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "Y",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "Y",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "R",
+            0
+          ],
+          [
+            0,
+            "M",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "R",
+            0
+          ],
+          [
+            0,
+            "M",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "R",
+            1
+          ],
+          [
+            0,
+            "M",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "R",
+            1
+          ],
+          [
+            0,
+            "M",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "R",
+            0
+          ],
+          [
+            0,
+            "C",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "R",
+            0
+          ],
+          [
+            0,
+            "C",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "R",
+            1
+          ],
+          [
+            0,
+            "C",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "R",
+            1
+          ],
+          [
+            0,
+            "C",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "M",
+            0
+          ],
+          [
+            0,
+            "C",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "M",
+            0
+          ],
+          [
+            0,
+            "C",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "M",
+            1
+          ],
+          [
+            0,
+            "C",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "M",
+            1
+          ],
+          [
+            0,
+            "C",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "R",
+            0
+          ],
+          [
+            1,
+            "M",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "R",
+            0
+          ],
+          [
+            1,
+            "M",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "R",
+            1
+          ],
+          [
+            1,
+            "M",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "R",
+            1
+          ],
+          [
+            1,
+            "M",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "R",
+            0
+          ],
+          [
+            1,
+            "C",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "R",
+            0
+          ],
+          [
+            1,
+            "C",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "R",
+            1
+          ],
+          [
+            1,
+            "C",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "R",
+            1
+          ],
+          [
+            1,
+            "C",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "M",
+            0
+          ],
+          [
+            1,
+            "C",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "M",
+            0
+          ],
+          [
+            1,
+            "C",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "M",
+            1
+          ],
+          [
+            1,
+            "C",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            1,
+            "M",
+            1
+          ],
+          [
+            1,
+            "C",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "C",
+            0
+          ],
+          [
+            1,
+            "C",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "C",
+            0
+          ],
+          [
+            1,
+            "C",
+            1
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "C",
+            1
+          ],
+          [
+            1,
+            "C",
+            0
+          ]
+        ]
+      },
+      {
+        "actions": [
+          "hold",
+          "hold"
+        ],
+        "clamps": [
+          [
+            0,
+            "C",
+            1
+          ],
+          [
+            1,
+            "C",
+            1
+          ]
+        ]
+      }
+    ]
+  },
+  "fixtures": [
+    {
+      "id": "C00-commands",
+      "initial_c": [
+        0,
+        0
+      ],
+      "profile": "commands"
+    },
+    {
+      "id": "C00-parallel_commands",
+      "initial_c": [
+        0,
+        0
+      ],
+      "profile": "parallel_commands"
+    },
+    {
+      "id": "C00-commands_c",
+      "initial_c": [
+        0,
+        0
+      ],
+      "profile": "commands_c"
+    },
+    {
+      "id": "C00-commands_single_clamps",
+      "initial_c": [
+        0,
+        0
+      ],
+      "profile": "commands_single_clamps"
+    },
+    {
+      "id": "C00-commands_joint_clamps",
+      "initial_c": [
+        0,
+        0
+      ],
+      "profile": "commands_joint_clamps"
+    },
+    {
+      "id": "C01-commands",
+      "initial_c": [
+        0,
+        1
+      ],
+      "profile": "commands"
+    },
+    {
+      "id": "C01-parallel_commands",
+      "initial_c": [
+        0,
+        1
+      ],
+      "profile": "parallel_commands"
+    },
+    {
+      "id": "C01-commands_c",
+      "initial_c": [
+        0,
+        1
+      ],
+      "profile": "commands_c"
+    },
+    {
+      "id": "C01-commands_single_clamps",
+      "initial_c": [
+        0,
+        1
+      ],
+      "profile": "commands_single_clamps"
+    },
+    {
+      "id": "C01-commands_joint_clamps",
+      "initial_c": [
+        0,
+        1
+      ],
+      "profile": "commands_joint_clamps"
+    },
+    {
+      "id": "C10-commands",
+      "initial_c": [
+        1,
+        0
+      ],
+      "profile": "commands"
+    },
+    {
+      "id": "C10-parallel_commands",
+      "initial_c": [
+        1,
+        0
+      ],
+      "profile": "parallel_commands"
+    },
+    {
+      "id": "C10-commands_c",
+      "initial_c": [
+        1,
+        0
+      ],
+      "profile": "commands_c"
+    },
+    {
+      "id": "C10-commands_single_clamps",
+      "initial_c": [
+        1,
+        0
+      ],
+      "profile": "commands_single_clamps"
+    },
+    {
+      "id": "C10-commands_joint_clamps",
+      "initial_c": [
+        1,
+        0
+      ],
+      "profile": "commands_joint_clamps"
+    },
+    {
+      "id": "C11-commands",
+      "initial_c": [
+        1,
+        1
+      ],
+      "profile": "commands"
+    },
+    {
+      "id": "C11-parallel_commands",
+      "initial_c": [
+        1,
+        1
+      ],
+      "profile": "parallel_commands"
+    },
+    {
+      "id": "C11-commands_c",
+      "initial_c": [
+        1,
+        1
+      ],
+      "profile": "commands_c"
+    },
+    {
+      "id": "C11-commands_single_clamps",
+      "initial_c": [
+        1,
+        1
+      ],
+      "profile": "commands_single_clamps"
+    },
+    {
+      "id": "C11-commands_joint_clamps",
+      "initial_c": [
+        1,
+        1
+      ],
+      "profile": "commands_joint_clamps"
+    }
+  ]
+}

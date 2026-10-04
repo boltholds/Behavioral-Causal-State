@@ -1,0 +1,1702 @@
+{
+  "scope": "integration_fixture_not_L1",
+  "features": "4-dimensional SHA256 fixture; no SONAR quality inference",
+  "counts": {
+    "train": 4,
+    "validation": 4,
+    "iid": 4,
+    "challenge_pairs_per_stratum": 2
+  },
+  "epochs_per_job": 1,
+  "tuning": {
+    "stage": "tuning",
+    "completed_jobs": 9,
+    "total_jobs": 9,
+    "executed_jobs": 9
+  },
+  "final": {
+    "stage": "final",
+    "completed_jobs": 15,
+    "total_jobs": 15,
+    "executed_jobs": 15
+  },
+  "selection": {
+    "concat": {
+      "learning_rate": 0.001,
+      "tuning_job": "tuning/concat/lr-0.001",
+      "weights_sha256": "e9e22943d311b58fb96341cb2657aa9e95a7bd68fe789bc30fcd05a42efc7e74"
+    },
+    "attention": {
+      "learning_rate": 0.0001,
+      "tuning_job": "tuning/attention/lr-0.0001",
+      "weights_sha256": "0ea20c14f424a5af9fdc477a955589fda0f57db0e47c9762cde1da3597239f04"
+    },
+    "gru": {
+      "learning_rate": 0.001,
+      "tuning_job": "tuning/gru/lr-0.001",
+      "weights_sha256": "a8c11800d764f8128a93d9184a69d5499022f40c30b200811c242f0032577e1d"
+    }
+  },
+  "result": {
+    "schema": "l1-study-result-v1",
+    "scope": "fixture",
+    "study_sha256": "fcd601aef114b57fdc35548dab4fbc4644b5851614f53de507906b9bb7b31fe6",
+    "seeds": [
+      11,
+      23,
+      37,
+      51,
+      79
+    ],
+    "passing_seeds": {
+      "concat": 0,
+      "attention": 0,
+      "gru": 0
+    },
+    "required_passing_seeds": 4,
+    "numeric_L1_status": "not_run_fixture",
+    "L1_status": "not_run_fixture",
+    "rare_context_status": "not_established",
+    "preflight": null,
+    "catalog_review": null,
+    "final_freeze_sha256": "5f44cf482991331345fb9081fe654125f0da7f63566fa902d20687ce6a4e4b26",
+    "seed_reports": {
+      "11": "77d50ad466e6b630d539a677eddee13c9e847f59898c70475de1f9e65c41a195",
+      "23": "d9377c664c388c0c13c91c3057ac4b38294bac098e564fe1b602c448ca0ce269",
+      "37": "fbf7698dee310d0348941b9b01782d9cae84f34f899d3b8899b7f5e6926934ba",
+      "51": "e3a8c47404063a165b0e4dc9416d4d643d09205be8ea7be411948bfa767595e9",
+      "79": "0333a1a06cfbd129078e9093ee212a225c603461f55da6dea013e35e4fb3bcc1"
+    },
+    "limitations": [
+      "Rare context projection/probability is unspecified in frozen v0.1.",
+      "Read-only dataset auditing may inspect evaluator sidecars; no held-out targets enter optimizer or model selection."
+    ]
+  },
+  "study_lock": {
+    "schema": "l1-study-v1",
+    "scope": "fixture",
+    "created_at": "2026-10-04T21:15:30.824990+00:00",
+    "code_commit": "0000000000000000000000000000000000000000",
+    "dataset": "/workspace/scratch/ccdcdfc626df/Behavioral-Causal-State/artifacts/l1-pipeline-smoke-v0.1/dataset",
+    "cache": "/workspace/scratch/ccdcdfc626df/Behavioral-Causal-State/artifacts/l1-pipeline-smoke-v0.1/cache",
+    "protocol_sha256": "a19ed455951e429ab77bbfe5182814a8c5f8802db136ee87c085b1bedac00bbf",
+    "dataset_files": {
+      "manifest.json": "596c167c0afd6a5e5d4fecc07df870e46c7c16dd7b30c680a640b9a2f6f65098",
+      "calibration.json": "f4b316bf3b68ef6913aa42af56e0eb8a1632fc5e774c2ba9a02aa079e5481c03",
+      "catalog.json": "4308558244476e29d2c887dc1b10a55af8243bad1c3dbea046101f42476609ce",
+      "core.json": "13a6585693b11c8d2486a84f14c2c7e16229ec95934a79916480830fd684d76b",
+      "evaluator/challenge.jsonl": "e9d48056e86d2692be4cb9d6cef8047313caf2846cbb08a92523ca7913945437",
+      "evaluator/iid_test.jsonl": "fd12ad689f0a5f24365e48a60041b4da717a92ef21c226ca4c0394d3eeb73200",
+      "evaluator/train.jsonl": "1e7e3981e569cb7fb9ad00b428fb58b48b88397e30334fc3ad7ca2ec38c782e2",
+      "evaluator/validation.jsonl": "1ef6d672b67cb1db7937bf19e36330ce3ceeab331ce03e4663fd7a0da57f0849",
+      "public/challenge.jsonl": "400ffe0276deb982a81ca1b3835b7844d67f2253e408c80e77261024cd46515b",
+      "public/iid_test.jsonl": "7ceee8da547cde5b30d835e9d4703d26f22a6da197900bea2f0eb50104177330",
+      "public/train.jsonl": "12f4298d9eabfa998e8a7a9b30de09d1631a6695169a2f954ba1fcb73dddc839",
+      "public/validation.jsonl": "cb16f467af02a1b51151945fdedfe0c9abd2720c9facb78e35822281f2a3c88a",
+      "training/labels.jsonl": "8a868b4717d4ea1ff54a68ecf023e96590ae56eb4a860104cb423d83a780cad1"
+    },
+    "cache_files": {
+      "train/manifest.json": "2addd3160db86ccc57cfff3b34ab5fda408e4c80c415491c8aa73867d295f04a",
+      "train/records.json": "14e8dddf4936ae2f88431d33e21c5dda2b4fe8f5ac2e6d084f780729dc2e795f",
+      "train/vectors.npy": "1be5cbd3964cbe99c4189ed32e18ed23daea3735013ed04f2e9e1ae679de6949",
+      "validation/manifest.json": "b165e9c2d3daa03e89b537f6d101e03a3791feb72861447a0928d23593451ab8",
+      "validation/records.json": "d41482a1052f53764de4cd1cbc304f6ba224932b0eb6d87b995146da1ba1f826",
+      "validation/vectors.npy": "aa75a46dd650c8be15587b83e398ffbe2a81b99ee72f6a1cc92d87b3054d9af0",
+      "iid_test/manifest.json": "f797272265cb20f688f67b9632d4f2f8fce5db4bff1733cd5aa4ab77bb9f63d6",
+      "iid_test/records.json": "9081e48fac2693696be56e18f2f308588581a2c84f0df1d67ef7b0b0d30eed8c",
+      "iid_test/vectors.npy": "610e0afa569b9e4f83dba20713540c6aa8950971bff023b16f2d74bbd5ac6b1f",
+      "challenge/manifest.json": "be99844cbad7fc6b40a2ae1abe244998e8f593a91ca3228261bb70aec8fb41f5",
+      "challenge/records.json": "935f1eab5fff935c1b081b0338977649bcf46f167a8464b9621e5f4a76271a59",
+      "challenge/vectors.npy": "ef75a7d7ec11ed61cdef8765b799c95970ade57adcd23a313121b4bdad771f62"
+    },
+    "source_sha256": {
+      "bcs/__init__.py": "e00680756351f76de38d29f6140971e76231dc08ddca2b88737ea54d52414644",
+      "bcs/__main__.py": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+      "bcs/calibration.py": "9ae39caaca209bb221273e3364cd81582aba2be9aaa7da9d0500ad913bcacd44",
+      "bcs/cli.py": "f6bc2347acf0c4969679a277eaa18b8904aee62b07d13b89bfef996594130507",
+      "bcs/contracts.py": "fc63f3e2a5132abf7c890fa6c0f9e07c11068f8c4112cc2fb18858662b328d72",
+      "bcs/core_evaluation.py": "e90a459a98e1b7d746776ba7268b89291cf3f9fec01c9ebbf7cbb5ca7dd8d3de",
+      "bcs/dataset.py": "fb708482cec264b040b2d04715ae69aae70f42e3e3eb270aa7f7ea77666cba2f",
+      "bcs/dataset_cli.py": "f7205395028aac6446a717d7f7d2cd40d990536dffa3a34db285ab533d8590f7",
+      "bcs/dataset_codec.py": "d95af4908a1dbdc4dd51e2552a65237d6a922e41ccde978c3afcdeca6dd9898f",
+      "bcs/dynamics.py": "df93041a712cf1134297a5ba0e1465aa2e64c5ffe3fb4a7e1fe81e099d035034",
+      "bcs/embedding_cache.py": "235cb18b5d179d26a475eef4009ecc0ef1a9155384c84fbc8542001ef84993b6",
+      "bcs/generator.py": "4110f688c79c45906f1cc20fb88caf1919f064187f282c9652f7011ad3c88da1",
+      "bcs/grounder.py": "be943381f00abc9cdffca9cf10267c5eb6535d9cbb3d02154eca2032375a1da3",
+      "bcs/inference.py": "2abb0b3fa818f8f7bbeb48085787f0e135972e6f9044494fcfbf7ed68df6469d",
+      "bcs/journal.py": "4924abdd549ec959041a39bdd0ea11b8cf145759f6d68e56c6839a97eb7c013d",
+      "bcs/language_catalog.py": "5a94b52d20e11a41b2a71d16c8905c120371f6a6aac4cee9c82e43f9fe26012b",
+      "bcs/language_cli.py": "6d07dc4e1e50e031b1f6388cd0a134a3c3562af85d60073b2c534ad7a08c73f5",
+      "bcs/language_evaluation.py": "c0f1c001c9a7640ff5c38827d5065874579adf05ed10a2eabeed8c68a68667f5",
+      "bcs/language_lock.py": "186dcf0eb82a4fc42c92ab3292dd17525190931caef53e849866e76aa7e9c7f1",
+      "bcs/language_tokens.py": "af41ddf3dd9e501be63c9fcb25ade5bc28066759b8488afcaceafcaa139b1fd9",
+      "bcs/language_training.py": "398fc2bdce9b82f7c93c59818889abe3f9b4671059dd8bca1b518b7282516eb1",
+      "bcs/metrics.py": "402a535ae2c304aaf26aba9dd21e4c409df339f03987d6bc329b868fad554392",
+      "bcs/misspecification.py": "889e310c89cb65be26a0b4d7e50ab219675bef98c40f3e6a4008b1e63cd4af76",
+      "bcs/pairs.py": "c5d4e7135cafa9ec8384f9127c08ad5290e90e37620019536c956e05b1f01bed",
+      "bcs/population.py": "6cc256e6e3c214f028d0506febc044bebd372889e5fc1b83d285e663b261a050",
+      "bcs/queries.py": "b0f14cff5e34d203f3794b3cdbaca20fc807992efb993dfcbc0eed4a4858749e",
+      "bcs/simulator.py": "830d1ca740c9cf8c50aee47fc564c01ddbd4e6b00b21a8d86f9b4ab5224c840d",
+      "bcs/sonar_encoder.py": "8f2cd3dbe307c788062ad57642f26a28c58e42f993add294f75e897e8589e476",
+      "l1/training.py": "df5dfb34701eaca5819fc72af91232e667e606156b596ea324548acbf8bc044d",
+      "experiments/l1/evaluation.py": "6b471a93136f55b3520703ef59cb3dace8af73206817e00930a2098e8787ae65",
+      "experiments/l1/preparation.py": "27c561b308d6737095fefa32cf79f0eba31fc4fd23256e4526530334580e0a08",
+      "experiments/l1/smoke.py": "59587f8e2650bffb0e142185a045a8ce2d95bbe9891f6260feae0e56688a1132",
+      "experiments/l1/study.py": "7c925cac677d6556083fa96b187afe3ff99c4286b9613c8e9cb4da1f22d63b97",
+      "experiments/l1/training.py": "df5dfb34701eaca5819fc72af91232e667e606156b596ea324548acbf8bc044d",
+      "tests/test_simulator.py": "a58778acb3ba59d1910bb306acc89436030c3d34134a33a0ef74b00b03e97239",
+      "tests/test_inference.py": "733c85c1523e6957344dab0a61eae8bea9ccd6646b3a47147ad498aec6fa5865",
+      "tests/test_contracts.py": "26dd612215c6f031813f7948367a916936f3a5dd2274c23df08c02e7c736228a",
+      "tests/test_population.py": "caebc02d5e27a8870d79fe50e32533afc41a82d0b16d06da3358679765373d5e",
+      "tests/test_journal.py": "224c42821d84e597acef9bb1fff8bb925eaead683336f45a2a2361b4128a64d1",
+      "tests/test_dataset.py": "06a764fd9f458a75bae3701bf178d938511ac5f2db33b2baeb08cd2dd443beff",
+      "tests/test_embedding_cache.py": "c364e9dcf23d204f8ce4df2e5945210397c24a600b6037715ea229d4d3af50c3",
+      "tests/test_language_cli.py": "e9f6bef8fb3c5c4a0d4db9122386119efa699acbabd231b37a841c59d76a0d58"
+    },
+    "training": {
+      "optimizer": "AdamW",
+      "learning_rates": [
+        0.0001,
+        0.0003,
+        0.001
+      ],
+      "weight_decay": 0.01,
+      "batch_size": 64,
+      "max_epochs": 1,
+      "early_stopping_patience": 5,
+      "gradient_clip_norm": 1.0,
+      "tuning_seed": 0,
+      "maximum_tuning_configurations": 3,
+      "final_seeds": [
+        11,
+        23,
+        37,
+        51,
+        79
+      ],
+      "required_passing_seeds": 4
+    },
+    "encoder": {
+      "family": "sha256-fixture",
+      "causal_semantics": false
+    },
+    "catalog_review": null,
+    "device": "cpu",
+    "threads": 1,
+    "runtime_versions": {
+      "torch": "2.14.1+cpu",
+      "numpy": "2.3.5",
+      "python": "3.12.14"
+    },
+    "audit": {
+      "integrity_status": "passed",
+      "training_ready": false,
+      "training_blockers": [
+        "human catalog review",
+        "encoder/tokenizer manifest lock"
+      ],
+      "base_counts": {
+        "train": 4,
+        "validation": 4,
+        "iid_test": 4
+      },
+      "challenge_groups": 28,
+      "challenge_strata": {
+        "paraphrase/new_templates": 2,
+        "paraphrase/new_names_compositions": 2,
+        "negation/new_templates": 2,
+        "negation/new_names_compositions": 2,
+        "mode/new_templates": 2,
+        "mode/new_names_compositions": 2,
+        "order/new_templates": 2,
+        "order/new_names_compositions": 2,
+        "time/new_templates": 2,
+        "time/new_names_compositions": 2,
+        "binding/new_templates": 2,
+        "binding/new_names_compositions": 2,
+        "knownness/new_templates": 2,
+        "knownness/new_names_compositions": 2
+      },
+      "cross_split_semantic_duplicates": 0,
+      "diagnostics": {
+        "train:mode": {
+          "Observation": 15,
+          "Forced": 15,
+          "Unknown": 2,
+          "Hypothetical": 6,
+          "Executed": 15,
+          "Denied": 3
+        },
+        "train:name_mode": {
+          "\u0411\u0435\u0442\u0430/Observation": 2,
+          "\u041e\u043c\u0435\u0433\u0430/Observation": 9,
+          "\u0411\u0435\u0442\u0430/Forced": 1,
+          "\u041e\u043c\u0435\u0433\u0430/Unknown": 2,
+          "\u041e\u043c\u0435\u0433\u0430/Hypothetical": 5,
+          "\u041e\u043c\u0435\u0433\u0430/Executed": 9,
+          "\u0411\u0435\u0442\u0430/Hypothetical": 1,
+          "\u041a\u0430\u043f\u043f\u0430/Observation": 3,
+          "\u041a\u0430\u043f\u043f\u0430/Forced": 7,
+          "\u041e\u043c\u0435\u0433\u0430/Forced": 6,
+          "\u041a\u0430\u043f\u043f\u0430/Executed": 4,
+          "\u041a\u0430\u043f\u043f\u0430/Denied": 2,
+          "\u0410\u043b\u044c\u0444\u0430/Observation": 1,
+          "\u0410\u043b\u044c\u0444\u0430/Forced": 1,
+          "\u0410\u043b\u044c\u0444\u0430/Denied": 1,
+          "\u0410\u043b\u044c\u0444\u0430/Executed": 2
+        },
+        "train:name_value": {
+          "\u0411\u0435\u0442\u0430/C/1": 1,
+          "\u041e\u043c\u0435\u0433\u0430/C/0": 1,
+          "\u0411\u0435\u0442\u0430/Y/0": 1,
+          "\u041e\u043c\u0435\u0433\u0430/C/1": 4,
+          "\u041a\u0430\u043f\u043f\u0430/C/0": 2,
+          "\u041e\u043c\u0435\u0433\u0430/M/0": 2,
+          "\u041a\u0430\u043f\u043f\u0430/C/1": 1,
+          "\u041e\u043c\u0435\u0433\u0430/R/1": 1,
+          "\u041e\u043c\u0435\u0433\u0430/Y/0": 1,
+          "\u0410\u043b\u044c\u0444\u0430/C/0": 1
+        },
+        "train:length": {
+          "12": 2,
+          "16": 2
+        },
+        "train:template": {
+          "0": 3,
+          "1": 1
+        },
+        "validation:mode": {
+          "Observation": 17,
+          "Hypothetical": 4,
+          "Executed": 14,
+          "Denied": 3,
+          "Forced": 2
+        },
+        "validation:name_mode": {
+          "\u0413\u0430\u043c\u043c\u0430/Observation": 5,
+          "\u0410\u043b\u044c\u0444\u0430/Observation": 2,
+          "\u0410\u043b\u044c\u0444\u0430/Hypothetical": 1,
+          "\u0410\u043b\u044c\u0444\u0430/Executed": 3,
+          "\u0410\u043b\u044c\u0444\u0430/Denied": 1,
+          "\u0413\u0430\u043c\u043c\u0430/Executed": 5,
+          "\u0421\u0438\u0433\u043c\u0430/Observation": 1,
+          "\u0411\u0435\u0442\u0430/Observation": 1,
+          "\u0421\u0438\u0433\u043c\u0430/Executed": 1,
+          "\u0411\u0435\u0442\u0430/Executed": 1,
+          "\u041b\u044f\u043c\u0431\u0434\u0430/Observation": 1,
+          "\u041e\u043c\u0435\u0433\u0430/Observation": 4,
+          "\u041e\u043c\u0435\u0433\u0430/Executed": 1,
+          "\u041b\u044f\u043c\u0431\u0434\u0430/Forced": 1,
+          "\u041b\u044f\u043c\u0431\u0434\u0430/Executed": 2,
+          "\u041e\u043c\u0435\u0433\u0430/Denied": 1,
+          "\u041b\u044f\u043c\u0431\u0434\u0430/Hypothetical": 1,
+          "\u041e\u043c\u0435\u0433\u0430/Hypothetical": 1,
+          "\u041a\u0430\u043f\u043f\u0430/Observation": 3,
+          "\u041a\u0430\u043f\u043f\u0430/Hypothetical": 1,
+          "\u041a\u0430\u043f\u043f\u0430/Executed": 1,
+          "\u0413\u0430\u043c\u043c\u0430/Denied": 1,
+          "\u041a\u0430\u043f\u043f\u0430/Forced": 1
+        },
+        "validation:name_value": {
+          "\u0413\u0430\u043c\u043c\u0430/C/0": 3,
+          "\u0410\u043b\u044c\u0444\u0430/C/0": 1,
+          "\u0413\u0430\u043c\u043c\u0430/M/0": 2,
+          "\u0410\u043b\u044c\u0444\u0430/R/0": 1,
+          "\u0421\u0438\u0433\u043c\u0430/C/1": 1,
+          "\u0411\u0435\u0442\u0430/C/0": 1,
+          "\u041b\u044f\u043c\u0431\u0434\u0430/C/0": 1,
+          "\u041e\u043c\u0435\u0433\u0430/C/1": 3,
+          "\u041e\u043c\u0435\u0433\u0430/M/1": 1,
+          "\u041a\u0430\u043f\u043f\u0430/C/0": 1,
+          "\u041a\u0430\u043f\u043f\u0430/C/1": 1,
+          "\u041a\u0430\u043f\u043f\u0430/Y/0": 1
+        },
+        "validation:length": {
+          "12": 3,
+          "4": 1
+        },
+        "validation:template": {
+          "0": 3,
+          "1": 1
+        },
+        "iid_test:mode": {
+          "Observation": 18,
+          "Hypothetical": 4,
+          "Executed": 15,
+          "Forced": 11,
+          "Denied": 7,
+          "Unknown": 1
+        },
+        "iid_test:name_mode": {
+          "\u0421\u0438\u0433\u043c\u0430/Observation": 6,
+          "\u041a\u0430\u043f\u043f\u0430/Observation": 4,
+          "\u0421\u0438\u0433\u043c\u0430/Hypothetical": 1,
+          "\u041a\u0430\u043f\u043f\u0430/Executed": 1,
+          "\u041a\u0430\u043f\u043f\u0430/Forced": 1,
+          "\u0421\u0438\u0433\u043c\u0430/Executed": 6,
+          "\u0421\u0438\u0433\u043c\u0430/Forced": 3,
+          "\u041a\u0430\u043f\u043f\u0430/Denied": 1,
+          "\u041a\u0430\u043f\u043f\u0430/Hypothetical": 1,
+          "\u0411\u0435\u0442\u0430/Observation": 1,
+          "\u0411\u0435\u0442\u0430/Forced": 2,
+          "\u0421\u0438\u0433\u043c\u0430/Denied": 2,
+          "\u0411\u0435\u0442\u0430/Hypothetical": 1,
+          "\u0411\u0435\u0442\u0430/Executed": 5,
+          "\u0421\u0438\u0433\u043c\u0430/Unknown": 1,
+          "\u0410\u043b\u044c\u0444\u0430/Observation": 5,
+          "\u0410\u043b\u044c\u0444\u0430/Executed": 2,
+          "\u0410\u043b\u044c\u0444\u0430/Denied": 2,
+          "\u0410\u043b\u044c\u0444\u0430/Forced": 3,
+          "\u041e\u043c\u0435\u0433\u0430/Observation": 2,
+          "\u041e\u043c\u0435\u0433\u0430/Executed": 1,
+          "\u041e\u043c\u0435\u0433\u0430/Denied": 2,
+          "\u041e\u043c\u0435\u0433\u0430/Forced": 2,
+          "\u0410\u043b\u044c\u0444\u0430/Hypothetical": 1
+        },
+        "iid_test:name_value": {
+          "\u0421\u0438\u0433\u043c\u0430/C/1": 3,
+          "\u041a\u0430\u043f\u043f\u0430/C/0": 1,
+          "\u041a\u0430\u043f\u043f\u0430/Y/0": 2,
+          "\u041a\u0430\u043f\u043f\u0430/M/0": 1,
+          "\u0411\u0435\u0442\u0430/C/0": 1,
+          "\u0421\u0438\u0433\u043c\u0430/C/0": 2,
+          "\u0421\u0438\u0433\u043c\u0430/R/0": 1,
+          "\u0410\u043b\u044c\u0444\u0430/C/0": 4,
+          "\u041e\u043c\u0435\u0433\u0430/C/0": 2,
+          "\u0410\u043b\u044c\u0444\u0430/C/1": 1
+        },
+        "iid_test:length": {
+          "16": 2,
+          "12": 2
+        },
+        "iid_test:template": {
+          "1": 3,
+          "0": 1
+        },
+        "challenge:mode": {
+          "Observation": 230,
+          "Forced": 64,
+          "Executed": 270,
+          "Hypothetical": 38,
+          "Unknown": 10,
+          "Denied": 36
+        },
+        "challenge:name_mode": {
+          "\u041a\u0430\u043f\u043f\u0430/Observation": 8,
+          "\u0411\u0435\u0442\u0430/Observation": 28,
+          "\u041a\u0430\u043f\u043f\u0430/Forced": 2,
+          "\u041a\u0430\u043f\u043f\u0430/Executed": 7,
+          "\u0413\u0430\u043c\u043c\u0430/Observation": 14,
+          "\u0413\u0430\u043c\u043c\u0430/Forced": 2,
+          "\u0411\u0435\u0442\u0430/Executed": 28,
+          "\u0411\u0435\u0442\u0430/Hypothetical": 4,
+          "\u0413\u0430\u043c\u043c\u0430/Executed": 23,
+          "\u041a\u0435\u0434\u0440/Observation": 18,
+          "\u042f\u0441\u0435\u043d\u044c/Observation": 11,
+          "\u041a\u0435\u0434\u0440/Unknown": 2,
+          "\u042f\u0441\u0435\u043d\u044c/Unknown": 3,
+          "\u041a\u0435\u0434\u0440/Executed": 21,
+          "\u042f\u0441\u0435\u043d\u044c/Forced": 2,
+          "\u041b\u043e\u0442\u043e\u0441/Observation": 25,
+          "\u0422\u043e\u043f\u0430\u0437/Observation": 10,
+          "\u041b\u043e\u0442\u043e\u0441/Executed": 23,
+          "\u041b\u043e\u0442\u043e\u0441/Denied": 2,
+          "\u041b\u043e\u0442\u043e\u0441/Hypothetical": 6,
+          "\u041b\u043e\u0442\u043e\u0441/Forced": 4,
+          "\u0422\u043e\u043f\u0430\u0437/Forced": 4,
+          "\u0422\u043e\u043f\u0430\u0437/Executed": 7,
+          "\u0422\u043e\u043f\u0430\u0437/Unknown": 2,
+          "\u0422\u043e\u043f\u0430\u0437/Hypothetical": 6,
+          "\u041b\u044f\u043c\u0431\u0434\u0430/Observation": 8,
+          "\u041e\u043c\u0435\u0433\u0430/Observation": 6,
+          "\u041e\u043c\u0435\u0433\u0430/Hypothetical": 2,
+          "\u041b\u044f\u043c\u0431\u0434\u0430/Executed": 13,
+          "\u041e\u043c\u0435\u0433\u0430/Forced": 2,
+          "\u041e\u043c\u0435\u0433\u0430/Executed": 11,
+          "\u041b\u044f\u043c\u0431\u0434\u0430/Denied": 1,
+          "\u0410\u043b\u044c\u0444\u0430/Observation": 13,
+          "\u0421\u0438\u0433\u043c\u0430/Observation": 8,
+          "\u0410\u043b\u044c\u0444\u0430/Hypothetical": 4,
+          "\u0410\u043b\u044c\u0444\u0430/Executed": 10,
+          "\u0421\u0438\u0433\u043c\u0430/Forced": 6,
+          "\u0421\u0438\u0433\u043c\u0430/Denied": 3,
+          "\u0421\u0438\u0433\u043c\u0430/Executed": 18,
+          "\u0410\u043b\u044c\u0444\u0430/Forced": 4,
+          "\u042f\u0441\u0435\u043d\u044c/Executed": 13,
+          "\u042f\u0441\u0435\u043d\u044c/Denied": 3,
+          "\u0418\u0440\u0438\u0441/Observation": 16,
+          "\u0418\u0440\u0438\u0441/Executed": 23,
+          "\u0418\u0440\u0438\u0441/Denied": 5,
+          "\u0411\u0435\u0442\u0430/Forced": 8,
+          "\u0411\u0435\u0442\u0430/Denied": 2,
+          "\u041a\u0430\u043f\u043f\u0430/Hypothetical": 1,
+          "\u0414\u0435\u043b\u044c\u0442\u0430/Observation": 15,
+          "\u0414\u0435\u043b\u044c\u0442\u0430/Executed": 32,
+          "\u0413\u0430\u043c\u043c\u0430/Hypothetical": 2,
+          "\u0414\u0435\u043b\u044c\u0442\u0430/Hypothetical": 1,
+          "\u0413\u0440\u0430\u043d\u0438\u0442/Observation": 18,
+          "\u0413\u0440\u0430\u043d\u0438\u0442/Executed": 14,
+          "\u0418\u0440\u0438\u0441/Hypothetical": 6,
+          "\u0418\u0440\u0438\u0441/Forced": 4,
+          "\u0414\u0435\u043b\u044c\u0442\u0430/Denied": 6,
+          "\u0414\u0435\u043b\u044c\u0442\u0430/Forced": 6,
+          "\u0411\u0430\u0437\u0430\u043b\u044c\u0442/Observation": 26,
+          "\u0411\u0430\u0437\u0430\u043b\u044c\u0442/Forced": 10,
+          "\u0411\u0430\u0437\u0430\u043b\u044c\u0442/Executed": 27,
+          "\u041a\u0435\u0434\u0440/Denied": 4,
+          "\u0413\u0440\u0430\u043d\u0438\u0442/Forced": 8,
+          "\u0413\u0430\u043c\u043c\u0430/Denied": 4,
+          "\u0411\u0430\u0437\u0430\u043b\u044c\u0442/Hypothetical": 4,
+          "\u0413\u0440\u0430\u043d\u0438\u0442/Denied": 2,
+          "\u041a\u0435\u0434\u0440/Hypothetical": 2,
+          "\u041a\u0435\u0434\u0440/Forced": 2,
+          "\u0411\u0430\u0437\u0430\u043b\u044c\u0442/Denied": 4,
+          "\u0410\u043b\u044c\u0444\u0430/Unknown": 1,
+          "\u0414\u0435\u043b\u044c\u0442\u0430/Unknown": 1,
+          "\u041e\u043f\u0430\u043b/Observation": 6,
+          "\u041b\u043e\u0442\u043e\u0441/Unknown": 1
+        },
+        "challenge:name_value": {
+          "\u041a\u0430\u043f\u043f\u0430/C/1": 2,
+          "\u0411\u0435\u0442\u0430/C/0": 8,
+          "\u0411\u0435\u0442\u0430/Y/0": 6,
+          "\u0411\u0435\u0442\u0430/M/0": 2,
+          "\u0411\u0435\u0442\u0430/C/1": 10,
+          "\u0413\u0430\u043c\u043c\u0430/C/0": 8,
+          "\u041a\u0435\u0434\u0440/C/0": 6,
+          "\u042f\u0441\u0435\u043d\u044c/C/1": 4,
+          "\u041a\u0435\u0434\u0440/M/0": 4,
+          "\u041a\u0435\u0434\u0440/R/0": 2,
+          "\u042f\u0441\u0435\u043d\u044c/R/1": 2,
+          "\u042f\u0441\u0435\u043d\u044c/M/1": 2,
+          "\u041b\u043e\u0442\u043e\u0441/C/1": 4,
+          "\u0422\u043e\u043f\u0430\u0437/C/0": 4,
+          "\u041b\u043e\u0442\u043e\u0441/M/1": 4,
+          "\u0422\u043e\u043f\u0430\u0437/R/0": 2,
+          "\u041b\u043e\u0442\u043e\u0441/Y/1": 2,
+          "\u041b\u044f\u043c\u0431\u0434\u0430/C/1": 6,
+          "\u041e\u043c\u0435\u0433\u0430/C/1": 2,
+          "\u0410\u043b\u044c\u0444\u0430/C/0": 2,
+          "\u0421\u0438\u0433\u043c\u0430/C/0": 4,
+          "\u0421\u0438\u0433\u043c\u0430/Y/0": 2,
+          "\u0410\u043b\u044c\u0444\u0430/Y/0": 2,
+          "\u0410\u043b\u044c\u0444\u0430/R/0": 3,
+          "\u042f\u0441\u0435\u043d\u044c/C/0": 2,
+          "\u0418\u0440\u0438\u0441/C/0": 8,
+          "\u0418\u0440\u0438\u0441/M/1": 2,
+          "\u041a\u0430\u043f\u043f\u0430/C/0": 2,
+          "\u0411\u0435\u0442\u0430/M/1": 2,
+          "\u041a\u0430\u043f\u043f\u0430/M/1": 2,
+          "\u041a\u0430\u043f\u043f\u0430/Y/1": 2,
+          "\u0414\u0435\u043b\u044c\u0442\u0430/C/0": 6,
+          "\u0413\u0430\u043c\u043c\u0430/C/1": 4,
+          "\u0413\u0440\u0430\u043d\u0438\u0442/C/1": 10,
+          "\u0418\u0440\u0438\u0441/R/1": 2,
+          "\u0418\u0440\u0438\u0441/R/0": 2,
+          "\u041b\u043e\u0442\u043e\u0441/Y/0": 2,
+          "\u041b\u044f\u043c\u0431\u0434\u0430/R/1": 2,
+          "\u0411\u0430\u0437\u0430\u043b\u044c\u0442/C/1": 10,
+          "\u041a\u0435\u0434\u0440/C/1": 6,
+          "\u0411\u0430\u0437\u0430\u043b\u044c\u0442/Y/0": 6,
+          "\u0413\u0440\u0430\u043d\u0438\u0442/Y/0": 2,
+          "\u0413\u0440\u0430\u043d\u0438\u0442/M/0": 6,
+          "\u0421\u0438\u0433\u043c\u0430/C/1": 2,
+          "\u0414\u0435\u043b\u044c\u0442\u0430/C/1": 4,
+          "\u0414\u0435\u043b\u044c\u0442\u0430/Y/0": 2,
+          "\u0410\u043b\u044c\u0444\u0430/C/1": 4,
+          "\u0411\u0430\u0437\u0430\u043b\u044c\u0442/C/0": 4,
+          "\u0418\u0440\u0438\u0441/M/0": 2,
+          "\u0411\u0430\u0437\u0430\u043b\u044c\u0442/R/0": 2,
+          "\u0411\u0430\u0437\u0430\u043b\u044c\u0442/R/1": 4,
+          "\u041e\u043c\u0435\u0433\u0430/C/0": 2,
+          "\u0413\u0430\u043c\u043c\u0430/M/0": 2,
+          "\u041e\u043c\u0435\u0433\u0430/M/0": 2,
+          "\u0422\u043e\u043f\u0430\u0437/Y/0": 4,
+          "\u041b\u043e\u0442\u043e\u0441/C/0": 6,
+          "\u041b\u043e\u0442\u043e\u0441/M/0": 2,
+          "\u0410\u043b\u044c\u0444\u0430/R/1": 2,
+          "\u0414\u0435\u043b\u044c\u0442\u0430/R/0": 3,
+          "\u041e\u043f\u0430\u043b/C/0": 6,
+          "\u041b\u043e\u0442\u043e\u0441/R/0": 5,
+          "\u042f\u0441\u0435\u043d\u044c/R/0": 1
+        },
+        "challenge:length": {
+          "8": 24,
+          "12": 14,
+          "16": 18
+        },
+        "challenge:template": {
+          "3": 20,
+          "2": 8,
+          "0": 18,
+          "1": 10
+        },
+        "challenge:paraphrase:relation": {
+          "Invariant": 4
+        },
+        "challenge:negation:relation": {
+          "DistinguishingWitness": 4
+        },
+        "challenge:mode:relation": {
+          "DistinguishingWitness": 4
+        },
+        "challenge:order:relation": {
+          "DistinguishingWitness": 4
+        },
+        "challenge:time:relation": {
+          "Invariant": 4
+        },
+        "challenge:binding:relation": {
+          "DistinguishingWitness": 4
+        },
+        "challenge:knownness:relation": {
+          "StructuralOnly": 4
+        }
+      },
+      "errors": []
+    },
+    "core_artifact_id": "sha256:e0bcf071209bcd67f3750bb2d02b749db939155645b44cc9b1dcd330183e93ed",
+    "assumption_ids": [
+      "deterministic",
+      "known_graph",
+      "known_binary_variables",
+      "fixed_learned_boolean_mechanisms",
+      "perfect_clamps",
+      "observed_initial_C",
+      "fixed_data"
+    ],
+    "heldout_features": "frozen encoder on public text only; no normalization/statistic fitting",
+    "preflight": null
+  },
+  "source_sha256": "59587f8e2650bffb0e142185a045a8ce2d95bbe9891f6260feae0e56688a1132",
+  "job_reports": {
+    "final/attention/seed-11": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "fab2f1100fea405372ae7697024ea589f2448d63512f08b9a2265ef8f6526ba1",
+      "reader": "attention",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "seed": 11,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.1699885129928589,
+          "validation_event_error": 1.0,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.1010203127001152
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 1.0,
+      "best_validation_nll": 1.1010203127001152,
+      "weights_sha256": "d4d228838ff6e8c0bafb043a71c99b8162e1831ab22009348aa379ebb65b4111",
+      "stop_reason": "epoch_budget",
+      "parameters": 2304808,
+      "resources": {
+        "process_peak_rss_bytes": 408473600,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.40661735799949383,
+        "last_validation_seconds": 0.2008817989990348,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 456865792.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "final/attention/seed-23": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "9589b92238b219603b24457084da14a04067f8812ac7259ad364206f118950b4",
+      "reader": "attention",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "seed": 23,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.1594483852386475,
+          "validation_event_error": 0.984375,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.1140341836898053
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 0.984375,
+      "best_validation_nll": 1.1140341836898053,
+      "weights_sha256": "5f55a8a2e790ce6dceec67276441220966bd4987d24c4da528d6fd44ee62de4e",
+      "stop_reason": "epoch_budget",
+      "parameters": 2304808,
+      "resources": {
+        "process_peak_rss_bytes": 410173440,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.36396167099883314,
+        "last_validation_seconds": 0.19532389900268754,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 456865792.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "final/attention/seed-37": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "4033b373df2fc8580e1a53469a409e8cf3043b60acdfb8c8425655bc65386059",
+      "reader": "attention",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "seed": 37,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.15842866897583,
+          "validation_event_error": 1.0,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.1243746397925205
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 1.0,
+      "best_validation_nll": 1.1243746397925205,
+      "weights_sha256": "7c326e1cb3ded1784324e4df5fa435c03d8ef16f060316d3a75153e8db288606",
+      "stop_reason": "epoch_budget",
+      "parameters": 2304808,
+      "resources": {
+        "process_peak_rss_bytes": 410173440,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.5103534230001969,
+        "last_validation_seconds": 0.3489049029958551,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 456865792.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "final/attention/seed-51": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "a6dbb25fbaba7573000f2faf190b9250f2b29bc71ec8965076cf4b24b40661d0",
+      "reader": "attention",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "seed": 51,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.1567306518554688,
+          "validation_event_error": 1.0,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.0978933865906761
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 1.0,
+      "best_validation_nll": 1.0978933865906761,
+      "weights_sha256": "4f1768e6e45a4aa5400d80eec6726744eef90dbd408c8323150f70a15ab49ae9",
+      "stop_reason": "epoch_budget",
+      "parameters": 2304808,
+      "resources": {
+        "process_peak_rss_bytes": 410173440,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.4258415430012974,
+        "last_validation_seconds": 0.2606622199964477,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 456865792.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "final/attention/seed-79": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "c3f21de8f6e37eb0bdd49d4a8137983b388fbea31e3ea1e705736fc47b20bd40",
+      "reader": "attention",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "seed": 79,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.1366641521453857,
+          "validation_event_error": 0.984375,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.11698851038198
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 0.984375,
+      "best_validation_nll": 1.11698851038198,
+      "weights_sha256": "4463a99b8bb8d753d5d577d8b2e738de544f80a8f7ecfbbd57ccd4a66aa19151",
+      "stop_reason": "epoch_budget",
+      "parameters": 2304808,
+      "resources": {
+        "process_peak_rss_bytes": 410173440,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.47421707500325283,
+        "last_validation_seconds": 0.27908344699972076,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 456865792.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "final/concat/seed-11": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "e7b0907117c7e15fd47dfcf467e207739156c716161ecc91891eb266f126f7ed",
+      "reader": "concat",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.001,
+        "seed": 11,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.158310890197754,
+          "validation_event_error": 1.0,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.135057167928727
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 1.0,
+      "best_validation_nll": 1.135057167928727,
+      "weights_sha256": "8e0d86cba7b4d3811d174a0e759997a207a2599d95de20c60112fca39071868f",
+      "stop_reason": "epoch_budget",
+      "parameters": 543528,
+      "resources": {
+        "process_peak_rss_bytes": 408211456,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.14480343199829804,
+        "last_validation_seconds": 0.030707325000548735,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 77115904.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "final/concat/seed-23": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "9dad5846dcc852e7d80bf54fea7b4b0f2c845ae8690044c6db05352f1719acc8",
+      "reader": "concat",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.001,
+        "seed": 23,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.152239441871643,
+          "validation_event_error": 1.0,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.1206727575083248
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 1.0,
+      "best_validation_nll": 1.1206727575083248,
+      "weights_sha256": "7eddbefb90535683357dbd787dfd87e4632db06a86c4218e452f14ca2a17ebc3",
+      "stop_reason": "epoch_budget",
+      "parameters": 543528,
+      "resources": {
+        "process_peak_rss_bytes": 408211456,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.22281704600027297,
+        "last_validation_seconds": 0.11451688600209309,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 77115904.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "final/concat/seed-37": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "054b18ce55af6dbe9fea5c71fee205e761bb55163dff4e889b6e8727892e1f58",
+      "reader": "concat",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.001,
+        "seed": 37,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.1433453559875488,
+          "validation_event_error": 0.96875,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.111786639104124
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 0.96875,
+      "best_validation_nll": 1.111786639104124,
+      "weights_sha256": "5c2605efb2ff2a1be86c1b7c9db3029e4443452a5747434fe0110eae453a76bb",
+      "stop_reason": "epoch_budget",
+      "parameters": 543528,
+      "resources": {
+        "process_peak_rss_bytes": 408211456,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.21600454800500302,
+        "last_validation_seconds": 0.10803268800373189,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 77115904.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "final/concat/seed-51": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "dbe71ea1e9040beb3c7ff0f43650e5d2c1578efe6c542be99359cbeac3c4fc25",
+      "reader": "concat",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.001,
+        "seed": 51,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.139865756034851,
+          "validation_event_error": 0.984375,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.108122278432377
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 0.984375,
+      "best_validation_nll": 1.108122278432377,
+      "weights_sha256": "8d10a6804d7015b98dae552410917135dda0952b0b0ab05fef80f17d9ebe5b74",
+      "stop_reason": "epoch_budget",
+      "parameters": 543528,
+      "resources": {
+        "process_peak_rss_bytes": 408211456,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.2518851770000765,
+        "last_validation_seconds": 0.12015208799857646,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 77115904.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "final/concat/seed-79": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "f37a678f66aa4db2708a27c3e44a88e9e5884aadf3c3f6de49bbcba2fc0d90cb",
+      "reader": "concat",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.001,
+        "seed": 79,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.1472007036209106,
+          "validation_event_error": 1.0,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.1137552730372695
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 1.0,
+      "best_validation_nll": 1.1137552730372695,
+      "weights_sha256": "d43f4043f772eca451916b457edfa518cf2e8a34f7dfd0d843f9772ee14a8e8b",
+      "stop_reason": "epoch_budget",
+      "parameters": 543528,
+      "resources": {
+        "process_peak_rss_bytes": 408211456,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.22189477800566237,
+        "last_validation_seconds": 0.10714566399838077,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 77115904.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "final/gru/seed-11": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "26b92cab0de60f0e4e1b08df2a8eb3b63d4f441b64d1c57a15fda2a3e372dd26",
+      "reader": "gru",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.001,
+        "seed": 11,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.148728847503662,
+          "validation_event_error": 1.0,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.1194007748463115
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 1.0,
+      "best_validation_nll": 1.1194007748463115,
+      "weights_sha256": "c0f411f528493dd16810923ae417f74be7193afa339706dbe175efebfb25c08f",
+      "stop_reason": "epoch_budget",
+      "parameters": 657960,
+      "resources": {
+        "process_peak_rss_bytes": 410173440,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.1394119890028378,
+        "last_validation_seconds": 0.032444386000861414,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 82534400.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "final/gru/seed-23": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "0e6bb2ed4e101a4e6e8e3fa3bd50d49b3cc301138fbc84a01a66ba0f8c8e5acf",
+      "reader": "gru",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.001,
+        "seed": 23,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.1553746461868286,
+          "validation_event_error": 1.0,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.1178002279312884
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 1.0,
+      "best_validation_nll": 1.1178002279312884,
+      "weights_sha256": "5213fc4eb17a2750c66e0b3956bd5fb89cbb0bc470af3d5d2c1c97aeb83f2daf",
+      "stop_reason": "epoch_budget",
+      "parameters": 657960,
+      "resources": {
+        "process_peak_rss_bytes": 410173440,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.21230634699895745,
+        "last_validation_seconds": 0.09882023699901765,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 82534400.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "final/gru/seed-37": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "3f8691c39dd2dc23fc90c0a6b125cf4d8f5e0d9bbff09c2a6ecaed6297e3821d",
+      "reader": "gru",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.001,
+        "seed": 37,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.145408272743225,
+          "validation_event_error": 1.0,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.1198729218029586
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 1.0,
+      "best_validation_nll": 1.1198729218029586,
+      "weights_sha256": "020225034a16073df743cfc1c1df2075dc30069dc20031f4b8ec41d0c5625abd",
+      "stop_reason": "epoch_budget",
+      "parameters": 657960,
+      "resources": {
+        "process_peak_rss_bytes": 410173440,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.1724543409945909,
+        "last_validation_seconds": 0.0685562690050574,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 82534400.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "final/gru/seed-51": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "033a43a690b1d5bc9209b2f38f7d97802c84c2586b63b58fd5809a45dc24b1d0",
+      "reader": "gru",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.001,
+        "seed": 51,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.150413990020752,
+          "validation_event_error": 1.0,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.1162537121381917
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 1.0,
+      "best_validation_nll": 1.1162537121381917,
+      "weights_sha256": "9a77b780234a32e704ac7fd05848b4c55eba5312ae42970b9d00669590beae9a",
+      "stop_reason": "epoch_budget",
+      "parameters": 657960,
+      "resources": {
+        "process_peak_rss_bytes": 410173440,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.22041561399964849,
+        "last_validation_seconds": 0.09617939300369471,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 82534400.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "final/gru/seed-79": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "7348af1f573f301cd335065b77e1bceb266c96ef6586cf4370755c6581c4e19e",
+      "reader": "gru",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.001,
+        "seed": 79,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.1508809328079224,
+          "validation_event_error": 1.0,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.1360110923892162
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 1.0,
+      "best_validation_nll": 1.1360110923892162,
+      "weights_sha256": "446c9b9ffcbd44456d28e91b1aafc54e3b3363ff9693b43edefda080fea62448",
+      "stop_reason": "epoch_budget",
+      "parameters": 657960,
+      "resources": {
+        "process_peak_rss_bytes": 410173440,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.20226731499860762,
+        "last_validation_seconds": 0.0654968170056236,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 82534400.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "tuning/attention/lr-0.0001": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "59a722c2048974f9377817f50a3abf9a0c354e6d1c91a8b6aa397a93dbbca4b6",
+      "reader": "attention",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "seed": 0,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.178466558456421,
+          "validation_event_error": 0.984375,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.1382791487897028
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 0.984375,
+      "best_validation_nll": 1.1382791487897028,
+      "weights_sha256": "0ea20c14f424a5af9fdc477a955589fda0f57db0e47c9762cde1da3597239f04",
+      "stop_reason": "epoch_budget",
+      "parameters": 2304808,
+      "resources": {
+        "process_peak_rss_bytes": 407179264,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.5054329240010702,
+        "last_validation_seconds": 0.19452022099721944,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 456865792.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "tuning/attention/lr-0.0003": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "6c53eead8dc22e90f183bb7e4102bf2740a17a0c075d42b6c39753d9793ca1f9",
+      "reader": "attention",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.0003,
+        "seed": 0,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.178466558456421,
+          "validation_event_error": 1.0,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.0908653384349385
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 1.0,
+      "best_validation_nll": 1.0908653384349385,
+      "weights_sha256": "5e6ca8f7c9521dd5b24877249bdee74dabe4a2104be431e35073d85b1d39ac0d",
+      "stop_reason": "epoch_budget",
+      "parameters": 2304808,
+      "resources": {
+        "process_peak_rss_bytes": 408211456,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.33651450899924384,
+        "last_validation_seconds": 0.155341778001457,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 456865792.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "tuning/attention/lr-0.001": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "e8aecf3f702567de710bb2d5838bfc0efe323525d30dac0d3cef0eb7b7e0a4ef",
+      "reader": "attention",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.001,
+        "seed": 0,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.178466558456421,
+          "validation_event_error": 1.0,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.1567316524318008
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 1.0,
+      "best_validation_nll": 1.1567316524318008,
+      "weights_sha256": "da4817b1fa2772dad3e0fb7e6e0be18e016ee6c85276f78e3de8d620ca40fbfd",
+      "stop_reason": "epoch_budget",
+      "parameters": 2304808,
+      "resources": {
+        "process_peak_rss_bytes": 408211456,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.26451868699950865,
+        "last_validation_seconds": 0.12788851599907503,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 456865792.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "tuning/concat/lr-0.0001": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "dada1ca384565add3cf6ff659b6f67f160a1966aeb8872a145ceaee25a6acb9d",
+      "reader": "concat",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "seed": 0,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.1588129997253418,
+          "validation_event_error": 1.0,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.1699591464683659
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 1.0,
+      "best_validation_nll": 1.1699591464683659,
+      "weights_sha256": "b44e95e91f4ba2fcf0b16da4dc2040566c8f9df8eb15b20f9f11ce5d6603b266",
+      "stop_reason": "epoch_budget",
+      "parameters": 543528,
+      "resources": {
+        "process_peak_rss_bytes": 348925952,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.16127013899676967,
+        "last_validation_seconds": 0.02103789200191386,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 77115904.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "tuning/concat/lr-0.0003": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "60d16433f3c2b49e852783982c051ba723d08f67622728975c300201b3d1b37d",
+      "reader": "concat",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.0003,
+        "seed": 0,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.1588129997253418,
+          "validation_event_error": 1.0,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.1618723634813652
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 1.0,
+      "best_validation_nll": 1.1618723634813652,
+      "weights_sha256": "c49a9204dcf7f82f41c81be378258989baff29b6d23c046b06b207d65f9749c8",
+      "stop_reason": "epoch_budget",
+      "parameters": 543528,
+      "resources": {
+        "process_peak_rss_bytes": 349536256,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.20207676899735816,
+        "last_validation_seconds": 0.10387617300148122,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 77115904.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "tuning/concat/lr-0.001": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "c2e83a5322698e1dafab1aaa25314cfb2c6375031359e9d0a2db36313ce90b8e",
+      "reader": "concat",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.001,
+        "seed": 0,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.1588129997253418,
+          "validation_event_error": 1.0,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.135724802486232
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 1.0,
+      "best_validation_nll": 1.135724802486232,
+      "weights_sha256": "e9e22943d311b58fb96341cb2657aa9e95a7bd68fe789bc30fcd05a42efc7e74",
+      "stop_reason": "epoch_budget",
+      "parameters": 543528,
+      "resources": {
+        "process_peak_rss_bytes": 351100928,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.1476022679999005,
+        "last_validation_seconds": 0.07944913699611789,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 77115904.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "tuning/gru/lr-0.0001": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "02c753306a9a1e90c221baca05baf6cc8de4284acc3cd5cac36bb7a0b9aa7f67",
+      "reader": "gru",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "seed": 0,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.137931227684021,
+          "validation_event_error": 1.0,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.1314302037973873
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 1.0,
+      "best_validation_nll": 1.1314302037973873,
+      "weights_sha256": "1957f5109e0515deff79562b267d002290718f100170d328cf3ca3a402c2a71b",
+      "stop_reason": "epoch_budget",
+      "parameters": 657960,
+      "resources": {
+        "process_peak_rss_bytes": 408211456,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.12502613499964355,
+        "last_validation_seconds": 0.025341047999972943,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 82534400.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "tuning/gru/lr-0.0003": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "6a51ce7234862baf097a5501af126e82402bcc3f23f9b95ac484a9a24f55001c",
+      "reader": "gru",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.0003,
+        "seed": 0,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.137931227684021,
+          "validation_event_error": 1.0,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.1248260247902793
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 1.0,
+      "best_validation_nll": 1.1248260247902793,
+      "weights_sha256": "4bc6c0f4bf402e728d020b9ba1fcd966243d5dbe611f505417844f042d85712d",
+      "stop_reason": "epoch_budget",
+      "parameters": 657960,
+      "resources": {
+        "process_peak_rss_bytes": 408211456,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.22074052300013136,
+        "last_validation_seconds": 0.10806137900362955,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 82534400.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    },
+    "tuning/gru/lr-0.001": {
+      "schema": "l1-training-job-v1",
+      "status": "completed",
+      "L1_status": "not_evaluated",
+      "context_sha256": "4057352ac7d3e9acb7c8409088876257efd67ebbfc4ea50bddd7ffe4b5d9aa80",
+      "reader": "gru",
+      "config": {
+        "epochs": 1,
+        "batch_size": 64,
+        "learning_rate": 0.001,
+        "seed": 0,
+        "patience": 5
+      },
+      "dtype": "float32",
+      "device": "cpu",
+      "completed_epochs": 1,
+      "committed_optimizer_steps": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train_nll": 1.137931227684021,
+          "validation_event_error": 1.0,
+          "validation_history_error": 1.0,
+          "validation_nll": 1.1031835587298284
+        }
+      ],
+      "best_epoch": 1,
+      "best_validation_event_error": 1.0,
+      "best_validation_nll": 1.1031835587298284,
+      "weights_sha256": "a8c11800d764f8128a93d9184a69d5499022f40c30b200811c242f0032577e1d",
+      "stop_reason": "epoch_budget",
+      "parameters": 657960,
+      "resources": {
+        "process_peak_rss_bytes": 408211456,
+        "rss_scope": "process lifetime high-water mark; not isolated model allocation",
+        "cuda_peak_allocated_bytes": null,
+        "committed_wall_seconds": 0.15594665199751034,
+        "last_validation_seconds": 0.037507089000428095,
+        "validation_scope": "greedy inference plus teacher-forced likelihood on validation; includes batching overhead",
+        "inference_flops_estimate": {
+          "per_history": 82534400.0,
+          "mean_history_length": 14.0,
+          "decoder_tokens": 85.0,
+          "assumptions": "Analytical dense inference estimate, multiply-add=2; attention at unpadded mean length, decoder greedy length approximated by target length. Excludes embedding lookup, bias, nonlinearities, masks, framework overhead and backpropagation; not a profiler measurement."
+        }
+      }
+    }
+  }
+}

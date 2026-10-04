@@ -1,0 +1,78 @@
+{
+  "scope": "resource_probe_not_L1",
+  "data": "first64 training histories of prior128-train diagnostic; no held-out metrics",
+  "warmup_steps": 2,
+  "measured_steps": 4,
+  "rows": [
+    {
+      "branch": "concat",
+      "threads": 1,
+      "training_step_seconds": 0.3857766962482856,
+      "greedy_batch64_seconds": 0.21353239699965343,
+      "maximum_training_only_hours_per_run": 1.0062342160476117
+    },
+    {
+      "branch": "attention",
+      "threads": 1,
+      "training_step_seconds": 0.6350220097483543,
+      "greedy_batch64_seconds": 0.7035406880022492,
+      "maximum_training_only_hours_per_run": 1.6563490754269574
+    },
+    {
+      "branch": "gru",
+      "threads": 1,
+      "training_step_seconds": 0.3655292589992314,
+      "greedy_batch64_seconds": 0.2082542479984113,
+      "maximum_training_only_hours_per_run": 0.9534221505563285
+    },
+    {
+      "branch": "concat",
+      "threads": 2,
+      "training_step_seconds": 0.28977332375143305,
+      "greedy_batch64_seconds": 0.18651789800060214,
+      "maximum_training_only_hours_per_run": 0.7558254194516546
+    },
+    {
+      "branch": "attention",
+      "threads": 2,
+      "training_step_seconds": 0.42597950375056826,
+      "greedy_batch64_seconds": 0.4053864550005528,
+      "maximum_training_only_hours_per_run": 1.111096538949399
+    },
+    {
+      "branch": "gru",
+      "threads": 2,
+      "training_step_seconds": 0.31077517675112176,
+      "greedy_batch64_seconds": 0.20977691699954448,
+      "maximum_training_only_hours_per_run": 0.8106052526925093
+    },
+    {
+      "branch": "concat",
+      "threads": 4,
+      "training_step_seconds": 0.30910485700042045,
+      "greedy_batch64_seconds": 0.21231003099819645,
+      "maximum_training_only_hours_per_run": 0.80624850200943
+    },
+    {
+      "branch": "attention",
+      "threads": 4,
+      "training_step_seconds": 0.4627947052485979,
+      "greedy_batch64_seconds": 0.4707246699981624,
+      "maximum_training_only_hours_per_run": 1.2071228561900929
+    },
+    {
+      "branch": "gru",
+      "threads": 4,
+      "training_step_seconds": 0.31337436025023635,
+      "greedy_batch64_seconds": 0.21008546500524972,
+      "maximum_training_only_hours_per_run": 0.8173847896526998
+    }
+  ],
+  "training_only_hours_24_runs": 21.4202176887485,
+  "exclusions": [
+    "validation",
+    "test",
+    "checkpoint IO",
+    "causal evaluation"
+  ]
+}

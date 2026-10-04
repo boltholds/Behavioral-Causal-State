@@ -1,0 +1,11 @@
+{
+  "command": "OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python -m pytest -q",
+  "passed": 237,
+  "failed": 0,
+  "elapsed_seconds": 95.39,
+  "log_sha256": "23ec57936e3a56fa827bb0b2b462275153314a28e38a1c2b7f7ca1158cb50657",
+  "ttt_trials": 60,
+  "l1_fixture_jobs": 24,
+  "registered_L1_training": "not_run",
+  "catalog_review": "pending"
+}

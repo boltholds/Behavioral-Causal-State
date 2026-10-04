@@ -1,0 +1,15 @@
+{
+  "dependencies": [
+    {
+      "coordinate": "de.learnlib.distribution:learnlib-distribution:jar:dependencies-bundle:0.18.0",
+      "filename": "learnlib-distribution-0.18.0-dependencies-bundle.jar",
+      "url": "https://repo.maven.apache.org/maven2/de/learnlib/distribution/learnlib-distribution/0.18.0/learnlib-distribution-0.18.0-dependencies-bundle.jar",
+      "sha256": "bcee286332a5bb331fe60123fe93158caa1768263c13a9bb21a197833b65e31a",
+      "bytes": 7870298
+    }
+  ],
+  "official_api_source": "https://repo.maven.apache.org/maven2/de/learnlib/learnlib-ttt/0.18.0/learnlib-ttt-0.18.0-sources.jar",
+  "official_documentation": "https://learnlib.de/learnlib/maven-site/0.18.0/learnlib-build-parent/learnlib-algorithms-parent/learnlib-algorithms-active-parent/learnlib-ttt/index.html",
+  "constructor": "TTTLearnerMealy(Alphabet<I>, MembershipOracle<I, Word<O>>, AcexAnalyzer)",
+  "analyzer": "AcexAnalyzers.BINARY_SEARCH_BWD"
+}

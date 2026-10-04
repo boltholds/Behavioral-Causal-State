@@ -1,0 +1,37 @@
+# Held-out L1 evaluator
+
+`experiments/l1/evaluation.py` supplies `evaluate_seed(dataset: Path, predictions: dict[str, dict[str, tuple[int, ...]]], output: Path) -> dict`. Predictions contain exactly `concat`, `attention`, and `gru`, each keyed by the complete IID plus challenge record-ID set. The caller must finish the whole-study configuration and checkpoint freeze before calling it. The evaluator does not import training code, select checkpoints, or permit a supplied oracle prediction. Its only label access occurs during evaluation and the integrity audit it invokes.
+
+A successful unit test or a smoke-sized report does not establish trained L1 success. The numerical seed gates and external evidence gates have separate statuses. `numeric_oracle_gate` checks only the μ_lang/μ_joint TV bounds and exhaustive local-kernel agreement; the full Oracle gate additionally requires external exact status fixtures. Registered numerical gates require the actual 20,000/4,000/4,000 base counts and all fourteen 1,000-group challenge strata, not a manifest assertion alone. The exact G0/status fixtures, TTT, actual training-loader isolation, frozen checkpoint provenance, and AnswerRecord replay remain the study runner's responsibility. Reports explicitly list these requirements.
+
+## Distribution scores and independent units
+
+The frozen learned core answers gold events for the oracle. The independently specified exact deterministic simulator answers gold events for simulator truth. Every side is scored for branch versus oracle, branch versus simulator, and oracle versus simulator. `iid.comparisons` and all `challenge.strata` publish these comparisons. Full group rows retain category vectors and both query-panel means for downstream aggregation. Challenge sides are averaged inside their group before any mean bound. No IID bound is computed on the pooled fixed challenge mixture.
+
+For μ_lang the two object answers are averaged within predictive, `do(C=0)`, and `do(C=1)` categories; all gold executed-command replacement queries are averaged within the fourth category. The four category errors then receive equal weight inside each history. This deliberately avoids giving longer histories more weight because they have more counterfactual references. Every query returns the joint `(M,Y)` law. The two registered sensitivity weightings are descriptive and cannot change a gate.
+
+For μ_joint all three pairs of targets from `(R,M,C)`, four binary assignments, and two objects are enumerated, giving 24 query answers per history. Joint TV compares joint laws, not marginal errors. Invalid decoding, undefined evidence, and inadmissible decoded counterfactual references contribute one even if a point answer cannot be produced. Coverage, result-kind/computation/grounding status counts, and invalid-history counts accompany the scores.
+
+An exact conditional distribution under a fixed SCM does not supply an identification certificate. Status summaries use the existing contract enums with `NotEstablished` identification and distinguish exact laws, undefined results, invalid grounding, and exhausted inference budgets. They do not manufacture an `AnswerRecord` proof or label an exact conditional law `ProvenIdentified`.
+
+## Structural and challenge scores
+
+Each branch publishes field error rates/exact matches and confusion matrices, full-event/full-history errors, and invalid decoding counts, both collectively and separately for IID and each challenge stratum. Confusions retain the existing structured vocabulary IDs; value token 35 is binary zero and token 37 is Unknown, never interchangeable. Mode, negation, entity binding, timestamps, predicate, and value are all retained.
+
+Critical interpretation uses a conservative complete-context check: a group is erroneous if either side has any incorrect event field, missing/extra event, invalid decoding, or context required to interpret the checked field. All six fields in the visible history are checked, rather than accepting a correct command value with incorrect mode or binding. Thus this implementation can fail a critical gate for an additional context error even if the transformed final field is correct; it never conceals that error through a field-only shortcut. For paraphrase and explicit-time invariance, events are normalized by timestamp and full event wire representation, preserving multiplicity. Narrative permutations with unchanged timestamps are equivalent. Other challenge checks preserve narrative positions.
+
+Critical binomial upper bounds use one-sided Clopper–Pearson at `alpha=0.05/14` independently for every challenge type and holdout stratum. Both strata must pass. Per-field statistics are descriptive; messages are not treated as independent statistical examples.
+
+Cross-paraphrase scores use the same gold μ_lang queries on both decoded histories, with journal replay absent. Each group records whether any identification/result/computation/grounding status differs and its category-weighted mean joint TV. Two invalid sides may have matching statuses, but still have TV penalty one. Bounds are calculated separately for the two strata: binomial status bounds at `0.05/14` (conservative relative to a per-comparison 0.05 choice), and empirical Bernstein TV bounds at 0.05.
+
+IID attention/GRU excess pairs each branch's error with concat by exact group ID. Missing or extra group IDs are rejected. Queries and sides cannot create extra independent rows. Empirical Bernstein uses sample variance with `n-1`, range `[0,1]` for TV and `[-1,1]` for excess, and `log(2/0.05)`. Bounds are unavailable with fewer than two groups. With all-zero excess at n=4,000 the upper bound is approximately 0.004305, below 0.005; with all-zero paraphrase TV at n=1,000 it is approximately 0.008616, below 0.01. Zero empirical errors alone do not pass small fixtures.
+
+## Rare contexts and limitations
+
+`rare_contexts.status` is `not_established`, with no fabricated score. SPEC-05 specifies probability below 0.01 but does not specify what constitutes the context: full visible history, current state, action history, or another projection. These give different probabilities. The actual training builder also conditions its sampler through semantic-hash split ownership and rejection; zero observed frequency is not generator probability. A valid rare panel requires an explicit context projection and its exact probability under that conditional sampler. Withheld joint interventions are not declared rare merely because they were withheld.
+
+The evaluator establishes numerical scores for this deterministic, known-graph, fixed-core benchmark. It does not infer general embedding information loss, certify identification over an SCM class, extend success to misspecified models, or treat training seeds as additional IID examples. The study runner combines externally established G0/G1/replay evidence with the published five seed results and the registered four-of-five rule.
+
+## Verification
+
+`python -m pytest -q tests/test_l1_evaluation.py` exercises hand-derived invalid penalties, category weighting and preserved factual continuation, false versus Unknown, explicit-time narrative equivalence, mode/negation/binding dependencies, exact binomial/range bounds, record-ID pairing, wrong-core versus independent simulator truth, paraphrase failures, duplicate sides, and generated smoke integration. The full project suite is also required before publishing a completion claim.

@@ -1,0 +1,31 @@
+{
+  "scope": "actual_completed_fixture_integrity",
+  "checks": [
+    {
+      "check": "prediction_corruption",
+      "rejected": true,
+      "reason": "seed report/predictions changed"
+    },
+    {
+      "check": "seed_report_corruption",
+      "rejected": true,
+      "reason": "seed report/predictions changed"
+    },
+    {
+      "check": "aggregate_report_corruption",
+      "rejected": true,
+      "reason": "result changed"
+    },
+    {
+      "check": "frozen_checkpoint_corruption",
+      "rejected": true,
+      "reason": "completed report/checkpoint changed"
+    },
+    {
+      "check": "training_after_test_open",
+      "rejected": true,
+      "reason": "test is open: training and selection are closed"
+    }
+  ],
+  "restored_result_sha256": "fea8d0932a3de3564e0038d8fa007691f0719206376b95c930e10ce52a7cc824"
+}

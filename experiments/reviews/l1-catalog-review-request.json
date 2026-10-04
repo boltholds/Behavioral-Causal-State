@@ -1,0 +1,308 @@
+{
+  "schema": "l1-catalog-human-review-request-v1",
+  "status": "pending",
+  "catalog_path": "artifacts/l1-v0.1-final/catalog.json",
+  "catalog_sha256": "4308558244476e29d2c887dc1b10a55af8243bad1c3dbea046101f42476609ce",
+  "reviewer": null,
+  "reviewed_at": null,
+  "decision": null,
+  "forms": [
+    {
+      "family": 0,
+      "mode": "Observation",
+      "explicit_time": true,
+      "text": "На шаге 1 у устройства Альфа значение Y равно 1."
+    },
+    {
+      "family": 0,
+      "mode": "Observation",
+      "explicit_time": false,
+      "text": "У устройства Альфа значение Y равно 1."
+    },
+    {
+      "family": 0,
+      "mode": "Unknown",
+      "explicit_time": true,
+      "text": "В этой записи на шаге 1 новое измерение Y устройства Альфа не приведено."
+    },
+    {
+      "family": 0,
+      "mode": "Unknown",
+      "explicit_time": false,
+      "text": "В этой записи новое измерение Y устройства Альфа не приведено."
+    },
+    {
+      "family": 0,
+      "mode": "Executed",
+      "explicit_time": true,
+      "text": "На шаге 1 на устройстве Альфа выполнили команду start."
+    },
+    {
+      "family": 0,
+      "mode": "Executed",
+      "explicit_time": false,
+      "text": "На устройстве Альфа выполнили команду start."
+    },
+    {
+      "family": 0,
+      "mode": "Forced",
+      "explicit_time": true,
+      "text": "На шаге 1 принудительно установили Y устройства Альфа в 1."
+    },
+    {
+      "family": 0,
+      "mode": "Forced",
+      "explicit_time": false,
+      "text": "Принудительно установили Y устройства Альфа в 1."
+    },
+    {
+      "family": 0,
+      "mode": "Hypothetical",
+      "explicit_time": true,
+      "text": "На шаге 1 рассмотрели вариант выполнения start на устройстве Альфа."
+    },
+    {
+      "family": 0,
+      "mode": "Hypothetical",
+      "explicit_time": false,
+      "text": "Рассмотрели вариант выполнения start на устройстве Альфа."
+    },
+    {
+      "family": 0,
+      "mode": "Denied",
+      "explicit_time": true,
+      "text": "В этой записи на шаге 1 зафиксирован отказ от выполнения ещё одной команды start на устройстве Альфа."
+    },
+    {
+      "family": 0,
+      "mode": "Denied",
+      "explicit_time": false,
+      "text": "В этой записи зафиксирован отказ от выполнения ещё одной команды start на устройстве Альфа."
+    },
+    {
+      "family": 1,
+      "mode": "Observation",
+      "explicit_time": true,
+      "text": "Устройство Альфа, шаг 1: измеренное значение Y — 1."
+    },
+    {
+      "family": 1,
+      "mode": "Observation",
+      "explicit_time": false,
+      "text": "Устройство Альфа: измеренное значение Y — 1."
+    },
+    {
+      "family": 1,
+      "mode": "Unknown",
+      "explicit_time": true,
+      "text": "Устройство Альфа, шаг 1: эта запись не добавляет измерения Y."
+    },
+    {
+      "family": 1,
+      "mode": "Unknown",
+      "explicit_time": false,
+      "text": "Устройство Альфа: эта запись не добавляет измерения Y."
+    },
+    {
+      "family": 1,
+      "mode": "Executed",
+      "explicit_time": true,
+      "text": "Устройство Альфа, шаг 1: выполнена команда start."
+    },
+    {
+      "family": 1,
+      "mode": "Executed",
+      "explicit_time": false,
+      "text": "Устройство Альфа: выполнена команда start."
+    },
+    {
+      "family": 1,
+      "mode": "Forced",
+      "explicit_time": true,
+      "text": "Устройство Альфа, шаг 1: значение Y принудительно задано равным 1."
+    },
+    {
+      "family": 1,
+      "mode": "Forced",
+      "explicit_time": false,
+      "text": "Устройство Альфа: значение Y принудительно задано равным 1."
+    },
+    {
+      "family": 1,
+      "mode": "Hypothetical",
+      "explicit_time": true,
+      "text": "Устройство Альфа, шаг 1: обсуждалась возможность команды start."
+    },
+    {
+      "family": 1,
+      "mode": "Hypothetical",
+      "explicit_time": false,
+      "text": "Устройство Альфа: обсуждалась возможность команды start."
+    },
+    {
+      "family": 1,
+      "mode": "Denied",
+      "explicit_time": true,
+      "text": "Устройство Альфа, шаг 1: ещё одна предложенная команда start оставлена без выполнения."
+    },
+    {
+      "family": 1,
+      "mode": "Denied",
+      "explicit_time": false,
+      "text": "Устройство Альфа: ещё одна предложенная команда start оставлена без выполнения."
+    },
+    {
+      "family": 2,
+      "mode": "Observation",
+      "explicit_time": true,
+      "text": "Шаг 1. Прибор Альфа: наблюдаем Y=1."
+    },
+    {
+      "family": 2,
+      "mode": "Observation",
+      "explicit_time": false,
+      "text": "Прибор Альфа: наблюдаем Y=1."
+    },
+    {
+      "family": 2,
+      "mode": "Unknown",
+      "explicit_time": true,
+      "text": "Шаг 1. Для прибора Альфа в этой записи нет нового измерения Y."
+    },
+    {
+      "family": 2,
+      "mode": "Unknown",
+      "explicit_time": false,
+      "text": "Для прибора Альфа в этой записи нет нового измерения Y."
+    },
+    {
+      "family": 2,
+      "mode": "Executed",
+      "explicit_time": true,
+      "text": "Шаг 1. Прибору Альфа подали команду start."
+    },
+    {
+      "family": 2,
+      "mode": "Executed",
+      "explicit_time": false,
+      "text": "Прибору Альфа подали команду start."
+    },
+    {
+      "family": 2,
+      "mode": "Forced",
+      "explicit_time": true,
+      "text": "Шаг 1. У прибора Альфа принудительно зафиксировали Y=1."
+    },
+    {
+      "family": 2,
+      "mode": "Forced",
+      "explicit_time": false,
+      "text": "У прибора Альфа принудительно зафиксировали Y=1."
+    },
+    {
+      "family": 2,
+      "mode": "Hypothetical",
+      "explicit_time": true,
+      "text": "Шаг 1. Для прибора Альфа только рассмотрели возможность команды start."
+    },
+    {
+      "family": 2,
+      "mode": "Hypothetical",
+      "explicit_time": false,
+      "text": "Для прибора Альфа только рассмотрели возможность команды start."
+    },
+    {
+      "family": 2,
+      "mode": "Denied",
+      "explicit_time": true,
+      "text": "Шаг 1. Новую предложенную команду start прибору Альфа оставили без выполнения."
+    },
+    {
+      "family": 2,
+      "mode": "Denied",
+      "explicit_time": false,
+      "text": "Новую предложенную команду start прибору Альфа оставили без выполнения."
+    },
+    {
+      "family": 3,
+      "mode": "Observation",
+      "explicit_time": true,
+      "text": "В момент 1 измерение у Альфа показало Y=1."
+    },
+    {
+      "family": 3,
+      "mode": "Observation",
+      "explicit_time": false,
+      "text": "Измерение у Альфа показало Y=1."
+    },
+    {
+      "family": 3,
+      "mode": "Unknown",
+      "explicit_time": true,
+      "text": "В момент 1 эта запись о Альфа не содержит нового измерения Y."
+    },
+    {
+      "family": 3,
+      "mode": "Unknown",
+      "explicit_time": false,
+      "text": "Эта запись о Альфа не содержит нового измерения Y."
+    },
+    {
+      "family": 3,
+      "mode": "Executed",
+      "explicit_time": true,
+      "text": "В момент 1 для Альфа исполнили команду start."
+    },
+    {
+      "family": 3,
+      "mode": "Executed",
+      "explicit_time": false,
+      "text": "Для Альфа исполнили команду start."
+    },
+    {
+      "family": 3,
+      "mode": "Forced",
+      "explicit_time": true,
+      "text": "В момент 1 у Альфа установили Y=1 внешним воздействием."
+    },
+    {
+      "family": 3,
+      "mode": "Forced",
+      "explicit_time": false,
+      "text": "У Альфа установили Y=1 внешним воздействием."
+    },
+    {
+      "family": 3,
+      "mode": "Hypothetical",
+      "explicit_time": true,
+      "text": "В момент 1 для Альфа обсуждали гипотетическое выполнение start."
+    },
+    {
+      "family": 3,
+      "mode": "Hypothetical",
+      "explicit_time": false,
+      "text": "Для Альфа обсуждали гипотетическое выполнение start."
+    },
+    {
+      "family": 3,
+      "mode": "Denied",
+      "explicit_time": true,
+      "text": "В момент 1 от исполнения новой предложенной команды start для Альфа отказались."
+    },
+    {
+      "family": 3,
+      "mode": "Denied",
+      "explicit_time": false,
+      "text": "От исполнения новой предложенной команды start для Альфа отказались."
+    }
+  ],
+  "required_review": [
+    "Russian fluency and absence of unintended mode ambiguity in all 48 rendered forms",
+    "Executed and Forced alone advance implicit clock; explicit timestamps permit narration reordering",
+    "Denied means a newly proposed command was not executed, not retroactive cancellation",
+    "Unknown means no new measurement and never a zero-valued observation",
+    "Names bind by the two initial C observations at time0: first introduced device-0, second device-1; consistent within record, not across records; no sidecar or speaker change.",
+    "Approval must name the exact catalog SHA256; changed catalog requires new review"
+  ],
+  "binding_semantics": "First two messages introduce distinct devices through C observations at time0: first introduced name binds to device-0, second to device-1. Names have no permanent ID across histories. Initial introductions persist across challenge transforms; model receives no names-to-ID sidecar."
+}
