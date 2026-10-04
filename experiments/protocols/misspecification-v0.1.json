@@ -1,0 +1,66 @@
+{
+  "protocol_id": "G2-MISSPEC-v0.1",
+  "status": "specified_not_run",
+  "spec": "docs/specs/09-misspecification.md",
+  "grounding": "oracle_visible_journal",
+  "observed_outcome": "Y",
+  "hidden_natural_variable": "M",
+  "regimes": ["independent_xor", "shared_xor", "wrong_gate"],
+  "intervention_order": ["R", "C"],
+  "intervention_values": [[0, 0], [0, 1], [1, 0], [1, 1]],
+  "classes": {
+    "H_ind": {
+      "mechanism_form": "M=R_xor_NM;Y=(M_and_not_C)_xor_NY",
+      "noise_relation": "independent",
+      "bernoulli_parameter_interval": [0.0, 1.0]
+    },
+    "H_joint": {
+      "mechanism_form": "M=R_xor_NM;Y=(M_and_not_C)_xor_NY",
+      "noise_relation": "arbitrary_joint_binary_distribution",
+      "law_invariant_across_interventions": true
+    }
+  },
+  "expected_population_compatibility": {
+    "independent_xor": {"H_ind": true, "H_joint": true},
+    "shared_xor": {"H_ind": false, "H_joint": true},
+    "wrong_gate": {"H_ind": false, "H_joint": false}
+  },
+  "finite_data": {
+    "episodes_per_regime_cell_seed": 10000,
+    "seed_range_inclusive": [0, 99],
+    "episodes_per_seed": 120000,
+    "total_episodes": 12000000,
+    "interval": "two_sided_clopper_pearson",
+    "simultaneous_panel_alpha": 0.05,
+    "bonferroni_cells": 12,
+    "tail_allocation": "cell_alpha_divided_by_2",
+    "rounding": "outward",
+    "confidence_scope": "12_cells_within_one_seed"
+  },
+  "feasibility": {
+    "method": "analytic_interval_intersections",
+    "X": "I00_intersect_complement_I10",
+    "B": "I01_intersect_I11",
+    "H_joint": "X_and_B_nonempty",
+    "H_ind": "X_and_B_nonempty_and_X_intersect_[m,1-m]_nonempty;m=min(B.low,1-B.high)",
+    "independent_certificate_verification": true,
+    "search_failure_proves_infeasibility": false
+  },
+  "acceptance": {
+    "exact_matrix_errors": 0,
+    "minimum_rejections_per_incompatible_combination": 95,
+    "maximum_rejections_per_compatible_combination": 10,
+    "runs_per_combination": 100,
+    "budget_fault_status_errors": 0,
+    "undetectable_coupling_false_detections": 0,
+    "fixture_tolerance": 1e-12,
+    "all_five_subgates_required": true
+  },
+  "required_controls": [
+    "compatible_independent_noise",
+    "compatible_correlated_class",
+    "budget_exhausted_before_certificate",
+    "observationally_and_interventionally_equivalent_M_plus_M_minus"
+  ],
+  "individual_p_values": "not_computed"
+}

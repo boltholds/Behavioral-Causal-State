@@ -80,6 +80,14 @@
       "do_c_one_hold": 0.25,
       "replace_past_command": 0.25
     },
+    "weight_rationale": "initial_balanced_category_benchmark_not_deployment_workload",
+    "per_category_report_required": true,
+    "sensitivity_category_order": ["predict_hold", "do_c_zero_hold", "do_c_one_hold", "replace_past_command"],
+    "sensitivity_weights": {
+      "intervention_priority": [0.1, 0.35, 0.35, 0.2],
+      "counterfactual_priority": [0.1, 0.2, 0.2, 0.5]
+    },
+    "sensitivity_changes_primary_gate": false,
     "averaging_unit": "history_then_category",
     "predictive_interventional_objects": "uniform_over_both",
     "counterfactual_actions": "uniform_over_eligible_executed_actions",
@@ -92,6 +100,7 @@
     "rare_training_context_probability_below": 0.01
   },
   "metrics": {
+    "geometry_diagnostic": "deferred",
     "primary_distribution_distance": "total_variation",
     "invalid_output_penalty": 1.0,
     "critical_error_interval": "one_sided_clopper_pearson",
@@ -111,6 +120,12 @@
     "paraphrase_status_disagreement_upper": 0.01,
     "paraphrase_mean_tv_upper": 0.01,
     "analytic_tolerance": 1e-12
+  },
+  "misspecification_gate": {
+    "protocol": "experiments/protocols/misspecification-v0.1.json",
+    "required_for_language_only_claim": false,
+    "required_for_c1_and_misspecification_claim": true,
+    "current_status": "not_run"
   },
   "run_manifest_required": [
     "code_commit", "protocol_sha256", "encoder_checkpoint_hash", "tokenizer_hash",

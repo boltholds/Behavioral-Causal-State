@@ -1,0 +1,385 @@
+{
+  "fixture_id": "AnswerJournal-v1",
+  "status": "serialization_reference_not_runtime_test",
+  "spec": "docs/specs/02-contracts.md",
+  "equal_key_groups": [
+    [
+      "base",
+      "same_request",
+      "query_object_key_order"
+    ]
+  ],
+  "distinct_key_representatives": [
+    "base",
+    "paraphrase",
+    "trailing_space",
+    "role_change",
+    "snapshot_change",
+    "query_change",
+    "unicode_composed",
+    "unicode_decomposed",
+    "two_messages",
+    "message_order_changed"
+  ],
+  "cases": [
+    {
+      "id": "base",
+      "request": {
+        "snapshot_id": "fixture-snapshot-1",
+        "messages": [
+          {
+            "role": "user",
+            "speaker_id": "speaker-0",
+            "text": "Стоп."
+          }
+        ],
+        "query": {
+          "schema_version": "query-v1",
+          "kind": "Predictive",
+          "object_id": "device-0",
+          "outcome": [
+            "M",
+            "Y"
+          ],
+          "horizon": 1,
+          "future_actions": [
+            "hold"
+          ],
+          "evidence_ref": "current_history"
+        }
+      },
+      "expected_key": "sha256:b89ff5b20c39638dcfbf4bf753def4c71928ef78ae4d6007873916cd6a8a5cd3",
+      "expected_payload_bytes": 304,
+      "expected_payload_hex": "4243532e416e737765724a6f75726e616c2f76310000000000000000030000000000000012666978747572652d736e617073686f742d3100000000000000460000000000000001000000000000003600000000000000030000000000000004757365720000000000000009737065616b65722d300000000000000009d0a1d182d0bed0bf2e00000000000000a37b2265766964656e63655f726566223a2263757272656e745f686973746f7279222c226675747572655f616374696f6e73223a5b22686f6c64225d2c22686f72697a6f6e223a312c226b696e64223a2250726564696374697665222c226f626a6563745f6964223a226465766963652d30222c226f7574636f6d65223a5b224d222c2259225d2c22736368656d615f76657273696f6e223a2271756572792d7631227d"
+    },
+    {
+      "id": "same_request",
+      "request": {
+        "snapshot_id": "fixture-snapshot-1",
+        "messages": [
+          {
+            "role": "user",
+            "speaker_id": "speaker-0",
+            "text": "Стоп."
+          }
+        ],
+        "query": {
+          "schema_version": "query-v1",
+          "kind": "Predictive",
+          "object_id": "device-0",
+          "outcome": [
+            "M",
+            "Y"
+          ],
+          "horizon": 1,
+          "future_actions": [
+            "hold"
+          ],
+          "evidence_ref": "current_history"
+        }
+      },
+      "expected_key": "sha256:b89ff5b20c39638dcfbf4bf753def4c71928ef78ae4d6007873916cd6a8a5cd3",
+      "expected_payload_bytes": 304
+    },
+    {
+      "id": "query_object_key_order",
+      "request": {
+        "snapshot_id": "fixture-snapshot-1",
+        "messages": [
+          {
+            "role": "user",
+            "speaker_id": "speaker-0",
+            "text": "Стоп."
+          }
+        ],
+        "query": {
+          "evidence_ref": "current_history",
+          "future_actions": [
+            "hold"
+          ],
+          "horizon": 1,
+          "outcome": [
+            "M",
+            "Y"
+          ],
+          "object_id": "device-0",
+          "kind": "Predictive",
+          "schema_version": "query-v1"
+        }
+      },
+      "expected_key": "sha256:b89ff5b20c39638dcfbf4bf753def4c71928ef78ae4d6007873916cd6a8a5cd3",
+      "expected_payload_bytes": 304
+    },
+    {
+      "id": "paraphrase",
+      "request": {
+        "snapshot_id": "fixture-snapshot-1",
+        "messages": [
+          {
+            "role": "user",
+            "speaker_id": "speaker-0",
+            "text": "Выполнили стоп."
+          }
+        ],
+        "query": {
+          "schema_version": "query-v1",
+          "kind": "Predictive",
+          "object_id": "device-0",
+          "outcome": [
+            "M",
+            "Y"
+          ],
+          "horizon": 1,
+          "future_actions": [
+            "hold"
+          ],
+          "evidence_ref": "current_history"
+        }
+      },
+      "expected_key": "sha256:dc876d23deb78d0668b4eb0a4a0d6ce21b056c654c0689404493395509672dcf",
+      "expected_payload_bytes": 323
+    },
+    {
+      "id": "trailing_space",
+      "request": {
+        "snapshot_id": "fixture-snapshot-1",
+        "messages": [
+          {
+            "role": "user",
+            "speaker_id": "speaker-0",
+            "text": "Стоп. "
+          }
+        ],
+        "query": {
+          "schema_version": "query-v1",
+          "kind": "Predictive",
+          "object_id": "device-0",
+          "outcome": [
+            "M",
+            "Y"
+          ],
+          "horizon": 1,
+          "future_actions": [
+            "hold"
+          ],
+          "evidence_ref": "current_history"
+        }
+      },
+      "expected_key": "sha256:0eb1f4a1c4c399a6332d6360de276a75b088cdbb3fc8bc678fa87a7c4519d1a0",
+      "expected_payload_bytes": 305
+    },
+    {
+      "id": "role_change",
+      "request": {
+        "snapshot_id": "fixture-snapshot-1",
+        "messages": [
+          {
+            "role": "assistant",
+            "speaker_id": "speaker-0",
+            "text": "Стоп."
+          }
+        ],
+        "query": {
+          "schema_version": "query-v1",
+          "kind": "Predictive",
+          "object_id": "device-0",
+          "outcome": [
+            "M",
+            "Y"
+          ],
+          "horizon": 1,
+          "future_actions": [
+            "hold"
+          ],
+          "evidence_ref": "current_history"
+        }
+      },
+      "expected_key": "sha256:c65a91b7da3c638a12b9b6d7227fcd72ff617a266b7a88624f1d1c3de41ae220",
+      "expected_payload_bytes": 309
+    },
+    {
+      "id": "snapshot_change",
+      "request": {
+        "snapshot_id": "fixture-snapshot-2",
+        "messages": [
+          {
+            "role": "user",
+            "speaker_id": "speaker-0",
+            "text": "Стоп."
+          }
+        ],
+        "query": {
+          "schema_version": "query-v1",
+          "kind": "Predictive",
+          "object_id": "device-0",
+          "outcome": [
+            "M",
+            "Y"
+          ],
+          "horizon": 1,
+          "future_actions": [
+            "hold"
+          ],
+          "evidence_ref": "current_history"
+        }
+      },
+      "expected_key": "sha256:1d06f5546f58b9faaba6be7c456b566d48448b6031f8e368ace8a24c4d150984",
+      "expected_payload_bytes": 304
+    },
+    {
+      "id": "query_change",
+      "request": {
+        "snapshot_id": "fixture-snapshot-1",
+        "messages": [
+          {
+            "role": "user",
+            "speaker_id": "speaker-0",
+            "text": "Стоп."
+          }
+        ],
+        "query": {
+          "schema_version": "query-v1",
+          "kind": "Predictive",
+          "object_id": "device-0",
+          "outcome": [
+            "M",
+            "Y"
+          ],
+          "horizon": 1,
+          "future_actions": [
+            "start"
+          ],
+          "evidence_ref": "current_history"
+        }
+      },
+      "expected_key": "sha256:45f03af8e8dac93d0b7651b4efd24c1857184da71d73d33db096e6c284956d09",
+      "expected_payload_bytes": 305
+    },
+    {
+      "id": "unicode_composed",
+      "request": {
+        "snapshot_id": "fixture-snapshot-1",
+        "messages": [
+          {
+            "role": "user",
+            "speaker_id": "speaker-0",
+            "text": "й"
+          }
+        ],
+        "query": {
+          "schema_version": "query-v1",
+          "kind": "Predictive",
+          "object_id": "device-0",
+          "outcome": [
+            "M",
+            "Y"
+          ],
+          "horizon": 1,
+          "future_actions": [
+            "hold"
+          ],
+          "evidence_ref": "current_history"
+        }
+      },
+      "expected_key": "sha256:eebc491c98a09393690a68a3f29075b3717a25d72043cfc224a1749b5bf44856",
+      "expected_payload_bytes": 297
+    },
+    {
+      "id": "unicode_decomposed",
+      "request": {
+        "snapshot_id": "fixture-snapshot-1",
+        "messages": [
+          {
+            "role": "user",
+            "speaker_id": "speaker-0",
+            "text": "й"
+          }
+        ],
+        "query": {
+          "schema_version": "query-v1",
+          "kind": "Predictive",
+          "object_id": "device-0",
+          "outcome": [
+            "M",
+            "Y"
+          ],
+          "horizon": 1,
+          "future_actions": [
+            "hold"
+          ],
+          "evidence_ref": "current_history"
+        }
+      },
+      "expected_key": "sha256:e33689b0a19dba10603d2ac69d6bdba1b8a6adf194f765f0beaba6a15d743ddf",
+      "expected_payload_bytes": 299
+    },
+    {
+      "id": "two_messages",
+      "request": {
+        "snapshot_id": "fixture-snapshot-1",
+        "messages": [
+          {
+            "role": "user",
+            "speaker_id": "speaker-0",
+            "text": "Стоп."
+          },
+          {
+            "role": "user",
+            "speaker_id": "speaker-0",
+            "text": "Пуск."
+          }
+        ],
+        "query": {
+          "schema_version": "query-v1",
+          "kind": "Predictive",
+          "object_id": "device-0",
+          "outcome": [
+            "M",
+            "Y"
+          ],
+          "horizon": 1,
+          "future_actions": [
+            "hold"
+          ],
+          "evidence_ref": "current_history"
+        }
+      },
+      "expected_key": "sha256:4b76d08b5e39ce778652b8ecf7c144e35bb2592f8aebb1b9978ccac34579037e",
+      "expected_payload_bytes": 366
+    },
+    {
+      "id": "message_order_changed",
+      "request": {
+        "snapshot_id": "fixture-snapshot-1",
+        "messages": [
+          {
+            "role": "user",
+            "speaker_id": "speaker-0",
+            "text": "Пуск."
+          },
+          {
+            "role": "user",
+            "speaker_id": "speaker-0",
+            "text": "Стоп."
+          }
+        ],
+        "query": {
+          "schema_version": "query-v1",
+          "kind": "Predictive",
+          "object_id": "device-0",
+          "outcome": [
+            "M",
+            "Y"
+          ],
+          "horizon": 1,
+          "future_actions": [
+            "hold"
+          ],
+          "evidence_ref": "current_history"
+        }
+      },
+      "expected_key": "sha256:f52a3cae3e4b0f6b635936a9172425f81b67457e85979b1f6a1f7241eb4bd66f",
+      "expected_payload_bytes": 366
+    }
+  ]
+}

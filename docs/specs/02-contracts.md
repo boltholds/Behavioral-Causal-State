@@ -23,7 +23,7 @@ Search не может выставлять ProvenIdentified или Inconsistent
 
 B_t хранит joint uncertainty о (Γ₁:ₜ, M, X_t, относящемся к запросам U), ссылки на архив свидетельств и snapshot. Представление может быть symbolic constraints, belief, posterior с явным prior либо проверенным набором кандидатов плюс сертификаты. Эти представления не считаются эквивалентными автоматически.
 
-Кэш ответов — дополнительный журнал K→AnswerRecord, а не часть доказательства идентифицируемости. Исходные свидетельства для CF не удаляются только потому, что predictive state не изменилось.
+Кэш ответов — дополнительный журнал K→AnswerRecord, а не часть доказательства идентифицируемости. K определяется побайтно в разделе «Журнал воспроизводимости» ниже; semantic canonical_history в этом контракте отсутствует. Исходные свидетельства для CF не удаляются только потому, что predictive state не изменилось.
 
 ## Запрос
 
@@ -64,9 +64,27 @@ v0.1 использует hard interventions. Soft/mechanism interventions пр�
 
 ## Журнал воспроизводимости
 
-K=hash(snapshot_id, exact_serialization(raw_messages, roles, order), structural_query_serialization). Используется однозначное length-prefixed/эквивалентное кодирование полей. Байты Unicode сохраняются; семантическая нормализация и threshold nearest-neighbor запрещены в этом журнале.
+### Формат ключа AnswerJournal/v1
 
-Snapshot включает данные/constraints, assumptions, interventions, классы моделей, encoder/tokenizer, grounder, core, алгоритм и бюджет вывода, dtype и версии схем. Replay возвращает именно сохранённый ответ. Продолжение незавершённого расчёта создаёт новую ревизию ответа с ссылкой на предыдущую, не переписывая историю.
+Фиксируется один формат, а не выбор из эквивалентных сериализаций:
+
+- U64(n) — беззнаковое 64-битное число big-endian.
+- LP(b)=U64(len_bytes(b)) || b.
+- SEQ(b₁,…,bₙ)=U64(n) || LP(b₁) || … || LP(bₙ).
+- Message_i=SEQ(UTF8(role_i), UTF8(speaker_id_i), UTF8(text_i)).
+- History=SEQ(Message₁,…,Messageₜ), строго в исходном порядке сообщений.
+- Payload=ASCII("BCS.AnswerJournal/v1") || byte(0) || SEQ(UTF8(snapshot_id), History, QueryBytes).
+- K="sha256:" || lowercase_hex(SHA256(Payload)).
+
+Message boundary содержит три обязательные строки role, speaker_id, text. Позиция определяется индексом последовательности, а не сортировкой. Дополнительные входные поля, влияющие на ответ, нельзя молча игнорировать: они требуют новой версии wire schema/key либо включения в snapshot, если постоянны для всех запросов snapshot.
+
+QueryBytes — UTF-8 JSON уже проверенного structured Query AST с schema_version="query-v1". Object keys сортируются лексикографически по Unicode code points, separators=(',', ':'), ensure_ascii=false, строки сохраняются без Unicode normalization; escaping — как у json.dumps Python 3 для кавычек, backslash и control characters. Разрешены строки, bool, integers, arrays и objects; float, null, duplicate object keys и unpaired surrogates отклоняются на wire boundary. Массивы сохраняют порядок. Это техническая сериализация структурированного запроса; равнозначные, но различно записанные AST не обязаны получать один K.
+
+Whitespace, регистр, пунктуация и Unicode composition исходного text сохраняются после декодирования внешнего wire format в строку. Ни Γ, ни z, ни threshold similarity не входят в K. Перефразировки сознательно дают промах; гарантия относится к идентичному request payload. Для одинакового K журнал дополнительно сравнивает сохранённый Payload: несовпадение означает HashCollision и запрещает replay чужого ответа.
+
+Конкретные пары вход→K и пример Payload: [journal-key-v1.json](../../experiments/fixtures/journal-key-v1.json). Runtime MUST воспроизвести все expected keys. Это эталон контракта; исполняемого journal в репозитории пока нет.
+
+Snapshot включает данные/constraints, assumptions, interventions, классы моделей, encoder/tokenizer, grounder, core, алгоритм, seed и бюджет вывода, dtype и версии схем. Replay возвращает именно сохранённый ответ. Продолжение незавершённого расчёта с новым бюджетом создаёт новый snapshot и новую ревизию ответа с ссылкой на предыдущую, не переписывая историю.
 
 Перефразировки не имеют общего ключа. Cross-paraphrase consistency измеряется с отключённым replay. Истинная Γ доступна только oracle/evaluator и не используется для ключа рабочего движка.
 

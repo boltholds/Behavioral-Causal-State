@@ -15,12 +15,15 @@
 7. [Поиск популяции SCM и сертификация границ](docs/specs/06-population.md).
 8. [Roadmap снятия предположений](docs/specs/07-roadmap.md).
 9. [Литература и сравнение методов](docs/specs/08-literature.md).
+10. [G2-MISSPEC: обнаружение нарушения предположений](docs/specs/09-misspecification.md).
 
-Машиночитаемые параметры: [language-v0.1.json](experiments/protocols/language-v0.1.json), [population-v0.1.json](experiments/protocols/population-v0.1.json). Аналитические примеры: [causal-oracles-v0.1.json](experiments/fixtures/causal-oracles-v0.1.json).
+[Что входит в первый запуск и что отложено](docs/specs/deferred.md). Формат ключа журнала полностью задан в [SPEC-02](docs/specs/02-contracts.md); геометрическая диагностика GEO-1 отложена. Генератор описан в SPEC-04, но его исполняемая реализация отсутствует — G0/G1/G2 пока имеют статус not_run.
+
+Машиночитаемые параметры: [language-v0.1.json](experiments/protocols/language-v0.1.json), [population-v0.1.json](experiments/protocols/population-v0.1.json), [misspecification-v0.1.json](experiments/protocols/misspecification-v0.1.json). Аналитические примеры: [causal-oracles-v0.1.json](experiments/fixtures/causal-oracles-v0.1.json). Побайтные примеры ключей: [journal-key-v1.json](experiments/fixtures/journal-key-v1.json).
 
 ## Первый результат
 
-Четыре ветки — oracle grounding, SONAR concat, SONAR attention, SONAR GRU — используют одно и то же обученное и затем замороженное причинное ядро. Проверяются восстановление структуры событий, ответы на причинные запросы и устойчивость к перефразированию.
+Четыре ветки — oracle grounding, SONAR concat, SONAR attention, SONAR GRU — используют одно и то же обученное и затем замороженное причинное ядро. Проверяются восстановление структуры событий, ответы на причинные запросы и устойчивость к перефразированию. Concat — baseline плотного чтения фиксированного окна; он не задаёт верхнюю или нижнюю границу качества остальных архитектур.
 
 Отдельный небольшой эксперимент проверяет поиск альтернативных SCM на контрфактуальном запросе с точными границами `[0, 1]`. Экстремумы найденной популяции всегда маркируются как найденный диапазон; полнота требует отдельного доказательства.
 
