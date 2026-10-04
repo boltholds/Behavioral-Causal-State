@@ -56,7 +56,9 @@ def test_resume_reproduces_uninterrupted_weights_and_metrics(tmp_path):
     assert resumed['committed_optimizer_steps']==4
     assert resumed['history']==full['history']
     assert resumed['best_epoch']==full['best_epoch']
+    torch.use_deterministic_algorithms(False)
     x=training.load_completed_run(tmp_path/'full',identity)
+    assert torch.are_deterministic_algorithms_enabled()
     y=training.load_completed_run(tmp_path/'resumed',identity)
     assert all(torch.equal(x.state_dict()[k],y.state_dict()[k]) for k in x.state_dict())
     # A rerun must not spend another epoch or mutate the completed checkpoint.

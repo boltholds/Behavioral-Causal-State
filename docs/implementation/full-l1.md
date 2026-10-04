@@ -4,6 +4,8 @@
 
 Полный SONAR cache подготовлен: **56 000 histories, 12 112 глобально уникальных фраз**, 2 025.9 секунды на CPU (2 потока, batch 16). Train/validation/IID/challenge имеют хэши и проверены в training runtime. Зарегистрированный study инициализирован на опубликованном commit `d82614718d1334b402e82f1fa85e4b7421d4793e`; его preflight прошёл **76/76** тестов. Фактическая попытка начать tuning остановлена до оптимизатора: `blocked_catalog_review`, `jobs=0`, `test_open=false`. [Манифест готовности](../../experiments/results/l1-pipeline-v0.1/registered-readiness.json).
 
+После этого владелец одобрил каталог для локального GPU-запуска. Подготовлены [CUDA launcher, готовые входы и команды](local-gpu.md); старый CPU study и исторический readiness report не переписаны.
+
 Реальный deterministic TTT завершён отдельно: [60 прогонов и точная проверка](ttt.md). Его успех не сообщает ничего о качестве текстового grounder.
 
 ## Зафиксированный бюджет

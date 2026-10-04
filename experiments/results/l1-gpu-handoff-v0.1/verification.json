@@ -1,0 +1,27 @@
+{
+  "schema": "l1-gpu-handoff-verification-v1",
+  "pytest": {
+    "command": "python -m pytest -q",
+    "result": "244 passed in 58.25s"
+  },
+  "shell_syntax": "bash -n experiments/l1/run_gpu.sh: passed",
+  "cuda_execution": "not_run_no_GPU_available",
+  "cpu_probe_branches": [
+    "concat",
+    "attention",
+    "gru"
+  ],
+  "catalog_receipt": "approved_by_owner_conversation; exact catalog SHA256 validated",
+  "python": "3.12.14",
+  "torch": "2.14.1+cpu",
+  "numpy": "2.3.5",
+  "source_sha256": {
+    "experiments/l1/evaluation.py": "6b471a93136f55b3520703ef59cb3dace8af73206817e00930a2098e8787ae65",
+    "experiments/l1/study.py": "3dd016c265350ad800be8a2580ebb6deef91cfa23138c5bd75581aedd2450417",
+    "experiments/l1/preparation.py": "27c561b308d6737095fefa32cf79f0eba31fc4fd23256e4526530334580e0a08",
+    "experiments/l1/runtime.py": "4ab96a00a273c4eb1b831438d3708d87302ccfc1b879e7338fd123bfd03b638b",
+    "experiments/l1/gpu_preflight.py": "14b66ae9229abc0c5461fb53a198d6eda88b18bf303ceeb4f0835070bcf0e0c5",
+    "experiments/l1/training.py": "f51d1311f5ff90f16e1ff74a85539f3f782c2fad65f92bc02bda94015fb4b45b",
+    "experiments/l1/smoke.py": "59587f8e2650bffb0e142185a045a8ce2d95bbe9891f6260feae0e56688a1132"
+  }
+}

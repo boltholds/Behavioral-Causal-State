@@ -1,0 +1,47 @@
+{
+  "schema": "l1-gpu-transfer-v1",
+  "archive": "BCS-L1-GPU-data.zip",
+  "bytes": 80970461,
+  "sha256": "ed319da913f962cbf7a4e841c64da0e6e8d78065d00a55c52bc47f8902b03a45",
+  "files": {
+    "artifacts/l1-embeddings-v0.1/challenge/manifest.json": "cd3aba43bf50bb81735b826ade5f84548f3f024cd22dd313a4ec7d6eba48bccc",
+    "artifacts/l1-embeddings-v0.1/challenge/records.json": "40604e08f5650f17395d29832e8f33d4d4789d839b0265ddecb80aaca82ab76f",
+    "artifacts/l1-embeddings-v0.1/challenge/vectors.npy": "0eb38e8644f4e7a96f6aed9b2426becd4cff63cb7f587d6ef2b9f59d1c14d4e6",
+    "artifacts/l1-embeddings-v0.1/iid_test/manifest.json": "0ade92c9aa796e0a2c471c005ce05385f53a162a9003f13cae742e1a6006cfa3",
+    "artifacts/l1-embeddings-v0.1/iid_test/records.json": "f8f5e39a61c530661a37d3de50a9890847a1571557ecbb60f768c83746cf4a01",
+    "artifacts/l1-embeddings-v0.1/iid_test/vectors.npy": "79114d243416690629f41f014cd727986994b88d422d2045fdafa2389439bec0",
+    "artifacts/l1-embeddings-v0.1/preparation.json": "e00002420239b642f3753080ecb37c5340c494d4dbae262db72db41ccf1d433a",
+    "artifacts/l1-embeddings-v0.1/train/manifest.json": "a1870f7de0fea95e4263f765c09871fe53e63b805240e87d6ac7495a3052ab2d",
+    "artifacts/l1-embeddings-v0.1/train/records.json": "2be2b49e0901b9d2443ebaf2ddba2aeec7ebf005b35dd222f50f4d5473c7b80d",
+    "artifacts/l1-embeddings-v0.1/train/vectors.npy": "ceb9d39011dfdf8d56b147d78648c5424761937988a8b04fc65a5ba62933ef23",
+    "artifacts/l1-embeddings-v0.1/validation/manifest.json": "d47bd294e72227c131f8ff5c5c78df7f1c8aa49f92852c24578aa94821b38758",
+    "artifacts/l1-embeddings-v0.1/validation/records.json": "6b5f555c01b2e21eaa779b41089f7a39c7a43fc2eb6f704a0e4111cc8212e32c",
+    "artifacts/l1-embeddings-v0.1/validation/vectors.npy": "0f10ca3db530497c305b8fe8c4cec07b2571adfd33278035ab924d67260478ce",
+    "artifacts/l1-v0.1-final/audit.json": "0267b93b37cb1a8b85cfdfc2f95fb379f27e905d8b77a36f6488866580ea54b8",
+    "artifacts/l1-v0.1-final/calibration.json": "f4b316bf3b68ef6913aa42af56e0eb8a1632fc5e774c2ba9a02aa079e5481c03",
+    "artifacts/l1-v0.1-final/catalog.json": "4308558244476e29d2c887dc1b10a55af8243bad1c3dbea046101f42476609ce",
+    "artifacts/l1-v0.1-final/core-evaluation.json": "46846d3637fa254640a4a9a1b1bff0739ccc8ea569945d3290375be5a725174d",
+    "artifacts/l1-v0.1-final/core.json": "13a6585693b11c8d2486a84f14c2c7e16229ec95934a79916480830fd684d76b",
+    "artifacts/l1-v0.1-final/evaluator/challenge.jsonl": "40a912e54bc603b914db9bf2a946aaed5dec546bfdbbbdac68f571d6d7ada7e7",
+    "artifacts/l1-v0.1-final/evaluator/iid_test.jsonl": "a0d429da84f5a6826bad19ffe63c63c0ffb40a1eec4a36479ab302809c2f7153",
+    "artifacts/l1-v0.1-final/evaluator/train.jsonl": "b4765c73fe2b3da9d49201217b8aa9272ac514759b44ef5c6dc27602e96e7855",
+    "artifacts/l1-v0.1-final/evaluator/validation.jsonl": "c5d8e669878b4195453af1eb689dfa79f57ab420d139edd750583a969093b46b",
+    "artifacts/l1-v0.1-final/manifest.json": "fd230102ff597ed5493b249a0167c83858bdf9be52f92bff6a5ecc1d6f4b3ba1",
+    "artifacts/l1-v0.1-final/public/challenge.jsonl": "23c3912c1ffb50b716044c03d199d142a964abbe8c3bc90856742010a1222b86",
+    "artifacts/l1-v0.1-final/public/iid_test.jsonl": "abc3488679ededb5cf412ee43a59fd0a730ba14cdbee58f21cfd87bfe5c510a7",
+    "artifacts/l1-v0.1-final/public/train.jsonl": "1af8629e618161f9f36186cb0f2ec17cdff02a0ece6bafd8b57d29c28a095298",
+    "artifacts/l1-v0.1-final/public/validation.jsonl": "fd09fbb3e650996dacaa5ee2fa1acbf75890990242ef8e7357debf9044181ae9",
+    "artifacts/l1-v0.1-final/training/labels.jsonl": "c2cedb42e762900fd26c15b22a6bf595cc8a4b956ca09c5433b803a1689cc9ed"
+  },
+  "verification": "zip CRC and every decompressed file SHA256 match source",
+  "counts": {
+    "histories": 56000,
+    "splits": 4
+  },
+  "excludes": [
+    "CPU study locks",
+    "checkpoints",
+    "SONAR encoder weights"
+  ],
+  "gpu_execution": "not_run_no_GPU_in_preparation_environment"
+}

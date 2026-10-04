@@ -2,13 +2,14 @@
 
 Исследовательский проект причинного рассуждающего движка: состояния относительно семейств predictive, interventional и counterfactual запросов; текстовый grounding; факторизованные SCM; проверяемые границы причинных ответов.
 
-**Текущий статус: causal runtime и языковой training pipeline, 2026-10-04.** Реализованы точный do/CF inference, журнал, обучение Boolean core, семь видов текстовых пар и аудит splits. Добавлены verified SONAR adapter, concat/attention/GRU, autoregressive grounder и diagnostic training с input locks. Полные G2/P1 пройдены на 100 seeds. Реальный LearnLib TTT завершён: 60/60 прогонов с точным EQ. Для полного L1 реализован исполнитель 9 tuning + 15 final запусков; полный SONAR cache готов (56 000 histories), зарегистрированное обучение ожидает обязательный human review каталога. Проверка реализации:237 tests passed.
+**Текущий статус: causal runtime и языковой training pipeline, 2026-10-04.** Реализованы точный do/CF inference, журнал, обучение Boolean core, семь видов текстовых пар и аудит splits. Добавлены verified SONAR adapter, concat/attention/GRU, autoregressive grounder и diagnostic training с input locks. Полные G2/P1 пройдены на 100 seeds. Реальный LearnLib TTT завершён: 60/60 прогонов с точным EQ. Для полного L1 реализован исполнитель 9 tuning + 15 final запусков; полный SONAR cache готов (56 000 histories), каталог одобрен владельцем для запуска; подготовлен локальный CUDA launcher с проверкой воспроизводимости. Зарегистрированные GPU-обучения ещё не выполнены.
 
 [Запуск, результаты и ограничения runtime](docs/implementation/first-runtime.md).
 [Обученное ядро, полный кандидатный датасет и oracle validation](docs/implementation/calibration-dataset.md).
 [SONAR, языковые ветки и команды обучения](docs/implementation/language-runtime.md).
 [Полный L1: запуск, возобновление, freeze и блокеры](docs/implementation/full-l1.md).
 [TTT: результаты 60 реальных LearnLib прогонов](docs/implementation/ttt.md).
+[Запуск полного L1 на своей GPU: данные, установка, resume](docs/implementation/local-gpu.md).
 
 Первый языковой diagnostic выполнен на128 train /32 validation histories с реальными SONAR embeddings. Все три ветки обучены, но полностью правильных validation histories пока0/32. Это проверка интеграции с отрицательным результатом качества; зарегистрированный L1 остаётся `not_run`. Проверки реализации:156 tests passed.
 
@@ -34,7 +35,7 @@ python -m bcs prepare-l1 --smoke --output /tmp/bcs-l1-smoke
 9. [Литература и сравнение методов](docs/specs/08-literature.md).
 10. [G2-MISSPEC: обнаружение нарушения предположений](docs/specs/09-misspecification.md).
 
-[Что входит в первый запуск и что отложено](docs/specs/deferred.md). Формат ключа журнала полностью задан в [SPEC-02](docs/specs/02-contracts.md); геометрическая диагностика GEO-1 отложена. Аудитор проверяет публичные/evaluator файлы, calibration, splits и pair witnesses. Training loader проверяет split IDs и input locks; точный TTT теперь выполнен; зарегистрированное обучение L1 и его test metrics ещё не получены. Каталог имеет статус human review pending; `training_ready=false` относится к зарегистрированному L1. Ограниченная диагностика не получает его gates. G2/P1 имеют отдельные воспроизводимые run reports.
+[Что входит в первый запуск и что отложено](docs/specs/deferred.md). Формат ключа журнала полностью задан в [SPEC-02](docs/specs/02-contracts.md); геометрическая диагностика GEO-1 отложена. Аудитор проверяет публичные/evaluator файлы, calibration, splits и pair witnesses. Training loader проверяет split IDs и input locks; точный TTT теперь выполнен; зарегистрированное обучение L1 и его test metrics ещё не получены. Исторический dataset manifest сохраняет pending; отдельный receipt фиксирует одобрение владельца для нового GPU study. Ограниченная диагностика не получает его gates. G2/P1 имеют отдельные воспроизводимые run reports.
 
 Машиночитаемые параметры: [language-v0.1.json](experiments/protocols/language-v0.1.json), [population-v0.1.json](experiments/protocols/population-v0.1.json), [misspecification-v0.1.json](experiments/protocols/misspecification-v0.1.json). Аналитические примеры: [causal-oracles-v0.1.json](experiments/fixtures/causal-oracles-v0.1.json). Побайтные примеры ключей: [journal-key-v1.json](experiments/fixtures/journal-key-v1.json).
 

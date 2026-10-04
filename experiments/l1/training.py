@@ -14,6 +14,7 @@ from bcs.grounder import Grounder, ReaderKind
 from bcs.language_tokens import PAD
 from bcs.language_training import TrainConfig, _batch, validation_metrics
 from bcs.sonar_encoder import file_hash
+from .runtime import configure_runtime
 
 
 def digest(value):
@@ -30,7 +31,8 @@ def atomic_json(path,value):
 def source_hashes():
     import bcs
     return {**{'bcs/'+p.name:file_hash(p) for p in sorted(Path(bcs.__file__).parent.glob('*.py'))},
-            'l1/training.py':file_hash(Path(__file__))}
+            'l1/training.py':file_hash(Path(__file__)),
+            'l1/runtime.py':file_hash(Path(__file__).with_name('runtime.py'))}
 
 
 def _versions():
@@ -40,7 +42,7 @@ def _versions():
 def _context(kind,train,targets,validation,val_targets,config,identity,device):
     return {'schema':'l1-job-context-v1','reader':kind.value,'input_dim':train.vectors.shape[1],
             'identity':identity,'config':asdict(config),'device':str(device),'threads':torch.get_num_threads(),
-            'versions':_versions(),'source_sha256':source_hashes(),
+            'versions':_versions(),'numeric_runtime':configure_runtime(device),'source_sha256':source_hashes(),
             'train_cache':train.manifest,'validation_cache':validation.manifest,
             'train_targets_sha256':digest(targets),'validation_targets_sha256':digest(val_targets)}
 
@@ -84,6 +86,7 @@ def _validate_report(output,identity):
 
 
 def load_completed_run(output,expected_identity,device='cpu'):
+    configure_runtime(device)
     output=Path(output);report,context=_validate_report(output,expected_identity)
     model=Grounder(ReaderKind(context['reader']),context['input_dim']).to(device)
     model.load_state_dict(torch.load(output/'best.pt',map_location=device,weights_only=True))

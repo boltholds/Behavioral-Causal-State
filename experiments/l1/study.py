@@ -17,6 +17,7 @@ from bcs.language_cli import validation_events
 from bcs.language_tokens import encode_events
 from bcs.sonar_encoder import file_hash,validate_sonar_identity
 from .training import fit_run,load_completed_run,_validate_report,_versions,atomic_json,digest,source_hashes as training_sources
+from .runtime import configure_runtime
 
 ROOT=Path(__file__).resolve().parents[2]
 PROTOCOL=ROOT/'experiments/protocols/language-v0.1.json'
@@ -44,6 +45,7 @@ def validate_review(receipt,catalog_hash):
 
 def initialize(dataset,cache,output,*,code_revision,scope='registered',review=None,device='cpu',fixture_epochs=None):
     from bcs.dataset import audit_dataset
+    numeric_runtime=configure_runtime(device)
     dataset,cache,output=Path(dataset).resolve(),Path(cache).resolve(),Path(output).resolve()
     if scope not in ('registered','fixture'):raise ValueError('unknown study scope')
     if output.exists() and any(output.iterdir()):raise ValueError('study destination must be empty; use resume commands')
@@ -69,7 +71,7 @@ def initialize(dataset,cache,output,*,code_revision,scope='registered',review=No
           'dataset_files':{n:file_hash(dataset/n) for n in ('manifest.json',*manifest['files'])},
           'cache_files':{f'{s}/{n}':file_hash(cache/s/n) for s in SPLITS for n in ('manifest.json','records.json','vectors.npy')},
           'source_sha256':_sources(),'training':training,'encoder':identity,'catalog_review':receipt,
-          'device':device,'threads':torch.get_num_threads(),'runtime_versions':_versions(),'audit':audit,'core_artifact_id':manifest['core_artifact_id'],
+          'device':device,'threads':torch.get_num_threads(),'runtime_versions':_versions(),'numeric_runtime':numeric_runtime,'audit':audit,'core_artifact_id':manifest['core_artifact_id'],
           'assumption_ids':['deterministic','known_graph','known_binary_variables','fixed_learned_boolean_mechanisms','perfect_clamps','observed_initial_C','fixed_data'],
           'heldout_features':'frozen encoder on public text only; no normalization/statistic fitting',
           'preflight':None}
@@ -91,7 +93,7 @@ def initialize(dataset,cache,output,*,code_revision,scope='registered',review=No
 def _lock(output):
     output=Path(output);lock=_read(output/'study.json')
     if lock['source_sha256']!=_sources() or lock['protocol_sha256']!=file_hash(PROTOCOL):raise ValueError('study source/protocol changed')
-    if lock['device']!='cpu' and not torch.cuda.is_available():raise ValueError('locked device unavailable')
+    if lock.get('numeric_runtime')!=configure_runtime(lock['device']):raise ValueError('locked numeric runtime/GPU changed')
     if lock['threads']!=torch.get_num_threads() or lock['runtime_versions']!=_versions():raise ValueError('locked runtime/thread count changed')
     if lock['scope']=='registered' and lock['training']!=_read(PROTOCOL)['training']:raise ValueError('registered training budget changed')
     for field,root in (('dataset_files',Path(lock['dataset'])),('cache_files',Path(lock['cache']))):

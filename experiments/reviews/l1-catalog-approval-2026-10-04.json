@@ -1,0 +1,12 @@
+{
+  "schema": "l1-catalog-human-review-v1",
+  "catalog_sha256": "4308558244476e29d2c887dc1b10a55af8243bad1c3dbea046101f42476609ce",
+  "decision": "approved",
+  "reviewer": "repository owner, conversation approval",
+  "reviewed_at": "2026-10-04T21:38:55+00:00",
+  "forms_reviewed": 48,
+  "approval_basis": "User replied affirmatively to the selected question asking approval of the 48-form catalog for this run.",
+  "selected_question": "Одобряешь каталог из 48 форм для запуска?",
+  "user_reply": "давай я запущу у себя на GPU",
+  "scope": "Owner acceptance of this complete catalog for the registered run. No independent linguistic audit or measured language quality is claimed."
+}
